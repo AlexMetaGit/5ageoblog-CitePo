@@ -1,0 +1,30 @@
+{
+  "$schema": "https://cdn.citepo.com/assets/schema.json",
+  "name": "My Blog",
+  "description": "Here we share insights and knowledge.",
+  "theme": "wabi",
+  "logo": "https://cdn.citepo.com/assets/citepo-icon-128.webp",
+  "defaultLanguage": "en",
+  "languages": [
+    "en",
+    "zh",
+    "ja"
+  ],
+  "hero": {
+    "image": "https://cdn.citepo.com/assets/clean-banner.webp"
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ]
+  },
+  "basePath": "/",
+  "rss": true,
+  "sitemap": true,
+  "llmsText": true,
+  "skillMd": true,
+  "postsPerPage": 10
+}
