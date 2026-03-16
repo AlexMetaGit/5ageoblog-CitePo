@@ -1,0 +1,198 @@
+---
+title: GEO 工具选择指南：从免费到企业级的完整对比
+description: 深度对比 GEO/AEO 工具生态，从免费开源的 geo-aeo-tracker 到企业级的 getcito，帮助你选择最适合的 AI 可见性优化工具。
+date: 2026-03-16
+tags: [GEO, AEO, AI搜索, 工具对比, 品牌可见性]
+authors: [WuKong]
+draft: false
+---
+
+# GEO 工具选择指南：从免费到企业级的完整对比
+
+在 AI 搜索时代，选择合适的 GEO（Generative Engine Optimization）工具，就像在传统 SEO 时代选择合适的关键词工具一样重要。今天，我们就来深度对比一下当前最流行的 GEO 工具，帮你找到最适合自己的那一款。
+
+## 为什么需要 GEO 工具？
+
+<Callout type="info">
+GEO 工具的核心价值：追踪品牌在 AI 搜索引擎（ChatGPT、Perplexity、Gemini 等）中的可见性，分析竞争对手表现，并提供优化建议。
+</Callout>
+
+与传统 SEO 不同，GEO 关注的是**引用**而非排名。AI 引擎不会列出 10 个结果，而是选择少数可信来源进行总结和引用。因此，你需要专门的工具来：
+
+- **监控可见性**：品牌在 AI 回答中的出现频率
+- **竞争分析**：竞争对手的引用情况
+- **优化建议**：如何提高被 AI 引用的概率
+
+## 工具分类总览
+
+根据使用场景和成本，GEO 工具可以分为三类：
+
+### 1. 免费开源工具
+
+| 工具 | Star 数 | 特点 | 推荐度 |
+|------|---------|------|--------|
+| geo-aeo-tracker | 15 ⭐ | 本地优先、功能全面 | ⭐⭐⭐⭐⭐ |
+| easyGEO | 42 ⭐ | HTML 转 Markdown | ⭐⭐⭐ |
+| gtm-engineer-skills | 61 ⭐ | Claude Code 技能 | ⭐⭐⭐⭐ |
+
+### 2. 企业级工具
+
+| 工具 | 特点 | 推荐度 |
+|------|------|--------|
+| getcito | 企业级监控平台 | ⭐⭐⭐ |
+
+### 3. 研究工具
+
+| 工具 | 特点 | 推荐度 |
+|------|------|--------|
+| E-GEO | 电商 GEO 测试框架 | ⭐⭐⭐ |
+
+## 深度对比：geo-aeo-tracker vs getcito
+
+### geo-aeo-tracker：本地优先的全能选手
+
+<Badge variant="green">免费</Badge> <Badge variant="blue">开源</Badge> <Badge variant="purple">本地优先</Badge>
+
+**核心优势：**
+
+1. **12 个功能标签页**：从项目设置到自动化，覆盖完整工作流
+2. **多模型支持**：ChatGPT、Perplexity、Gemini、Copilot、Google AI Overview、Grok
+3. **竞争分析**：对手对战卡和引用机会分析
+4. **完全免费**：$0/月，数据留在本地
+
+**技术栈：**
+- Next.js 16.1 + Turbopack
+- TypeScript + Tailwind CSS v4
+- IndexedDB + localStorage（本地存储）
+- Bright Data API（抓取）+ OpenRouter（LLM）
+
+**适合人群：**
+- 注重隐私的品牌方
+- 技术能力较强的营销团队
+- 预算有限的初创公司
+
+<Callout type="warning">
+需要配置 Bright Data 和 OpenRouter API 密钥，有一定技术门槛。
+</Callout>
+
+### getcito：企业级监控平台
+
+<Badge variant="blue">企业级</Badge> <Badge variant="orange">需配置</Badge>
+
+**核心优势：**
+
+1. **企业级支持**：稳定的云端服务
+2. **团队协作**：多用户、多项目管理
+3. **高级分析**：深度数据洞察
+
+**适合人群：**
+- 大型企业
+- 需要云端托管
+- 预算充足
+
+**缺点：**
+- 需要付费
+- 数据存储在云端
+
+## 工具选择建议
+
+### 按预算选择
+
+<Steps>
+  <Step>
+    <h4>预算有限（$0）</h4>
+    <p>选择 <strong>geo-aeo-tracker</strong>，完全免费，功能全面。</p>
+  </Step>
+  <Step>
+    <h4>中等预算（$50-200/月）</h4>
+    <p>使用 geo-aeo-tracker + API 费用（Bright Data + OpenRouter）。</p>
+  </Step>
+  <Step>
+    <h4>充足预算（$200+/月）</h4>
+    <p>考虑 getcito 企业版，享受云端托管和高级支持。</p>
+  </Step>
+</Steps>
+
+### 按技术能力选择
+
+<CardGroup>
+  <Card href="https://github.com/danishashko/geo-aeo-tracker" title="开发者/技术团队">
+    geo-aeo-tracker：需要配置环境变量和本地部署。
+  </Card>
+  <Card href="https://github.com/danishashko/geo-aeo-tracker" title="非技术团队">
+    getcito：云端托管，开箱即用。
+  </Card>
+  <Card href="https://github.com/AlexMetaGit/5ageoblog-CitePo" title="内容创作者">
+    gtm-engineer-skills：Claude Code 技能，优化内容。
+  </Card>
+</CardGroup>
+
+### 按使用场景选择
+
+| 场景 | 推荐工具 | 理由 |
+|------|---------|------|
+| 品牌监控 | geo-aeo-tracker | 12 个功能标签页，全面覆盖 |
+| 竞争分析 | geo-aeo-tracker | 对战卡和引用机会分析 |
+| 内容优化 | gtm-engineer-skills | Claude Code 技能，优化内容 |
+| 企业部署 | getcito | 云端托管，团队协作 |
+| 学术研究 | E-GEO | 电商 GEO 测试框架 |
+
+## 快速开始：geo-aeo-tracker 实战
+
+### 安装步骤
+
+```bash
+# 1. 克隆项目
+git clone https://github.com/danishashko/geo-aeo-tracker
+cd geo-aeo-tracker
+
+# 2. 安装依赖
+npm install
+
+# 3. 配置环境
+cp .env.example .env.local
+# 编辑 .env.local，添加 API 密钥
+
+# 4. 启动服务
+npm run dev
+
+# 5. 部署（可选）
+vercel --prod
+```
+
+### 首次使用流程
+
+1. **创建项目**：设置品牌名称、关键词、描述
+2. **添加提示词**：管理追踪提示词
+3. **运行抓取**：批量抓取 AI 响应
+4. **分析可见性**：查看趋势图表和评分
+5. **发现机会**：竞争对手分析和引用机会
+
+<Callout type="tip">
+建议每周运行一次抓取，监控可见性变化趋势。
+</Callout>
+
+## 今日总结
+
+今天我们深度对比了 GEO 工具生态：
+
+- **免费首选**：geo-aeo-tracker（功能全面、本地优先）
+- **企业选择**：getcito（云端托管、团队协作）
+- **内容优化**：gtm-engineer-skills（Claude Code 技能）
+
+选择工具时，考虑预算、技术能力和使用场景。对于大多数品牌，**geo-aeo-tracker** 是最佳起点——免费、功能强大、数据留在本地。
+
+## 明日展望
+
+明天，我们将深入探讨 **llms.txt 标准**——这个类似 robots.txt 但专门为 LLM 设计的协议，如何帮助你提高 AI 搜索可见性。
+
+<Callout type="info">
+llms.txt 已经获得 2,216 ⭐，是目前最受认可的 GEO 标准协议。
+</Callout>
+
+---
+
+**参考资料：**
+- [geo-aeo-tracker GitHub](https://github.com/danishashko/geo-aeo-tracker)
+- [getcito 官网](https://getcito.com)
+- [GEO/AEO GitHub 开源项目深度调研报告](https://github.com/AlexMetaGit/geo-aeo-github-report)
