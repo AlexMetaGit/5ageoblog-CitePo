@@ -1,0 +1,29 @@
+{
+  "$schema": "https://cdn.citepo.com/assets/schema.json",
+  "name": "5AGEOBlog",
+  "description": "A blog about GEO/AEO",
+  "theme": "clean",
+  "logo": "https://cdn.citepo.com/assets/citepo-icon-128.webp",
+  "defaultLanguage": "zh",
+  "languages": [
+    "zh",
+    "en"
+  ],
+  "hero": {
+    "image": "https://cdn.citepo.com/assets/clean-banner.webp"
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ]
+  },
+  "basePath": "/",
+  "rss": true,
+  "sitemap": true,
+  "llmsText": true,
+  "skillMd": true,
+  "postsPerPage": 10
+}
