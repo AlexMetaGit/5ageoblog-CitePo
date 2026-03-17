@@ -1,0 +1,328 @@
+---
+title: "GEO工具实战：从零开始部署AI可见性追踪系统"
+description: "详细介绍如何部署和使用geo-aeo-tracker，一个开源的AI可见性追踪工具，帮助品牌监控在ChatGPT、Perplexity等AI引擎中的表现"
+date: 2026-03-17
+tags: [GEO, AI搜索, 工具评测, 实战指南]
+authors: [WuKong]
+draft: false
+---
+
+# GEO工具实战：从零开始部署AI可见性追踪系统
+
+> 做GEO优化，最大的挑战不是优化本身，而是**如何量化效果**。今天我们来部署一个免费的AI可见性追踪系统。
+
+## 为什么需要追踪GEO效果？
+
+传统SEO有Google Analytics、Search Console等成熟的追踪工具。但GEO不同——你的内容出现在ChatGPT、Perplexity、Gemini等AI引擎中，却无法通过传统工具看到。
+
+<Callout type="warning">
+  **核心问题**：AI引擎不会告诉你"你的内容被引用了"，你需要主动追踪。
+</Callout>
+
+## 工具选择：geo-aeo-tracker
+
+经过对比多个GEO工具（getcito、easyGEO等），我推荐**geo-aeo-tracker**，理由如下：
+
+### 优势对比
+
+| 特性 | geo-aeo-tracker | getcito | easyGEO |
+|------|----------------|---------|---------|
+| **价格** | 免费（开源） | 企业级（需配置） | 免费 |
+| **部署方式** | 本地优先 | 云端 | 本地 |
+| **支持AI引擎** | 6个（ChatGPT、Perplexity、Gemini、Copilot、AI Overview、Grok） | 3个 | 单一 |
+| **功能完整度** | 12个功能标签页 | 基础监控 | HTML转Markdown |
+| **数据隐私** | ✅ 数据不离开本地 | ❌ 云端存储 | ✅ 本地 |
+| **自动化** | ✅ Cron + GitHub Actions | ✅ 云端 | ❌ 手动 |
+
+[来源: GEO-AEO-Library/03-Tools]
+
+## 部署步骤
+
+<Steps>
+  <Step>
+    ### 准备环境
+
+    geo-aeo-tracker 基于 Next.js 开发，需要：
+
+    - Node.js 18+
+    - npm 或 pnpm
+    - Git
+
+    ```bash
+    # 检查 Node.js 版本
+    node -v  # 应该 >= 18.0.0
+    ```
+  </Step>
+
+  <Step>
+    ### 克隆项目
+
+    ```bash
+    cd ~/workspace
+    git clone https://github.com/danishashko/geo-aeo-tracker
+    cd geo-aeo-tracker
+    ```
+  </Step>
+
+  <Step>
+    ### 安装依赖
+
+    ```bash
+    npm install
+    # 或使用 pnpm
+    pnpm install
+    ```
+  </Step>
+
+  <Step>
+    ### 配置API密钥
+
+    geo-aeo-tracker 需要两个API密钥：
+
+    1. **Bright Data API** - 用于抓取AI引擎响应
+    2. **OpenRouter API** - 用于AI分析和评分
+
+    ```bash
+    # 复制环境变量模板
+    cp .env.example .env.local
+
+    # 编辑 .env.local
+    nano .env.local
+    ```
+
+    添加以下内容：
+    ```env
+    BRIGHT_DATA_API_KEY=your_bright_data_key
+    OPENROUTER_API_KEY=your_openrouter_key
+    ```
+
+    <Callout type="tip">
+      **如何获取API密钥？**
+      - Bright Data: https://brightdata.com/ (免费试用额度)
+      - OpenRouter: https://openrouter.ai/ (免费额度足够测试)
+    </Callout>
+  </Step>
+
+  <Step>
+    ### 启动服务
+
+    ```bash
+    npm run dev
+    ```
+
+    访问 `http://localhost:3000`，你应该能看到仪表板界面。
+  </Step>
+</Steps>
+
+## 核心功能介绍
+
+geo-aeo-tracker 提供了**12个功能标签页**，覆盖完整的GEO工作流：
+
+### 1️⃣ 项目设置
+- 品牌名称、关键词、描述
+- 竞争对手列表
+- 目标AI引擎选择
+
+### 2️⃣ 提示词中心
+- 管理追踪提示词
+- 批量添加提示词
+- 提示词分类（品牌、产品、行业等）
+
+### 3️⃣ 角色扩散
+- 生成角色特定提示词
+- 例如："作为营销总监，你会推荐什么CRM？"
+- 覆盖不同用户画像
+
+### 4️⃣ 细分领域探索器
+- 自动生成高意图查询
+- 发现长尾关键词机会
+
+### 5️⃣ 可见性分析
+- **核心功能**：追踪可见性分数（0-100）
+- 趋势图表
+- 品牌对比
+
+<Callout type="info">
+  **可见性评分算法**基于5个维度：
+  - Mention（品牌提及）
+  - Position（出现位置）
+  - Frequency（出现频率）
+  - Citation（引用质量）
+  - Sentiment（情感倾向）
+
+  [来源: GEO-AEO-Library/03-Tools/geo-aeo-tracker]
+</Callout>
+
+### 6️⃣ 引用机会
+- 发现竞争对手被引用但你的品牌未出现的查询
+- 优化机会清单
+
+### 7️⃣ 竞争对手对战卡
+- AI生成的品牌对比分析
+- 快速了解竞争态势
+
+### 8️⃣ AEO审计
+- 站点准备度检查
+- 结构化数据验证
+- llms.txt协议检查
+
+## 实战案例：追踪某SaaS品牌
+
+假设我们为一个CRM SaaS品牌做GEO追踪：
+
+### 第一步：创建项目
+```
+品牌名称：SuperCRM
+关键词：CRM软件、客户管理、销售自动化
+竞争对手：Salesforce、HubSpot、Zoho
+```
+
+### 第二步：添加提示词
+```
+- "最好的CRM软件是什么？"
+- "小企业适合用什么CRM？"
+- "Salesforce的替代品有哪些？"
+- "CRM软件推荐"
+```
+
+### 第三步：运行抓取
+点击"批量抓取"，工具会：
+1. 向6个AI引擎发送提示词
+2. 抓取AI响应
+3. 分析品牌可见性
+
+### 第四步：分析结果
+假设结果如下：
+
+| AI引擎 | 可见性分数 | 状态 |
+|--------|----------|------|
+| ChatGPT | 45/100 | 🟡 需优化 |
+| Perplexity | 62/100 | 🟢 良好 |
+| Gemini | 38/100 | 🔴 需改进 |
+| Copilot | 55/100 | 🟡 需优化 |
+
+**发现**：
+- Perplexity 表现最好（可见性62）
+- Gemini 表现最差（可见性38）
+- 主要问题：缺少结构化数据和llms.txt
+
+### 第五步：优化行动
+1. 添加llms.txt协议
+2. 增强产品页面的语义标记
+3. 创建更多Q&A格式内容
+
+## 自动化监控
+
+geo-aeo-tracker支持**Cron定时任务**和**GitHub Actions**：
+
+```yaml
+# .github/workflows/geo-tracking.yml
+name: GEO Tracking
+on:
+  schedule:
+    - cron: '0 9 * * *'  # 每天早上9点
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run GEO Tracking
+        run: npm run track
+```
+
+<Callout type="tip">
+  **建议频率**：
+  - 初期：每周一次（了解基准）
+  - 中期：每周两次（监控变化）
+  - 成熟期：每天一次（持续优化）
+</Callout>
+
+## 成本分析
+
+| 项目 | 费用 | 说明 |
+|------|------|------|
+| geo-aeo-tracker | $0 | 开源免费 |
+| Bright Data API | ~$10-30/月 | 取决于抓取量 |
+| OpenRouter API | ~$5-15/月 | 取决于分析量 |
+| **总计** | **$15-45/月** | 比企业级工具便宜90% |
+
+[来源: GEO-AEO-Library/03-Tools]
+
+## 常见问题
+
+<Accordion>
+  <AccordionItem title="需要技术背景吗？">
+    <p>基础部署需要熟悉命令行和Git。如果有技术团队，1-2小时可完成部署。如果没有，可以考虑getcito等托管方案。</p>
+  </AccordionItem>
+  <AccordionItem title="数据安全吗？">
+    <p>geo-aeo-tracker是本地优先的，数据存储在浏览器IndexedDB中，不会上传到任何服务器。只有API调用会发送到Bright Data和OpenRouter。</p>
+  </AccordionItem>
+  <AccordionItem title="多久能看到效果？">
+    <p>追踪工具本身可以立即看到当前可见性。但要提升可见性分数，通常需要1-3个月的GEO优化工作。</p>
+  </AccordionItem>
+  <AccordionItem title="可以追踪多个品牌吗？">
+    <p>可以！geo-aeo-tracker支持多项目管理，可以为不同品牌或产品线创建独立项目。</p>
+  </AccordionItem>
+</Accordion>
+
+## 最佳实践
+
+根据HubSpot的AEO实战经验 [案例来源: GEO-AEO-Article]：
+
+1. **从核心查询开始**
+   - 不要追踪所有关键词
+   - 选择10-20个最重要的品牌查询
+   - 逐步扩展
+
+2. **建立基准线**
+   - 运行2-4周，了解初始可见性
+   - 记录每个AI引擎的特点
+   - 识别最容易优化的引擎
+
+3. **竞争对手对标**
+   - 追踪3-5个主要竞争对手
+   - 分析他们为什么表现更好
+   - 学习他们的内容策略
+
+4. **持续优化**
+   - 每周查看可见性报告
+   - 发现问题立即优化
+   - 保持内容更新
+
+## 总结与行动建议
+
+### 关键要点
+
+<Badge variant="green">免费开源</Badge>
+<Badge variant="blue">本地优先</Badge>
+<Badge variant="purple">功能全面</Badge>
+<Badge variant="orange">自动化支持</Badge>
+
+geo-aeo-tracker是目前最优秀的开源GEO追踪工具，适合：
+
+- ✅ 品牌营销团队
+- ✅ SEO从业者转型GEO
+- ✅ 跨境电商独立站
+- ✅ 有技术团队的企业
+
+### 今日行动清单
+
+- [ ] 克隆geo-aeo-tracker项目
+- [ ] 申请Bright Data和OpenRouter API密钥
+- [ ] 部署到本地环境
+- [ ] 创建第一个品牌项目
+- [ ] 添加10个核心查询
+- [ ] 运行首次抓取
+- [ ] 分析可见性基准
+
+<Callout type="tip">
+  **明日预告**：明天我们将深入讲解如何优化GEO内容策略，包括llms.txt协议、结构化数据和Q&A内容创作技巧。
+</Callout>
+
+---
+
+**参考资料**：
+- geo-aeo-tracker GitHub: https://github.com/danishashko/geo-aeo-tracker
+- [GEO-AEO-Library/03-Tools/geo-aeo-tracker](本地文档)
+- [From SEO to AEO: HubSpot's New Growth Playbook](案例来源)
+- [Bing AI引用性能追踪](行业动态)
