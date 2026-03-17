@@ -1,0 +1,236 @@
+---
+title: llms.txt：让 AI 搜索引擎读懂你的网站 - GEO 第一课
+description: 详解 llms.txt 标准，这是专为 AI 搜索设计的新协议。教你如何用 10 分钟为网站添加 AI 友好索引，提升 ChatGPT、Claude、Gemini 等平台的可见性。
+date: 2026-03-17
+tags: [GEO, llms.txt, AI搜索, 标准协议, 快速开始]
+authors: [WuKong]
+draft: false
+---
+
+import { Callout, Badge, Steps, CardGroup, Card, Accordion, AccordionItem } from '@components';
+
+# llms.txt：让 AI 搜索引擎读懂你的网站
+
+<Callout type="info">
+  <strong>早间导读</strong>：如果你是 SEO 从业者、品牌营销人或跨境电商运营，这篇文章将帮你快速理解 GEO 的第一个标准协议。
+</Callout>
+
+## 互联网正在从"链接时代"跨入"回答时代"
+
+你可能已经注意到：Google 搜索中约 **58.5%** 的查询是零点击搜索，用户不再点击链接，而是直接看 AI 给出的答案。传统搜索流量正在下降，而来自 ChatGPT、Perplexity、Google AI Overviews 等 AI 平台的流量正在崛起。
+
+**核心转变**：互联网正从"链接时代"跨越到"回答时代"。
+
+[来源: GEO-AEO-NotebookLM/2026-03-16-GEO-AEO-完整指南.md]
+
+## 什么是 llms.txt？
+
+`llms.txt` 是一个专为**大语言模型（LLM）**设计的网站内容索引标准，类似于 `robots.txt`，但专门为 AI 搜索引擎优化。
+
+**项目地址**：https://github.com/AnswerDotAI/llms.txt  
+**Star 数**：2,216 ⭐（GitHub GEO 项目排名第 1）  
+**许可证**：MIT
+
+### 核心功能
+
+<Badge variant="blue">标准化格式</Badge> 提供 `/llms.txt` 和 `/llms-full.txt` 两种文件  
+<Badge variant="green">LLM 友好</Badge> 为 ChatGPT、Claude、Gemini 提供索引  
+<Badge variant="purple">提高可见性</Badge> 提升 AI 搜索中的引用概率
+
+[来源: GEO-AEO-Library/01-Standards/llms-txt.md]
+
+## 为什么需要 llms.txt？
+
+### 传统 SEO vs GEO
+
+| 维度 | 传统 SEO | GEO（生成式引擎优化） |
+|------|---------|---------------------|
+| **目标** | 提高排名 | 成为 AI 引用的来源 |
+| **机制** | 关键词匹配 + 反向链接 | 内容结构 + 实体权威 + 信任信号 |
+| **结果** | 获得点击 | 获得引用 |
+
+**关键认知**：引用是新点击。被 AI 引用意味着被发现。
+
+[来源: GEO-AEO-Library/02-Resources/GEO-Guide.md]
+
+### 88% 的品牌在 AI 搜索中不可见
+
+即使你的网站在传统搜索中排名靠前，也不代表你会在 AI 搜索中出现。**88%** 的品牌在 AI 搜索中是不可见的。
+
+llms.txt 是解决这个问题的基础设施之一。
+
+[来源: GEO-AEO-NotebookLM/2026-03-16-GEO-AEO-完整指南.md]
+
+## 如何实现 llms.txt？
+
+<Steps>
+
+### 创建文件
+
+在网站根目录创建 `/llms.txt` 文件：
+
+```bash
+touch llms.txt
+```
+
+### 添加元数据
+
+使用 YAML 格式添加基本信息：
+
+```yaml
+---
+title: 你的网站名称
+version: 1.0
+updated: 2026-03-17
+---
+```
+
+### 组织内容索引
+
+为 AI 提供结构化的内容索引：
+
+```markdown
+# Content Sections
+
+## Documentation
+- Getting Started: /docs/getting-started
+- API Reference: /docs/api
+- Tutorials: /docs/tutorials
+
+## Data
+- Dataset: /dataset
+- Model Weights: /models
+```
+
+### 测试和验证
+
+使用 AI 平台测试你的 llms.txt 是否被正确识别。
+
+</Steps>
+
+## llms.txt 完整示例
+
+```yaml
+---
+title: My Awesome Website
+version: 1.0
+updated: 2026-03-17
+description: 一个关于 AI 和技术的博客
+author: WuKong
+---
+
+# Content Sections
+
+## Blog
+- GEO/AEO 优化指南: /blog/geo-guide
+- AI 搜索趋势: /blog/ai-search-trends
+- 实战案例: /blog/case-studies
+
+## Documentation
+- 快速开始: /docs/quick-start
+- API 参考: /docs/api
+- 常见问题: /docs/faq
+
+## Resources
+- 工具推荐: /resources/tools
+- 学习资料: /resources/learning
+- 社区讨论: /resources/community
+```
+
+## 最佳实践
+
+<Callout type="tip">
+  <strong>核心原则</strong>：llms.txt 不是为了 SEO，而是为了让 AI 理解你的网站结构。专注于提供清晰、准确的内容索引。
+</Callout>
+
+### 1. 定期更新
+
+- 每次发布重要内容时更新 `updated` 字段
+- 保持索引与实际内容同步
+- AI 搜索引擎会优先引用更新频繁的网站
+
+### 2. 结构清晰
+
+- 使用清晰的层级结构
+- 为每个部分提供简洁的描述
+- 避免过度复杂的嵌套
+
+### 3. 关联 Schema.org
+
+llms.txt 配合 Schema.org 标记效果更佳：
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "My Awesome Website",
+  "url": "https://example.com"
+}
+```
+
+[来源: GEO-AEO-Library/02-Resources/GEO-Guide.md]
+
+## 实施检查清单
+
+<Accordion>
+  <AccordionItem title="第一步：准备">
+    <ul>
+      <li>✅ 理解 llms.txt 的作用和价值</li>
+      <li>✅ 确定网站的核心内容分类</li>
+      <li>✅ 准备好网站的元数据信息</li>
+    </ul>
+  </AccordionItem>
+  <AccordionItem title="第二步：创建">
+    <ul>
+      <li>✅ 在网站根目录创建 llms.txt</li>
+      <li>✅ 添加 YAML 元数据</li>
+      <li>✅ 组织内容索引结构</li>
+    </ul>
+  </AccordionItem>
+  <AccordionItem title="第三步：优化">
+    <ul>
+      <li>✅ 定期更新内容</li>
+      <li>✅ 配合 Schema.org 标记</li>
+      <li>✅ 监控 AI 搜索可见性</li>
+    </ul>
+  </AccordionItem>
+</Accordion>
+
+## 总结：这是 GEO 的第一课
+
+llms.txt 是 GEO（生成式引擎优化）的基础协议，就像当年的 robots.txt 对 SEO 的重要性一样。虽然目前主流 AI 平台尚未正式支持，但作为行业标准，它代表了未来方向。
+
+**核心要点**：
+- llms.txt 是为 AI 搜索设计的内容索引标准
+- 帮助 ChatGPT、Claude、Gemini 等理解你的网站
+- 实施简单，10 分钟即可完成
+- 配合 Schema.org 和内容优化效果更佳
+
+<Callout type="warning">
+  <strong>注意</strong>：llms.txt 是 GEO 的基础设施，但不是全部。要真正提升 AI 搜索可见性，还需要内容优化、权威建设、技术实施等多方面工作。
+</Callout>
+
+## 下一步行动
+
+<CardGroup>
+  <Card href="https://github.com/AnswerDotAI/llms.txt" title="llms.txt 官方文档">
+    查看完整的标准规范和示例。
+  </Card>
+  <Card href="https://github.com/krillinai/GEO" title="GEO 完整指南">
+    系统学习 GEO 的 8 章完整内容。
+  </Card>
+  <Card href="https://github.com/danishashko/geo-aeo-tracker" title="geo-aeo-tracker 工具">
+    追踪你的品牌在 AI 搜索中的表现。
+  </Card>
+</CardGroup>
+
+---
+
+**参考来源**：
+- [GEO-AEO-Library/01-Standards/llms-txt.md](https://github.com/AnswerDotAI/llms.txt)
+- [GEO-AEO-Library/02-Resources/GEO-Guide.md](https://github.com/krillinai/GEO)
+- [GEO-AEO-NotebookLM/2026-03-16-GEO-AEO-完整指南.md]
+
+---
+
+**标签**：`#geo` `#llms.txt` `#ai-search` `#standard` `#quick-start`
