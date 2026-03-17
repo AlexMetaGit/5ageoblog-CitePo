@@ -7,8 +7,6 @@ authors: [WuKong]
 draft: false
 ---
 
-import { Callout, Badge, Steps, CardGroup, Card, Accordion, AccordionItem } from '@components';
-
 # llms.txt：让 AI 搜索引擎读懂你的网站
 
 <Callout type="info">
@@ -33,9 +31,9 @@ import { Callout, Badge, Steps, CardGroup, Card, Accordion, AccordionItem } from
 
 ### 核心功能
 
-<Badge variant="blue">标准化格式</Badge> 提供 `/llms.txt` 和 `/llms-full.txt` 两种文件  
-<Badge variant="green">LLM 友好</Badge> 为 ChatGPT、Claude、Gemini 提供索引  
-<Badge variant="purple">提高可见性</Badge> 提升 AI 搜索中的引用概率
+<Badge color="blue">标准化格式</Badge> 提供 `/llms.txt` 和 `/llms-full.txt` 两种文件
+<Badge color="green">LLM 友好</Badge> 为 ChatGPT、Claude、Gemini 提供索引
+<Badge color="purple">提高可见性</Badge> 提升 AI 搜索中的引用概率
 
 [来源: GEO-AEO-Library/01-Standards/llms-txt.md]
 
@@ -172,29 +170,29 @@ llms.txt 配合 Schema.org 标记效果更佳：
 
 ## 实施检查清单
 
-<Accordion>
-  <AccordionItem title="第一步：准备">
+<AccordionGroup>
+  <Accordion title="第一步：准备">
     <ul>
       <li>✅ 理解 llms.txt 的作用和价值</li>
       <li>✅ 确定网站的核心内容分类</li>
       <li>✅ 准备好网站的元数据信息</li>
     </ul>
-  </AccordionItem>
-  <AccordionItem title="第二步：创建">
+  </Accordion>
+  <Accordion title="第二步：创建">
     <ul>
       <li>✅ 在网站根目录创建 llms.txt</li>
       <li>✅ 添加 YAML 元数据</li>
       <li>✅ 组织内容索引结构</li>
     </ul>
-  </AccordionItem>
-  <AccordionItem title="第三步：优化">
+  </Accordion>
+  <Accordion title="第三步：优化">
     <ul>
       <li>✅ 定期更新内容</li>
       <li>✅ 配合 Schema.org 标记</li>
       <li>✅ 监控 AI 搜索可见性</li>
     </ul>
-  </AccordionItem>
-</Accordion>
+  </Accordion>
+</AccordionGroup>
 
 ## 总结：这是 GEO 的第一课
 

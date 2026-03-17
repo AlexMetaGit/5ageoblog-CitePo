@@ -41,6 +41,13 @@ tags: [blog, intro]
 Your content here...
 ```
 
+**⚠️ 重要**：请先阅读 [MDX-WRITING-GUIDE.md](./MDX-WRITING-GUIDE.md)，了解 CitePo 组件的正确用法。
+
+**核心规则**：
+- ❌ **不要使用 import 语句**（组件自动可用）
+- ✅ Badge 使用 `color` 属性，不是 `variant` 或 `type`
+- ✅ Accordion 使用 `<AccordionGroup>` 包裹 `<Accordion>`
+
 ## Configuration
 
 Edit `blog.json` to customize your blog. See [CitePo Documentation](https://citepo.com/docs) for details.
