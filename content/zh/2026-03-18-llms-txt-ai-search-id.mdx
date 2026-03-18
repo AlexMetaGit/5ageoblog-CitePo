@@ -1,0 +1,195 @@
+---
+title: llms.txt - 你的网站在 AI 搜索时代的"身份证"
+description: ChatGPT 已占据 AI 推荐流量的 87.4%，你的网站准备好被 AI 发现了吗？一文读懂 llms.txt 标准，让 AI 搜索引擎正确理解和引用你的内容。
+date: 2026-03-18
+tags: [GEO, AEO, AI搜索, llms.txt, 标准规范]
+authors: [WuKong]
+draft: false
+---
+
+# llms.txt - 你的网站在 AI 搜索时代的"身份证"
+
+## AI 搜索正在改写游戏规则
+
+<Callout type="info">
+  <Badge color="blue">关键数据</Badge> ChatGPT 已占据 AI 推荐流量的 **87.4%**，AI 推荐的转化率是传统来源的 **2 倍**。
+</Callout>
+
+如果你还在用传统 SEO 的思维优化网站，可能已经错过了新流量红利。用户行为正在发生根本性变化：
+
+- 用户向 ChatGPT 输入 **23 个单词**的提示词
+- 传统搜索平均只有 **4.2 个单词**
+- 用户寻求**综合答案**而非链接列表
+
+这意味着：**被 AI 引用 = 被发现**。
+
+## 传统 SEO 不够用了
+
+传统 SEO 关注：
+- 关键词排名
+- 反向链接
+- 页面权重
+
+但 AI 搜索引擎需要的是：
+- **结构化的内容索引**
+- **清晰的语义标记**
+- **可信的来源引用**
+
+<Callout type="warning">
+  权威现在在 AI 模型内部，不仅仅在 Web 上。AI 模型的训练数据决定了你的内容是否会被引用。
+</Callout>
+
+## llms.txt - AI 时代的 robots.txt
+
+就像 `robots.txt` 告诉搜索引擎如何抓取你的网站，`llms.txt` 告诉 AI 模型如何理解你的内容。
+
+### 什么是 llms.txt？
+
+`llms.txt` 是一个标准化的文件格式，位于网站根目录（`/llms.txt`），为大语言模型提供内容索引。由 Answer.ai 提出，目前在 GitHub 上已有 **2,216 ⭐**。
+
+### 核心功能
+
+<Badge color="green">标准化格式</Badge> `/llms.txt` 和 `/llms-full.txt` 两种文件
+
+<Badge color="blue">LLM 友好</Badge> 为 ChatGPT、Claude、Gemini 提供索引
+
+<Badge color="purple">灵活扩展</Badge> 支持文档、API、数据集等多种内容类型
+
+## 如何实施 llms.txt
+
+<Steps>
+  <Step title="创建文件">
+    在网站根目录创建 `/llms.txt` 文件：
+    
+    ```bash
+    # 在网站根目录
+    touch llms.txt
+    ```
+  </Step>
+
+  <Step title="添加元数据">
+    ```yaml
+    ---
+    title: Your Website Name
+    version: 1.0
+    updated: 2026-03-18
+    ---
+    ```
+  </Step>
+
+  <Step title="组织内容索引">
+    ```markdown
+    # Content Sections
+    
+    ## Documentation
+    - Getting Started: /docs/getting-started
+    - API Reference: /docs/api
+    - Examples: /docs/examples
+    
+    ## Resources
+    - Blog: /blog
+    - Tutorials: /tutorials
+    - Case Studies: /cases
+    
+    ## Data
+    - Dataset: /dataset
+    - API Endpoint: /api/v1
+    ```
+  </Step>
+
+  <Step title="定期更新">
+    内容更新时间少于 **3 个月**的网站，被 AI 引用的概率高 **3 倍**。建议：
+    - 每月检查并更新 llms.txt
+    - 添加新内容时同步更新索引
+    - 使用自动化工具生成和维护
+  </Step>
+</Steps>
+
+## 监控你的 AI 可见性
+
+实施 llms.txt 只是第一步，你还需要持续监控品牌在 AI 搜索中的表现。
+
+### 推荐工具：geo-aeo-tracker
+
+<Badge color="orange">开源</Badge> <Badge color="blue">本地优先</Badge> <Badge color="green">完全免费</Badge>
+
+[geo-aeo-tracker](https://github.com/danishashko/geo-aeo-tracker) 是一个开源的 AI 可见性追踪工具，支持：
+
+- **多平台监控**：ChatGPT、Perplexity、Gemini、Copilot、Google AI Overview、Grok
+- **可见性评分**：基于提及、位置、频率、引用、情感计算 0-100 分
+- **竞争分析**：对比竞争对手的 AI 搜索表现
+- **自动化**：支持 Cron 和 GitHub Actions 定时抓取
+
+<Callout type="tip">
+  geo-aeo-tracker 采用**本地优先**架构，数据不离开你的机器，隐私安全有保障。
+</Callout>
+
+### 快速开始
+
+```bash
+# 克隆项目
+git clone https://github.com/danishashko/geo-aeo-tracker
+cd geo-aeo-tracker
+
+# 安装依赖
+npm install
+
+# 配置环境变量（需要 Bright Data 和 OpenRouter API 密钥）
+cp .env.example .env.local
+
+# 启动服务
+npm run dev
+```
+
+## 完整的 GEO 策略
+
+llms.txt 只是 GEO（生成式引擎优化）的一部分。要全面提升 AI 搜索可见性，你还需要：
+
+<AccordionGroup>
+  <Accordion title="内容优化">
+    - 提高语义清晰度
+    - 添加实体建模
+    - 创建结构化 Q&A
+    - 优化对话设计
+    - 证据驱动内容
+  </Accordion>
+
+  <Accordion title="技术实施">
+    - AI 的 Schema.org 标记
+    - 构建一致的结构化数据层
+    - XML Sitemap 用于 AI 发现
+    - AI 爬虫的 Robots.txt 配置
+    - 元数据优化
+  </Accordion>
+
+  <Accordion title="监控分析">
+    - 内容审计工具
+    - AI 可见性追踪
+    - 引用监控
+    - 性能测量
+  </Accordion>
+</AccordionGroup>
+
+## 立即行动
+
+<Callout type="tip">
+  <Badge color="purple">优先级</Badge> 如果你只有一个小时，做这三件事：
+  
+  1. ✅ 创建 `/llms.txt` 文件
+  2. ✅ 添加核心内容索引
+  3. ✅ 部署 geo-aeo-tracker 监控效果
+</Callout>
+
+## 参考资料
+
+- [llms.txt GitHub 仓库](https://github.com/AnswerDotAI/llms.txt)
+- [GEO Guide 完整指南](https://github.com/krillinai/GEO)
+- [geo-aeo-tracker 工具](https://github.com/danishashko/geo-aeo-tracker)
+- [GEO-AEO-Library 知识库](file:///Users/zz/Documents/Obsidian/Knowledge/GEO-AEO-Library/)
+
+---
+
+**来源标注**：本文基于 [GEO-AEO-Library](file:///Users/zz/Documents/Obsidian/Knowledge/GEO-AEO-Library/) 知识库整理，包括：
+- llms.txt 标准规范（来源: GEO-AEO-Library/01-Standards/llms-txt.md）
+- GEO Guide 完整指南（来源: GEO-AEO-Library/02-Resources/GEO-Guide.md）
+- geo-aeo-tracker 工具（来源: GEO-AEO-Library/03-Tools/geo-aeo-tracker.md）
