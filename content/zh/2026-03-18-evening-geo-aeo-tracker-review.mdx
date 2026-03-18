@@ -1,0 +1,253 @@
+---
+title: GEO/AEO 工具评测：geo-aeo-tracker 开源工具深度解析
+description: 深度评测开源 GEO/AEO 追踪工具 geo-aeo-tracker，12大功能标签页全覆盖，免费本地优先，品牌AI可见性监控首选。
+date: 2026-03-18
+tags: [GEO, AEO, AI搜索, 工具评测, 开源]
+authors: [WuKong]
+draft: false
+---
+
+import { Callout, Badge, Steps, Accordion, AccordionItem } from 'nextra/components';
+
+# GEO/AEO 工具评测：geo-aeo-tracker 开源工具深度解析
+
+在企业纷纷布局 GEO/AEO 的今天，如何监控品牌在 AI 搜索引擎中的表现？今天给大家评测一款开源免费、功能强大的 GEO/AEO 追踪工具——**geo-aeo-tracker**。
+
+<Callout type="info">
+本文基于 GEO-AEO-Library 知识库的实战资料整理，工具评测来自真实使用体验。
+</Callout>
+
+## 为什么需要 GEO/AEO 追踪工具？
+
+传统 SEO 时代，我们用 Google Analytics、Ahrefs、SEMrush 监控关键词排名和流量。但在 AI 搜索时代，这些工具已经不够用了：
+
+<Callout type="warning">
+**传统 SEO 工具的局限性**：
+- ❌ 无法追踪品牌在 ChatGPT、Perplexity、Gemini 等 AI 引擎中的表现
+- ❌ 无法分析 AI 引擎如何引用和提及品牌
+- ❌ 无法对比竞争对手的 AI 可见性分数
+- ❌ 无法发现 AI 搜索中的引用机会
+</Callout>
+
+这就是 geo-aeo-tracker 诞生的原因。
+
+## geo-aeo-tracker 核心功能
+
+这款工具提供 **12 个功能标签页**，覆盖 GEO/AEO 工作的完整流程：
+
+### 1. 项目设置 ⚙️
+配置品牌名称、关键词、描述，作为后续所有追踪的基础。
+
+### 2. 提示词中心 💬
+管理和组织追踪提示词，支持批量导入和分类管理。
+
+### 3. 角色扩散 🎭
+生成角色特定的提示词，模拟不同用户画像的查询行为。
+
+### 4. 细分领域探索器 🔍
+自动生成高意图查询，帮助发现长尾关键词和场景化问题。
+
+### 5. 响应浏览 📝
+浏览各个 AI 引擎的实时响应，了解品牌如何被提及和描述。
+
+### 6. 可见性分析 📊
+<Badge variant="green">核心功能</Badge> 趋势图表展示品牌可见性分数变化，支持多维度对比。
+
+**可见性评分算法（0-100分）基于**：
+- 品牌提及（Mention）
+- 位置（Position）
+- 频率（Frequency）
+- 引用（Citation）
+- 情感（Sentiment）
+
+### 7. 引用分析 🔗
+分析 AI 引擎引用品牌内容的频率和方式。
+
+### 8. 引用机会 🎯
+<Badge variant="blue">实战价值</Badge> 发现竞争对手被引用但你的品牌未被引用的机会点。
+
+### 9. 竞争对手对战卡 ⚔️
+AI 自动生成的品牌对比分析，了解在 AI 眼中你与竞品的差异。
+
+### 10. AEO 审计 🏥
+站点 AEO/GEO 准备度检查，评估内容结构化程度。
+
+### 11. 自动化 ⏱️
+支持 Cron 和 GitHub Actions，实现定期自动追踪和报告。
+
+### 12. 文档 📖
+包含 14 部分的完整使用指南，新手友好。
+
+## 技术架构与支持平台
+
+<Callout type="tip">
+**技术栈**：
+- **框架**: Next.js 16.1 + Turbopack（极速开发体验）
+- **语言**: TypeScript（类型安全）
+- **样式**: Tailwind CSS v4（现代化 UI）
+- **存储**: IndexedDB + localStorage（本地优先）
+- **抓取**: Bright Data API（专业爬虫服务）
+- **LLM**: OpenRouter（多模型支持）
+</Callout>
+
+**支持的 AI 模型**：
+- ChatGPT
+- Perplexity
+- Gemini
+- Copilot
+- Google AI Overview
+- Grok
+
+## 优缺点分析
+
+### ✅ 优点
+
+<Badge variant="green">功能全面</Badge> 12 个标签页覆盖所有 GEO 工作流，从提示词管理到自动化报告一应俱全。
+
+<Badge variant="green">本地优先</Badge> 数据不离开你的机器，隐私安全有保障。
+
+<Badge variant="green">完全免费</Badge> 开源项目，$0/月，只需支付 API 调用费用。
+
+<Badge variant="green">多模型支持</Badge> 覆盖 6 个主流 AI 平台，一次配置，全面监控。
+
+<Badge variant="green">竞争分析</Badge> 对战卡和引用机会功能，帮助你找到差异化优势。
+
+### ❌ 缺点
+
+<Badge variant="yellow">配置复杂</Badge> 需要配置 Bright Data 和 OpenRouter API 密钥，技术门槛较高。
+
+<Badge variant="yellow">依赖第三方</Badge> 依赖 Bright Data 抓取服务，如果服务不稳定会影响使用。
+
+<Badge variant="yellow">学习曲线</Badge> 功能丰富，初次使用需要时间熟悉。
+
+## 适用场景
+
+<Accordion>
+  <AccordionItem title="品牌监控场景">
+    <p>实时追踪品牌在 AI 引擎中的表现，及时发现负面提及或机会点。适合品牌经理和市场团队。</p>
+  </AccordionItem>
+  <AccordionItem title="竞争分析场景">
+    <p>了解竞争对手的 AI 搜索表现，找到差异化优势。适合战略规划和市场研究。</p>
+  </AccordionItem>
+  <AccordionItem title="营销团队场景">
+    <p>系统化的 GEO 工作流，从内容规划到效果监控。适合数字营销团队。</p>
+  </AccordionItem>
+  <AccordionItem title="开发者场景">
+    <p>构建本地优先的数据仪表板，自定义功能扩展。适合技术团队。</p>
+  </AccordionItem>
+</Accordion>
+
+## 快速开始指南
+
+<Steps>
+  <Step>
+    <h4>克隆项目</h4>
+    <p>从 GitHub 克隆 geo-aeo-tracker 项目到本地。</p>
+    ```bash
+    git clone https://github.com/danishashko/geo-aeo-tracker
+    cd geo-aeo-tracker
+    ```
+  </Step>
+  <Step>
+    <h4>安装依赖</h4>
+    <p>使用 npm 或 pnpm 安装项目依赖。</p>
+    ```bash
+    npm install
+    ```
+  </Step>
+  <Step>
+    <h4>配置环境</h4>
+    <p>复制环境变量模板并配置 API 密钥。</p>
+    ```bash
+    cp .env.example .env.local
+    # 编辑 .env.local，添加 Bright Data 和 OpenRouter API 密钥
+    ```
+  </Step>
+  <Step>
+    <h4>启动服务</h4>
+    <p>启动本地开发服务器，访问 http://localhost:3000。</p>
+    ```bash
+    npm run dev
+    ```
+  </Step>
+  <Step>
+    <h4>部署上线</h4>
+    <p>使用 Vercel 一键部署到生产环境。</p>
+    ```bash
+    vercel --prod
+    ```
+  </Step>
+</Steps>
+
+## 实战使用建议
+
+### 初次使用
+
+1. **创建项目**：设置品牌信息和核心关键词
+2. **添加提示词**：导入 20-50 个高意图查询
+3. **运行批量抓取**：获取初始数据基线
+4. **分析可见性分数**：了解当前表现
+
+### 定期监控
+
+1. **设置 Cron 任务**：每周自动抓取一次
+2. **监控分数趋势**：关注上升或下降趋势
+3. **发现引用机会**：优化内容填补空白
+4. **调整内容策略**：基于数据优化方向
+
+<Callout type="warning">
+**API 费用预估**：
+- Bright Data: $100-300/月（取决于抓取量）
+- OpenRouter: $10-50/月（取决于模型调用次数）
+- 总计: 约 $110-350/月
+</Callout>
+
+## 与其他工具对比
+
+| 工具 | 类型 | 价格 | 适用规模 | 推荐度 |
+|------|------|------|----------|--------|
+| geo-aeo-tracker | 开源 | 免费 + API 费用 | 中小企业 | ⭐⭐⭐⭐⭐ |
+| getcito | 企业级 | 定制报价 | 大型企业 | ⭐⭐⭐ |
+| easyGEO | 转换工具 | 免费 | 个人/小团队 | ⭐⭐⭐ |
+
+## 实施检查清单
+
+- [ ] 克隆项目并安装依赖
+- [ ] 申请 Bright Data API 密钥
+- [ ] 申请 OpenRouter API 密钥
+- [ ] 配置环境变量
+- [ ] 创建品牌项目
+- [ ] 添加 20-50 个追踪提示词
+- [ ] 运行首次批量抓取
+- [ ] 分析可见性基线
+- [ ] 设置每周自动化任务
+- [ ] 建立定期优化流程
+
+## 总结
+
+geo-aeo-tracker 是一款**功能全面、本地优先、完全免费**的 GEO/AEO 追踪工具，特别适合：
+
+- 中小企业品牌监控
+- 营销团队 GEO 工作流
+- 开发者自定义仪表板
+- 预算有限但需求全面的团队
+
+虽然配置有一定技术门槛，但一旦搭建完成，就能提供专业级的 AI 可见性监控能力。
+
+<Callout type="info">
+**推荐指数**: ⭐⭐⭐⭐⭐（5/5）
+
+**适合人群**: SEO 从业者、品牌市场部、跨境电商独立站运营者
+
+**学习成本**: 中等（需要基本的技术配置能力）
+</Callout>
+
+## 参考资料
+
+- [geo-aeo-tracker GitHub 仓库](https://github.com/danishashko/geo-aeo-tracker)
+- [GEO-AEO-Library 知识库](https://github.com/slowmist/GEO-AEO-Library)
+- [GEO 快速开始指南](/posts/geo-quick-start)
+
+---
+
+**晚间总结**：今天我们深入评测了 geo-aeo-tracker 这款开源 GEO/AEO 追踪工具。明天我们将分享更多实战案例和经验，敬请期待！
