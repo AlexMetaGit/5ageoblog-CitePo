@@ -1,0 +1,179 @@
+---
+title: GEO 快速开始：从 llms.txt 到 AI 可见性追踪
+description: 30 分钟内掌握 GEO 入门：实现 llms.txt 标准 + 部署 AI 可见性追踪工具，让你的品牌被 ChatGPT、Perplexity 正确引用
+date: 2026-03-19
+tags: [GEO, llms.txt, AI可见性, 快速开始]
+authors: [WuKong]
+draft: false
+---
+
+# GEO 快速开始：从 llms.txt 到 AI 可见性追踪
+
+<Callout type="info">
+  <strong>导读</strong>：不想看长篇大论？这篇文章给你最直接的 GEO 入门路径——一个标准协议 + 一个开源工具，30 分钟搞定。
+</Callout>
+
+## 为什么你需要 GEO？
+
+传统 SEO 关注排名和点击，但 AI 搜索时代变了：
+
+- ChatGPT 占 AI 推荐流量的 **87.4%**
+- AI 推荐转化率是传统来源的 **2 倍**
+- 用户向 ChatGPT 输入 **23 个单词**的提示词，而传统搜索只有 4.2 个
+
+**核心差异**：AI 引擎不给你列表，而是总结——只选择少数可信来源。
+
+<Callout type="tip">
+  <strong>引用是新点击</strong>：被 AI 引用意味着被发现。GEO 是关于信任，不是关键词。
+</Callout>
+
+---
+
+## 第一步：实现 llms.txt 标准（5 分钟）
+
+<Badge color="blue">标准协议</Badge> <Badge color="green">免费</Badge> <Badge color="purple">2,216 ⭐</Badge>
+
+**llms.txt** 是为大语言模型设计的网站内容索引标准，类似于 `robots.txt`，但专门为 LLM 优化。
+
+### 为什么需要 llms.txt？
+
+- 帮助 ChatGPT、Claude、Gemini 更好地理解你的网站
+- 提高 AI 搜索可见性
+- 标准化 AI 爬虫交互
+
+### 如何实现？
+
+在网站根目录创建 `/llms.txt` 文件：
+
+```yaml
+---
+title: Your Website Name
+version: 1.0
+updated: 2026-03-19
+---
+
+## Documentation
+- Getting Started: /docs/getting-started
+- API Reference: /docs/api
+- Examples: /docs/examples
+
+## Data
+- Dataset: /dataset
+- Blog: /blog
+```
+
+<Callout type="warning">
+  <strong>注意</strong>：llms.txt 尚未被主流 AI 平台正式支持，但作为前瞻性标准，早期实现有助于未来竞争。
+</Callout>
+
+---
+
+## 第二步：部署 AI 可见性追踪工具（20 分钟）
+
+<Badge color="blue">开源工具</Badge> <Badge color="green">本地优先</Badge> <Badge color="orange">$0/月</Badge>
+
+**geo-aeo-tracker** 是一个开源、本地优先的 AI 可见性智能仪表板，让你实时追踪品牌在 ChatGPT、Perplexity、Gemini 等 AI 引擎中的表现。
+
+### 核心功能
+
+| 功能 | 说明 |
+|------|------|
+| ⚙️ 项目设置 | 品牌名称、关键词、描述 |
+| 💬 提示词中心 | 管理追踪提示词 |
+| 📊 可见性分析 | 趋势图表、评分算法 |
+| 🔗 引用分析 | 引用频率、竞争对手对比 |
+| 🏥 AEO 审计 | 站点准备度检查 |
+| ⏱️ 自动化 | 支持 Cron 和 GitHub Actions |
+
+### 支持的 AI 模型
+
+- ChatGPT
+- Perplexity
+- Gemini
+- Copilot
+- Google AI Overview
+- Grok
+
+### 快速部署
+
+<Steps>
+
+### 克隆项目
+
+```bash
+git clone https://github.com/danishashko/geo-aeo-tracker
+cd geo-aeo-tracker
+```
+
+### 安装依赖
+
+```bash
+npm install
+```
+
+### 配置环境
+
+```bash
+cp .env.example .env.local
+# 编辑 .env.local，添加 Bright Data 和 OpenRouter API 密钥
+```
+
+### 启动服务
+
+```bash
+npm run dev
+```
+
+</Steps>
+
+<Callout type="tip">
+  <strong>首次使用建议</strong>：先创建项目，设置品牌信息，添加 5-10 个追踪提示词，运行首次抓取，分析可见性分数。
+</Callout>
+
+---
+
+## 第三步：定期监控和优化（持续）
+
+### 可见性评分算法
+
+**分数 (0-100)** 基于五个维度：
+
+1. **品牌提及** - AI 是否提到你的品牌？
+2. **位置** - 在答案中的位置（开头 vs 结尾）
+3. **频率** - 被提及的次数
+4. **引用** - 是否链接到你的网站
+5. **情感** - 正面 vs 负面
+
+### 定期监控流程
+
+1. 设置 Cron 定时任务（每天/每周）
+2. 监控分数变化趋势
+3. 发现引用机会（竞争对手被引用但你没有）
+4. 优化内容策略
+
+---
+
+## 总结
+
+GEO 入门只需要两件事：
+
+| 步骤 | 工具 | 时间 | 成本 |
+|------|------|------|------|
+| 1. 实现标准 | llms.txt | 5 分钟 | 免费 |
+| 2. 追踪表现 | geo-aeo-tracker | 20 分钟 | 免费 |
+
+<Callout type="info">
+  <strong>早间要点</strong>：不要等 AI 搜索完全成熟。现在就建立基础设施，当 ChatGPT、Perplexity 开始广泛采用 llms.txt 时，你已经领先一步。
+</Callout>
+
+---
+
+## 参考来源
+
+- [GEO-AEO-Library/llms-txt.md](https://github.com/AnswerDotAI/llms.txt) - llms.txt 标准规范
+- [GEO-AEO-Library/geo-aeo-tracker.md](https://github.com/danishashko/geo-aeo-tracker) - AI 可见性追踪工具
+- [GEO-AEO-Library/GEO-Guide.md](https://github.com/krillinai/GEO) - GEO 完整指南
+
+---
+
+**标签**：`#GEO` `#llms.txt` `#AI可见性` `#快速开始`
