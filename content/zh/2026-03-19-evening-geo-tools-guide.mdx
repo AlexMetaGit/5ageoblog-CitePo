@@ -1,0 +1,357 @@
+---
+title: GEO 工具选择实战：从免费到企业级的完整评测
+description: 深度评测 geo-aeo-tracker、getcito 等 GEO 工具，对比功能、成本和适用场景，给出不同预算下的最佳选择方案。
+date: 2026-03-19
+tags: [GEO, AEO, AI搜索, 工具评测, 实战指南]
+authors: [WuKong]
+draft: false
+---
+
+# GEO 工具选择实战：从免费到企业级的完整评测
+
+<Badge color="orange">实战指南</Badge> <Badge color="blue">工具评测</Badge>
+
+**核心问题**：88% 的品牌在 AI 搜索中不可见（即使传统 SEO 排名靠前）[数据来源：Seer Interactive 2025 分析]。要解决这个问题，选择合适的 GEO 工具至关重要。
+
+本文深度评测主流 GEO 工具，帮你找到最适合自己需求的解决方案。
+
+---
+
+## 一、GEO 工具的核心价值
+
+### 为什么需要 GEO 工具？
+
+<Callout type="info">
+传统 SEO 工具（Ahrefs、Semrush）主要监控排名和反向链接，但 AI 搜索的核心指标是：<strong>品牌可见度（Visibility）</strong>和<strong>引用频率（Citations）</strong>。
+</Callout>
+
+GEO 工具的核心功能：
+- **追踪品牌在 AI 回答中的出现频率**（ChatGPT、Perplexity、Gemini 等）
+- **监控竞争对手的 AI 可见性**
+- **分析引用来源和情感框架**
+- **自动化定期监控和报告**
+
+---
+
+## 二、工具分类与对比
+
+### 按成本分类
+
+| 类别 | 代表工具 | 月成本 | 适用场景 |
+|------|---------|--------|---------|
+| **免费/开源** | geo-aeo-tracker | $0（需 API 密钥费用） | 个人、小团队、开发者 |
+| **企业级 SaaS** | getcito、Profound | $500-$2000+ | 大型品牌、营销团队 |
+| **传统 SEO 扩展** | Semrush、Ahrefs | $100-$500（需额外 GEO 功能） | 已有 SEO 工具的用户 |
+
+### 按部署方式分类
+
+<Steps>
+<ol>
+<li><strong>本地优先（Local-First）</strong>：数据存储在本地，隐私安全，如 geo-aeo-tracker</li>
+<li><strong>云端 SaaS</strong>：数据存储在服务商服务器，易于协作，如 getcito</li>
+<li><strong>混合模式</strong>：本地抓取 + 云端分析，平衡隐私和便利</li>
+</ol>
+</Steps>
+
+---
+
+## 三、geo-aeo-tracker 深度评测
+
+### 工具概览
+
+<Badge color="green">免费开源</Badge> <Badge color="purple">本地优先</Badge> <Badge color="blue">功能全面</Badge>
+
+**项目地址**：https://github.com/danishashko/geo-aeo-tracker  
+**Star 数**：15 ⭐（GitHub GEO 项目排名第 10）  
+**技术栈**：Next.js 16.1 + TypeScript + Tailwind CSS v4
+
+### 核心功能（12 个标签页）
+
+1. **⚙️ 项目设置** - 品牌名称、关键词、描述
+2. **💬 提示词中心** - 管理追踪提示词（如"最佳 CRM 软件"）
+3. **🎭 角色扩散** - 生成角色特定提示词（如"营销总监的 CRM 选择"）
+4. **🔍 细分领域探索器** - 生成高意图查询
+5. **📝 响应浏览** - 查看 AI 回答原文
+6. **📊 可见性分析** - 趋势图表和评分
+7. **🔗 引用分析** - 引用频率和来源
+8. **🎯 引用机会** - 竞争对手未被引用的机会点
+9. **⚔️ 竞争对手对战卡** - AI 生成的品牌对比
+10. **🏥 AEO 审计** - 站点准备度检查
+11. **⏱️ 自动化** - Cron/GitHub Actions 定时任务
+12. **📖 文档** - 14 部分完整指南
+
+### 支持的 AI 平台
+
+- ChatGPT（OpenAI）
+- Perplexity
+- Google Gemini
+- Microsoft Copilot
+- Google AI Overviews
+- Grok（X/Twitter）
+
+### 优点 ✅
+
+<Callout type="success">
+<strong>功能全面</strong>：12 个标签页覆盖所有 GEO 工作流，从提示词管理到自动化监控
+</Callout>
+
+- **完全免费**：$0/月，开源代码可自行修改
+- **本地优先**：数据不离开机器，隐私安全
+- **多模型支持**：覆盖 6 个主流 AI 平台
+- **竞争分析**：对战卡和引用机会分析
+- **自动化支持**：Cron 和 GitHub Actions 定时抓取
+
+### 缺点 ❌
+
+<Callout type="warning">
+<strong>配置复杂</strong>：需要 Bright Data 和 OpenRouter API 密钥，初次设置有一定门槛
+</Callout>
+
+- **依赖第三方服务**：Bright Data 抓取、OpenRouter LLM
+- **API 成本**：虽然工具免费，但 API 调用需要付费（约 $10-$50/月）
+- **学习曲线**：功能丰富，需要时间熟悉
+
+### 成本分析
+
+| 项目 | 月成本 | 备注 |
+|------|--------|------|
+| geo-aeo-tracker 工具 | $0 | 开源免费 |
+| Bright Data API | $10-$30 | 按抓取量计费 |
+| OpenRouter API | $5-$20 | 按 token 计费 |
+| **总计** | **$15-$50/月** | 取决于抓取频率和模型选择 |
+
+### 适用场景
+
+- ✅ **个人品牌**：博主、独立创业者
+- ✅ **小团队**：营销团队 1-5 人
+- ✅ **开发者**：喜欢自己部署和定制
+- ✅ **隐私敏感**：数据不能离开本地
+
+---
+
+## 四、getcito 企业级方案对比
+
+### 工具概览
+
+<Badge color="red">企业级</Badge> <Badge color="blue">云端 SaaS</Badge> <Badge color="yellow">付费服务</Badge>
+
+**定位**：企业级 AI 可见性监控平台  
+**成本**：$500-$2000+/月（根据品牌数量和监控频率）
+
+### 核心功能
+
+- **自动化监控**：无需配置，开箱即用
+- **多平台覆盖**：ChatGPT、Perplexity、Gemini、Claude 等
+- **团队协作**：多人共享仪表板和报告
+- **高级分析**：情感分析、趋势预测、竞争情报
+- **API 集成**：与企业现有工具集成
+
+### 优点 ✅
+
+- **零配置**：无需技术背景，注册即用
+- **专业支持**：客服和技术支持
+- **企业级稳定性**：高可用性和数据备份
+- **团队协作**：多用户权限管理
+
+### 缺点 ❌
+
+- **高昂成本**：$500+/月，对小团队不友好
+- **数据隐私**：数据存储在服务商服务器
+- **定制限制**：无法修改源代码
+
+### 适用场景
+
+- ✅ **大型品牌**：预算充足，需要专业服务
+- ✅ **营销团队**：5 人以上，需要协作功能
+- ✅ **企业级需求**：稳定性、安全性要求高
+- ❌ **个人/小团队**：成本过高
+
+---
+
+## 五、实战选择指南
+
+### 场景 1：个人品牌/独立创业者
+
+<Callout type="info">
+<strong>推荐方案</strong>：geo-aeo-tracker + Bright Data + OpenRouter
+</Callout>
+
+**成本**：$15-$50/月  
+**优势**：功能全面、成本可控、数据隐私  
+**部署时间**：2-4 小时（初次配置）
+
+**实施步骤**：
+1. 克隆 geo-aeo-tracker 项目
+2. 注册 Bright Data（获取抓取 API）
+3. 注册 OpenRouter（获取 LLM API）
+4. 配置环境变量
+5. 添加品牌和提示词
+6. 运行首次抓取
+
+### 场景 2：小团队（1-5 人）
+
+<Callout type="info">
+<strong>推荐方案</strong>：geo-aeo-tracker + 团队协作
+</Callout>
+
+**成本**：$30-$100/月（API 费用随团队规模增加）  
+**优势**：团队共享、成本分摊、可定制
+
+**实施建议**：
+- 部署到 Vercel（免费托管）
+- 设置 GitHub Actions 自动化
+- 团队成员共享访问链接
+
+### 场景 3：中型企业（5-20 人）
+
+<Callout type="warning">
+<strong>推荐方案</strong>：评估 getcito 或自建混合方案
+</Callout>
+
+**成本**：$200-$1000/月  
+**决策因素**：
+- 如果技术团队强：自建 geo-aeo-tracker + 定制
+- 如果技术团队弱：getcito 企业级方案
+
+### 场景 4：大型企业（20+ 人）
+
+<Callout type="info">
+<strong>推荐方案</strong>：getcito 企业级 + 内部定制
+</Callout>
+
+**成本**：$1000-$3000+/月  
+**优势**：专业支持、企业级稳定性、合规性
+
+---
+
+## 六、geo-aeo-tracker 快速上手
+
+### 前置准备
+
+- Node.js 18+
+- Bright Data 账户（[注册地址](https://brightdata.com)）
+- OpenRouter 账户（[注册地址](https://openrouter.ai)）
+
+### 安装步骤
+
+```bash
+# 1. 克隆项目
+git clone https://github.com/danishashko/geo-aeo-tracker
+cd geo-aeo-tracker
+
+# 2. 安装依赖
+npm install
+
+# 3. 配置环境变量
+cp .env.example .env.local
+```
+
+编辑 `.env.local`：
+
+```env
+BRIGHT_DATA_USERNAME=your_username
+BRIGHT_DATA_PASSWORD=your_password
+OPENROUTER_API_KEY=your_api_key
+```
+
+```bash
+# 4. 启动开发服务器
+npm run dev
+
+# 5. 访问 http://localhost:3000
+```
+
+### 首次使用流程
+
+<Steps>
+<ol>
+<li><strong>创建项目</strong>：输入品牌名称、描述、关键词</li>
+<li><strong>添加提示词</strong>：如"最佳 CRM 软件"、"营销自动化工具"</li>
+<li><strong>运行抓取</strong>：点击"Run Scraping"按钮</li>
+<li><strong>查看分析</strong>：切换到"Visibility Analysis"标签页</li>
+<li><strong>设置自动化</strong>：配置 Cron 任务定期抓取</li>
+</ol>
+</Steps>
+
+### 可见性评分算法
+
+geo-aeo-tracker 使用 0-100 分制，基于：
+
+- **品牌提及（Mention）**：品牌是否在回答中出现
+- **位置（Position）**：品牌出现的位置（开头/中间/结尾）
+- **频率（Frequency）**：品牌被提及的次数
+- **引用（Citation）**：是否包含品牌链接
+- **情感（Sentiment）**：提及的语调（正面/中性/负面）
+
+---
+
+## 七、进阶使用技巧
+
+### 技巧 1：角色扩散（Persona Diffusion）
+
+<Callout type="tip">
+使用"角色扩散"功能生成针对不同用户角色的提示词，如"营销总监"、"创业者"、"中小企业主"等，全面覆盖不同搜索意图。
+</Callout>
+
+### 技巧 2：竞争对手对标
+
+在"引用机会"标签页中，查看竞争对手未被引用的机会点，针对性优化内容。
+
+### 技巧 3：自动化监控
+
+设置 GitHub Actions 定时任务（每周一次），自动抓取并发送报告到 Slack/邮件。
+
+### 技巧 4：多平台对比
+
+使用"细分领域探索器"生成高意图查询，对比不同 AI 平台的回答差异。
+
+---
+
+## 八、总结与建议
+
+### 工具选择决策树
+
+```
+是否有技术团队？
+├─ 是 → 预算是否充足？
+│        ├─ 是（$500+/月）→ getcito 企业级
+│        └─ 否（$50-/月）→ geo-aeo-tracker
+└─ 否 → 预算是否充足？
+         ├─ 是（$500+/月）→ getcito 企业级
+         └─ 否 → 考虑外包或培训团队
+```
+
+### 关键建议
+
+1. **从免费开始**：先用 geo-aeo-tracker 熟悉 GEO 工作流
+2. **定期监控**：至少每月一次追踪 AI 可见性变化
+3. **多平台覆盖**：不要只关注 ChatGPT，Perplexity 和 Gemini 同样重要
+4. **数据驱动**：基于可见性分数优化内容策略
+5. **长期投入**：GEO 是持续过程，3-6 个月才能看到显著效果
+
+### 今日总结
+
+- **GEO 工具的核心价值**：监控 AI 可见性，而非传统排名
+- **geo-aeo-tracker**：免费、功能全面，适合个人和小团队
+- **getcito**：企业级方案，适合大型品牌
+- **成本范围**：$15/月（个人）到 $2000+/月（企业）
+
+### 明日行动建议
+
+1. 选择适合你的工具（推荐从 geo-aeo-tracker 开始）
+2. 注册必要的 API 密钥（Bright Data、OpenRouter）
+3. 完成首次品牌可见性基线测量
+4. 制定每月监控计划
+
+---
+
+**参考来源**：
+- [GEO-AEO-Library 工具评测](https://github.com/danishashko/geo-aeo-tracker)
+- [Seer Interactive 2025 分析报告](https://www.seerinteractive.com)
+- [HubSpot AI Search Visibility 指南](https://blog.hubspot.com/marketing/ai-search-visibility)
+
+---
+
+**相关阅读**：
+- [GEO 快速开始：从 llms.txt 到 AI 可见性追踪](/2026-03-19-morning-geo-quickstart)
+- [Query Fan-Out：破解 AI 搜索的"隐形引擎"](/2026-03-19-midday-query-fanout)
