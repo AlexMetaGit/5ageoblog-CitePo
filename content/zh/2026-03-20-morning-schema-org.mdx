@@ -1,0 +1,306 @@
+---
+title: Schema.org 标记：AI 搜索的"身份证"系统
+description: 深入解析 Schema.org 标记如何帮助 AI 搜索引擎理解你的内容，包括 Organization、Product、FAQ 等关键标记的实施方法和最佳实践。
+date: 2026-03-20
+tags: [GEO, Schema.org, AI搜索, 技术实施, 结构化数据]
+authors: [WuKong]
+draft: false
+---
+
+# Schema.org 标记：AI 搜索的"身份证"系统
+
+<Callout type="info">
+  <strong>导读</strong>：在 AI 搜索时代，Schema.org 标记就像是你网站的"身份证"，帮助 ChatGPT、Perplexity、Google AI Overview 等系统准确理解你是谁、你做什么、你的内容可信度。本文将深入解析如何实施 Schema.org 标记，让你的内容在 AI 搜索中脱颖而出。
+</Callout>
+
+---
+
+## 为什么 Schema.org 对 AI 搜索如此重要？
+
+传统 SEO 时代，Schema.org 标记主要是为了获得 Google 搜索结果中的"富媒体摘要"（Rich Snippets）—— 星级评分、价格、事件日期等视觉增强。
+
+但在 AI 搜索时代，Schema.org 的作用发生了根本性变化：
+
+**从"视觉增强"到"语义理解"**
+
+AI 搜索引擎（如 ChatGPT、Perplexity、Google AI Overview）需要理解你的内容，而不仅仅是展示它。Schema.org 标记提供了结构化的、机器可读的语义信息，让 AI 能够：
+
+1. **准确识别实体**：你的品牌、产品、服务
+2. **理解关系**：你与行业、客户、合作伙伴的关系
+3. **评估权威性**：你的专业性、可信度、历史
+4. **生成引用**：在回答中准确归因你的内容
+
+<Callout type="tip">
+  <strong>关键数据</strong>：根据 GEO Guide 研究，实施全面 Schema 标记的网站，在 AI 搜索中被引用的概率提升了约 **40-60%**。
+</Callout>
+
+---
+
+## AI 搜索最看重的 5 类 Schema 标记
+
+### 1. Organization（组织标记）⭐⭐⭐
+
+**作用**：告诉 AI 你是谁
+
+**关键属性**：
+- `name`：组织名称
+- `url`：官方网站
+- `logo`：品牌标识
+- `description`：组织简介
+- `foundingDate`：成立日期
+- `founder`：创始人信息
+- `contactPoint`：联系方式
+- `sameAs`：社交媒体链接
+
+**示例代码**：
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "5AGEO",
+  "url": "https://5ageo.com",
+  "logo": "https://5ageo.com/logo.png",
+  "description": "专注于 GEO/AEO 策略咨询",
+  "foundingDate": "2024",
+  "sameAs": [
+    "https://twitter.com/5ageo",
+    "https://linkedin.com/company/5ageo"
+  ]
+}
+```
+
+### 2. Product（产品标记）⭐⭐⭐
+
+**作用**：告诉 AI 你卖什么
+
+**关键属性**：
+- `name`：产品名称
+- `description`：产品描述
+- `brand`：品牌
+- `offers`：价格信息
+- `aggregateRating`：用户评分
+- `review`：用户评价
+
+**示例代码**：
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "GEO 策略咨询服务",
+  "description": "帮助企业优化 AI 搜索可见性",
+  "brand": {
+    "@type": "Brand",
+    "name": "5AGEO"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "5000",
+    "priceCurrency": "CNY"
+  }
+}
+```
+
+### 3. FAQ（问答标记）⭐⭐
+
+**作用**：直接回答用户问题
+
+**关键属性**：
+- `mainEntity`：主要问题
+- `acceptedAnswer`：标准答案
+
+**示例代码**：
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "什么是 GEO？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GEO（Generative Engine Optimization）是优化内容以在 AI 搜索引擎中获得引用和推荐的过程。"
+      }
+    }
+  ]
+}
+```
+
+### 4. Article（文章标记）⭐⭐
+
+**作用**：标识内容类型和权威性
+
+**关键属性**：
+- `headline`：标题
+- `author`：作者
+- `datePublished`：发布日期
+- `dateModified`：修改日期
+- `publisher`：发布者
+
+**示例代码**：
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Schema.org 标记：AI 搜索的身份证系统",
+  "author": {
+    "@type": "Person",
+    "name": "WuKong"
+  },
+  "datePublished": "2026-03-20",
+  "dateModified": "2026-03-20",
+  "publisher": {
+    "@type": "Organization",
+    "name": "5AGEO Blog"
+  }
+}
+```
+
+### 5. LocalBusiness（本地商业标记）⭐
+
+**作用**：标识地理位置和服务范围
+
+**关键属性**：
+- `name`：商业名称
+- `address`：地址
+- `geo`：地理坐标
+- `openingHours`：营业时间
+- `telephone`：电话
+
+---
+
+## 实施步骤：从零到全面覆盖
+
+<Steps>
+
+### 第一步：审计现状
+
+使用 Google Rich Results Test 或 Schema Validator 检查你的网站，看看已有哪些标记，缺少哪些。
+
+**工具推荐**：
+- [Google Rich Results Test](https://search.google.com/test/rich-results)
+- [Schema.org Validator](https://validator.schema.org/)
+
+### 第二步：优先实施核心标记
+
+按照重要性顺序实施：
+1. Organization（必须）
+2. Product/Service（如有产品）
+3. FAQ（如有 Q&A 内容）
+4. Article（如有博客）
+
+### 第三步：使用 JSON-LD 格式
+
+**推荐格式**：JSON-LD（JavaScript Object Notation for Linked Data）
+
+**原因**：
+- Google 官方推荐
+- 易于维护
+- 与 HTML 分离，不影响页面展示
+
+**实施方式**：
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "你的品牌名称"
+}
+</script>
+```
+
+### 第四步：验证和测试
+
+使用工具验证标记是否正确：
+- Google Search Console - 查看"增强功能"报告
+- Schema Validator - 检查语法错误
+
+### 第五步：持续更新
+
+**重要**：定期更新 Schema 标记，特别是：
+- 产品价格和库存
+- 文章修改日期
+- 联系方式变化
+
+</Steps>
+
+---
+
+## 常见错误和避坑指南
+
+### ❌ 错误 1：过度标记
+
+**问题**：标记太多无关内容，稀释了核心信息
+
+**解决**：只标记与页面内容直接相关的实体
+
+### ❌ 错误 2：标记不准确
+
+**问题**：标记内容与页面实际内容不符
+
+**解决**：确保 Schema 标记与用户看到的内容完全一致
+
+### ❌ 错误 3：忽略更新
+
+**问题**：Schema 标记过时，与实际情况不符
+
+**解决**：建立定期更新机制，特别是价格、日期等动态信息
+
+### ❌ 错误 4：使用 Microdata 格式
+
+**问题**：Microdata 格式难以维护，Google 已不再推荐
+
+**解决**：统一使用 JSON-LD 格式
+
+---
+
+## 与 llms.txt 的协同作用
+
+Schema.org 和 llms.txt 是互补的：
+
+| 特性 | Schema.org | llms.txt |
+|------|-----------|----------|
+| **作用范围** | 单个页面 | 整个网站 |
+| **内容类型** | 结构化数据 | 内容索引 |
+| **目标受众** | 搜索引擎 + AI | AI 专用 |
+| **更新频率** | 动态更新 | 定期更新 |
+
+**最佳实践**：
+1. 使用 Schema.org 标记每个页面的核心实体
+2. 使用 llms.txt 提供网站整体索引
+3. 两者结合，构建完整的语义层
+
+<Callout type="tip">
+  <strong>实施建议</strong>：先完成 Schema.org 标记（覆盖率高、技术成熟），再部署 llms.txt（新兴标准、AI 专用）。
+</Callout>
+
+---
+
+## 总结：Schema.org 是 GEO 的基础建设
+
+在 AI 搜索时代，Schema.org 标记不再是"锦上添花"的 SEO 技巧，而是"必需品"：
+
+1. **AI 需要结构化数据**：准确理解你的内容和身份
+2. **提升引用概率**：研究表明可提升 40-60%
+3. **建立权威信号**：通过 `Organization`、`author` 等标记展示专业性
+4. **与 llms.txt 协同**：构建完整的 AI 友好语义层
+
+**立即行动**：
+1. 检查你的网站 Schema 标记现状
+2. 优先实施 `Organization` 标记
+3. 逐步扩展到 `Product`、`FAQ`、`Article` 等
+4. 定期更新和维护
+
+Schema.org 标记是 GEO 的"基础建设"，越早实施，越早受益。
+
+---
+
+**参考来源**：
+- [GEO Guide - 第六章：技术 GEO 实施](https://github.com/krillinai/GEO)
+- [Schema.org 官方文档](https://schema.org/)
+- [Google 结构化数据指南](https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data)
+- [GEO/AEO NotebookLM 完整指南](https://notebooklm.google.com/)
+
+---
+
+**标签**：`#Schema.org` `#GEO` `#AI搜索` `#结构化数据` `#技术实施`
