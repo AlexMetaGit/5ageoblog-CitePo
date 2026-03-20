@@ -1,0 +1,217 @@
+---
+title: "GEO工具评测：geo-aeo-tracker 深度体验"
+description: "深度评测开源 GEO 追踪工具 geo-aeo-tracker，12 大功能标签页全覆盖，本地优先完全免费，支持 6 大 AI 平台监控。"
+date: 2026-03-20
+tags: [GEO, AEO, 工具评测, AI搜索, 开源工具, geo-aeo-tracker]
+authors: [WuKong]
+draft: false
+---
+
+# GEO工具评测：geo-aeo-tracker 深度体验
+
+在 AI 搜索时代，**88% 的品牌在 AI 引擎中是不可见的**[来源: GEO-AEO-NotebookLM]。即使你在传统搜索中排名靠前，也不代表你能出现在 ChatGPT、Perplexity 或 Google AI Overviews 的回答中。
+
+如何追踪你的品牌在 AI 搜索中的表现？今天我们来深度评测一个开源工具：**geo-aeo-tracker**。
+
+<Callout type="info">
+**工具定位**：本地优先、完全免费的开源 GEO 追踪仪表板，支持 ChatGPT、Perplexity、Gemini、Copilot、Google AI Overview 和 Grok 六大平台。
+</Callout>
+
+## 为什么需要 GEO 追踪工具？
+
+传统 SEO 工具（如 Ahrefs、SEMrush）只能追踪传统搜索排名，但 AI 搜索的可见性完全不同：
+
+- **传统搜索**：追踪关键词排名、点击率、流量
+- **AI 搜索**：追踪品牌提及、引用频率、位置、情感
+
+<Badge color="red">核心问题</Badge> 没有专门的工具，你无法知道品牌在 AI 回答中的表现如何。
+
+## geo-aeo-tracker 核心功能
+
+这个工具提供了 **12 个功能标签页**，覆盖完整的 GEO 工作流：
+
+### 1. 项目设置 ⚙️
+设置品牌名称、关键词、描述，创建追踪项目。
+
+### 2. 提示词中心 💬
+管理用于追踪的提示词库，支持批量测试。
+
+### 3. 角色扩散 🎭
+生成角色特定提示词，测试不同用户场景下的品牌可见性。
+
+### 4. 细分领域探索器 🔍
+生成高意图查询，发现长尾关键词机会。
+
+### 5. 响应浏览 📝
+浏览 AI 响应内容，查看品牌是否被提及。
+
+### 6. 可见性分析 📊
+**核心功能**：趋势图表展示可见性分数变化。
+
+<Callout type="tip">
+**可见性评分算法**（0-100分）基于：
+- 品牌提及（Mention）
+- 位置（Position）
+- 频率（Frequency）
+- 引用（Citation）
+- 情感（Sentiment）
+</Callout>
+
+### 7. 引用分析 🔗
+分析品牌被引用的频率和上下文。
+
+### 8. 引用机会 🎯
+**战略功能**：发现竞争对手的引用机会，找到你的内容缺口。
+
+### 9. 竞争对手对战卡 ⚔️
+AI 生成的品牌对比分析，了解你的优劣势。
+
+### 10. AEO 审计 🏥
+站点准备度检查，评估你的网站是否 GEO 友好。
+
+### 11. 自动化 ⏱️
+支持 Cron 和 GitHub Actions，实现定期自动追踪。
+
+### 12. 文档 📖
+14 部分完整指南，从安装到高级用法。
+
+## 实战体验
+
+### 优点 ✅
+
+<Badge color="green">完全免费</Badge> $0/月，开源
+<Badge color="green">本地优先</Badge> 数据不离开机器，隐私安全
+<Badge color="green">功能全面</Badge> 12 个标签页覆盖所有 GEO 工作流
+<Badge color="green">多模型支持</Badge> 6 个 AI 平台
+<Badge color="green">竞争分析</Badge> 对比卡和引用机会分析
+
+### 缺点 ❌
+
+<Badge color="orange">配置复杂</Badge> 需要 Bright Data 和 OpenRouter API 密钥
+<Badge color="orange">依赖第三方</Badge> 依赖 Bright Data 抓取服务
+<Badge color="orange">学习曲线</Badge> 功能多，需要时间熟悉
+
+## 快速开始
+
+### 步骤 1：安装
+
+```bash
+git clone https://github.com/danishashko/geo-aeo-tracker
+cd geo-aeo-tracker
+npm install
+```
+
+### 步骤 2：配置
+
+```bash
+cp .env.example .env.local
+# 编辑 .env.local，添加 API 密钥
+```
+
+需要两个 API 密钥：
+- **Bright Data**：用于抓取 AI 引擎响应
+- **OpenRouter**：用于 LLM 分析
+
+### 步骤 3：启动
+
+```bash
+npm run dev
+# 访问 http://localhost:3000
+```
+
+### 步骤 4：部署
+
+```bash
+vercel --prod
+```
+
+## 与其他工具对比
+
+| 工具 | 价格 | 部署方式 | 功能覆盖 | 推荐度 |
+|------|------|---------|---------|--------|
+| **geo-aeo-tracker** | 免费 | 本地/Vercel | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| getcito | 需配置 | 企业级 | ⭐⭐⭐ | ⭐⭐⭐ |
+| easyGEO | 免费 | Chrome 扩展 | ⭐⭐ | ⭐⭐⭐ |
+| gtm-engineer-skills | 免费 | Claude Code | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
+
+<Callout type="warning">
+**注意**：getcito 是企业级工具，需要更多配置。gtm-engineer-skills 是 Claude Code 技能集，不是独立的追踪工具。
+</Callout>
+
+## 最佳实践建议
+
+### 初次使用
+1. 创建项目，设置品牌信息
+2. 添加 10-20 个追踪提示词
+3. 运行首次批量抓取
+4. 分析可见性分数基线
+
+### 定期监控
+1. 设置 Cron 定时任务（每周一次）
+2. 监控分数变化趋势
+3. 发现引用机会并优化内容
+4. 对比竞争对手表现
+
+### 数据驱动优化
+- **可见性分数下降** → 检查内容质量和权威性
+- **引用机会增加** → 创建针对性的内容
+- **竞争对手领先** → 分析其优势并学习
+
+<AccordionGroup>
+<Accordion title="适合谁使用？">
+
+**适合**：
+- 品牌营销团队
+- SEO 从业者转型 GEO
+- 跨境电商独立站运营
+- 内容营销人员
+
+**不适合**：
+- 没有技术背景的纯市场人员（需要配置 API）
+- 预算充足想要托管服务的企业（可用企业级工具）
+</Accordion>
+
+<Accordion title="多久能看到效果？">
+
+根据 [案例来源: GEO-AEO-Article]，HubSpot 通过系统化的 GEO 策略：
+- **1-3 个月**：能看到可见性提升
+- **3-6 个月**：能有显著效果
+- **关键**：持续监控和优化，而不是一次性设置
+
+</Accordion>
+
+<Accordion title="成本如何？">
+
+- **工具本身**：$0（开源免费）
+- **Bright Data API**：根据使用量，约 $50-200/月
+- **OpenRouter API**：根据 LLM 使用量，约 $10-50/月
+- **总计**：约 $60-250/月，远低于企业级工具
+
+</Accordion>
+</AccordionGroup>
+
+## 总结与展望
+
+geo-aeo-tracker 是目前**功能最全面、性价比最高**的 GEO 追踪工具。虽然配置需要一定技术背景，但一旦设置完成，它能提供：
+
+✅ 全面的可见性追踪
+✅ 竞争对手分析
+✅ 自动化监控
+✅ 数据驱动的优化建议
+
+<Callout type="success">
+**明日行动建议**：
+1. 克隆项目并安装依赖
+2. 申请 Bright Data 和 OpenRouter API 密钥
+3. 创建你的第一个追踪项目
+4. 运行首次抓取并分析结果
+</Callout>
+
+在 AI 搜索时代，**看不见等于不存在**。从今天开始追踪你的品牌在 AI 引擎中的表现，才能在 GEO 的竞争中占据先机。
+
+---
+
+**参考资源**：
+- [geo-aeo-tracker GitHub](https://github.com/danishashko/geo-aeo-tracker)
+- [GEO-AEO-Library 工具库](https://github.com/your-repo)
+- [HubSpot Loop Marketing 案例](来源: GEO-AEO-Article)
