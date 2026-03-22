@@ -1,0 +1,231 @@
+---
+title: llms.txt 标准实战指南：让 AI 搜索引擎爱上你的网站
+description: llms.txt 是专门为大语言模型设计的网站内容索引标准。本文详解 llms.txt 的原理、实施方法和最佳实践，帮助你提升在 ChatGPT、Claude、Gemini 等 AI 搜索引擎中的可见性。
+date: 2026-03-22
+tags: [GEO, AEO, llms.txt, AI搜索, 标准规范]
+authors: [WuKong]
+draft: false
+---
+
+# llms.txt 标准实战指南：让 AI 搜索引擎爱上你的网站
+
+<Callout type="info">
+  <strong>导读</strong>：在 AI 搜索时代，网站需要新的方式让 AI 理解和引用。llms.txt 标准正是为此而生——就像 robots.txt 为搜索引擎服务，llms.txt 为大语言模型提供结构化的网站索引。
+</Callout>
+
+## 互联网正在经历一场范式转移
+
+**关键数据**：
+
+- **58.5%** 的 Google 搜索已变成零点击搜索 [来源: GEO-AEO-NotebookLM]
+- **ChatGPT 占据 AI 推荐流量的 87.4%** [来源: GEO-AEO-Library/GEO-Guide.md]
+- **88%** 的品牌在 AI 搜索中不可见，即使它们在传统搜索中排名靠前 [来源: GEO-AEO-NotebookLM]
+
+互联网正从"链接时代"跨越到"回答时代"。用户的搜索行为也在变化：
+
+- 传统搜索：平均 **4.2 个单词**
+- ChatGPT 提示词：平均 **23 个单词**
+
+用户不再只是找链接，而是在寻求综合答案。你的网站需要被 AI 理解、信任和引用。
+
+## 什么是 llms.txt？
+
+llms.txt 是由 Answer.ai 提出的开放标准，专门为大语言模型（LLM）设计。它定义了一个标准化的文件格式，帮助 ChatGPT、Claude、Gemini 等 AI 更好地理解和使用网站内容。
+
+<Badge color="blue">排名 #1</Badge> <Badge color="green">2,216 ⭐</Badge> <Badge color="purple">MIT 许可证</Badge>
+
+**核心功能**：
+
+1. **标准化索引**：提供网站内容的结构化索引
+2. **AI 友好**：优化 AI 爬虫的抓取和理解
+3. **灵活扩展**：支持文档、API、数据集等多种内容类型
+
+## 为什么需要 llms.txt？
+
+### 传统 SEO 的问题
+
+传统 SEO 关注关键词排名和点击率（CTR），但在 AI 搜索时代：
+
+- AI 引擎**总结**内容，而不是列出链接
+- AI 只选择**少数可信来源**进行引用
+- **权威性**现在存在于 AI 模型的训练数据中
+
+### llms.txt 的价值
+
+**llms.txt 解决的核心问题**：
+
+1. **提高可见性**：让 AI 更容易发现和理解你的内容
+2. **建立信任**：提供结构化的、可验证的内容索引
+3. **标准化交互**：统一 AI 爬虫的访问方式
+
+> **引用是新点击**：被 AI 引用意味着被发现。[来源: GEO-AEO-Library/GEO-Guide.md]
+
+## 如何实施 llms.txt？
+
+<Steps>
+
+### 创建文件
+
+在网站根目录创建 `/llms.txt` 文件：
+
+```bash
+touch llms.txt
+```
+
+### 添加元数据
+
+使用 YAML 格式添加基本信息：
+
+```yaml
+---
+title: Your Website Name
+version: 1.0
+updated: 2026-03-22
+---
+```
+
+### 组织内容索引
+
+按照内容类型组织索引：
+
+```markdown
+## Documentation
+- Getting Started: /docs/getting-started
+- API Reference: /docs/api
+- Examples: /docs/examples
+
+## Data
+- Dataset: /dataset
+- Model Weights: /models
+
+## Blog
+- Latest Posts: /blog
+```
+
+### 创建完整版（可选）
+
+对于内容丰富的网站，还可以创建 `/llms-full.txt`：
+
+```markdown
+---
+title: Your Website Full Index
+version: 1.0
+updated: 2026-03-22
+---
+
+## All Pages
+- [Complete list of all accessible pages]
+```
+
+### 验证和监控
+
+- 使用日志监控 AI 爬虫的访问
+- 定期更新内容索引
+- 检查 AI 搜索中的可见性变化
+
+</Steps>
+
+## llms.txt vs robots.txt：关键区别
+
+| 特性 | robots.txt | llms.txt |
+|------|-----------|----------|
+| **目标用户** | 传统搜索引擎爬虫 | 大语言模型（LLM） |
+| **主要功能** | 控制爬虫访问权限 | 提供内容索引 |
+| **内容格式** | 指令式（Allow/Disallow） | 结构化索引 |
+| **优化目标** | 抓取效率 | 理解和引用 |
+| **典型应用** | 阻止敏感页面 | 推荐 API、文档、数据集 |
+
+## 实战案例：技术文档网站
+
+假设你运营一个 SaaS 产品的技术文档网站：
+
+```yaml
+---
+title: ExampleAPI Documentation
+version: 2.1
+updated: 2026-03-22
+---
+
+## Getting Started
+- Quick Start: /docs/quick-start
+- Installation: /docs/installation
+- Authentication: /docs/auth
+
+## API Reference
+- REST API: /api/rest
+- GraphQL: /api/graphql
+- Webhooks: /api/webhooks
+
+## SDKs & Tools
+- Python SDK: /sdks/python
+- JavaScript SDK: /sdks/javascript
+- CLI Tool: /tools/cli
+
+## Resources
+- Tutorials: /tutorials
+- Examples: /examples
+- Changelog: /changelog
+```
+
+**效果**：
+
+- ChatGPT 可以快速定位 API 文档
+- Claude 能准确引用安装指南
+- Gemini 可以推荐相关教程
+
+## 最佳实践建议
+
+<Callout type="tip">
+  <strong>5 步快速开始</strong>：
+  
+  1. **盘点内容**：列出所有高价值页面
+  2. **分类组织**：按类型（文档、API、博客）分组
+  3. **添加元数据**：标题、版本、更新时间
+  4. **部署上线**：放在网站根目录
+  5. **定期更新**：内容变化时同步更新 llms.txt
+</Callout>
+
+**进阶建议**：
+
+1. **结合 Schema.org**：同时使用结构化数据标记
+2. **优化内容质量**：确保引用的内容有价值
+3. **监控效果**：使用 GEO 工具追踪 AI 可见性
+4. **多平台策略**：在 Reddit、YouTube 等平台建立存在感
+
+## 工具推荐
+
+<Badge color="orange">本地优先</Badge> <Badge color="green">开源免费</Badge>
+
+**geo-aeo-tracker**：开源的 AI 可见性追踪工具，支持：
+
+- ChatGPT、Perplexity、Gemini、Copilot 等 6 个平台
+- 可见性分析、引用监控、竞争对比
+- 本地优先，数据安全
+
+GitHub: https://github.com/danishashko/geo-aeo-tracker
+
+## 总结
+
+llms.txt 是 AI 搜索时代的 robots.txt，它帮助你的网站：
+
+- ✅ 被 AI 更好地理解和引用
+- ✅ 在 ChatGPT、Claude、Gemini 中提升可见性
+- ✅ 建立标准化的 AI 交互方式
+
+**实施成本低，潜在收益高**——现在就开始为你的网站添加 llms.txt 吧！
+
+---
+
+**延伸阅读**：
+
+- [GEO/AEO GitHub 开源项目深度调研](https://github.com/AnswerDotAI/llms.txt)
+- [GEO Guide - 生成式引擎优化完整指南](https://github.com/krillinai/GEO)
+
+---
+
+**参考来源**：
+
+- [GEO-AEO-Library/01-Standards/llms-txt.md](https://github.com/AnswerDotAI/llms.txt)
+- [GEO-AEO-Library/02-Resources/GEO-Guide.md](https://github.com/krillinai/GEO)
+- [GEO-AEO-NotebookLM/2026-03-16-GEO-AEO-完整指南.md]
+- [GEO-AEO-Library/03-Tools/geo-aeo-tracker.md](https://github.com/danishashko/geo-aeo-tracker)
