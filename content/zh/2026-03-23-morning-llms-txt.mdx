@@ -1,0 +1,263 @@
+---
+title: "llms.txt：让 AI 搜索引擎认识你的网站"
+description: "在 ChatGPT、Perplexity 等 AI 搜索主导的时代，llms.txt 标准让你的网站被 AI 正确理解和引用。本文详解 llms.txt 的作用、写法和最佳实践。"
+date: 2026-03-23
+tags: [GEO, AI搜索, llms.txt, 网站优化, SEO]
+authors: [WuKong]
+draft: false
+---
+
+# llms.txt：让 AI 搜索引擎认识你的网站
+
+<Callout type="info">
+  <strong>导读</strong>：传统 SEO 优化 robots.txt 让搜索引擎爬虫找到你，现在你需要 llms.txt 让 AI 搜索引擎理解你。这是 GEO（生成式引擎优化）的第一步。
+</Callout>
+
+## 为什么你需要 llms.txt？
+
+<Badge color="red">重要数据</Badge> 根据 GEO Guide 研究报告：
+- ChatGPT 占据 AI 推荐流量的 **87.4%**
+- AI 推荐的转化率是传统搜索的 **2 倍**
+- 内容更新时间少于 3 个月的被引用概率高 **3 倍**
+
+更重要的是：**88% 的品牌在 AI 搜索中是不可见的**，即使它们在传统搜索中排名靠前。
+
+**问题根源**：传统搜索引擎爬虫能理解 HTML，但 AI 搜索引擎需要更结构化、更语义化的内容索引。
+
+## llms.txt 是什么？
+
+<Badge color="blue">标准定义</Badge> `llms.txt` 是一个位于网站根目录的文件（类似 `robots.txt`），专门为大语言模型（LLM）设计，帮助 ChatGPT、Claude、Gemini 等 AI 正确理解和使用你的网站内容。
+
+### 核心特点
+
+<Callout type="tip">
+  <strong>类比理解</strong>：
+  - `robots.txt` → 告诉搜索引擎"能爬什么"
+  - `sitemap.xml` → 告诉搜索引擎"有什么页面"
+  - `llms.txt` → 告诉 AI 搜索引擎"内容是什么、怎么用"
+</Callout>
+
+## 如何创建 llms.txt？
+
+### 基础模板
+
+```markdown
+---
+title: 你的网站名称
+version: 1.0
+updated: 2026-03-23
+---
+
+# 网站简介
+
+## 文档
+- 快速开始：/docs/getting-started
+- API 参考：/docs/api
+- 教程：/docs/tutorials
+
+## 产品
+- 功能介绍：/features
+- 价格方案：/pricing
+- 案例研究：/case-studies
+
+## 资源
+- 博客：/blog
+- 常见问题：/faq
+- 社区：/community
+```
+
+### 完整示例（电商网站）
+
+```markdown
+---
+title: Example Store - 跨境电商平台
+version: 1.2
+updated: 2026-03-23
+language: zh-CN
+---
+
+# Example Store
+
+## 产品分类
+- 女装：/products/women
+- 男装：/products/men
+- 配饰：/products/accessories
+
+## 品牌故事
+- 关于我们：/about
+- 品牌理念：/brand-story
+- 可持续发展：/sustainability
+
+## 客户支持
+- 联系方式：/contact
+- 退换政策：/return-policy
+- 物流查询：/shipping
+
+## 数据
+- 产品目录：/data/products.json
+- 库存状态：/data/inventory.json
+```
+
+## 关键最佳实践
+
+### 1. 保持更新
+
+<Badge color="orange">重要</Badge> 研究显示：**内容更新时间少于 3 个月的被引用概率高 3 倍**。
+
+```markdown
+---
+updated: 2026-03-23  ← 每次内容更新时修改这里
+---
+```
+
+### 2. 语义清晰
+
+<Callout type="warning">
+  <strong>避免模糊分类</strong>：AI 需要明确知道每个链接的内容用途
+  
+  ❌ 错误：`- 更多信息：/info`
+  
+  ✅ 正确：`- 产品规格：/products/specifications`
+</Callout>
+
+### 3. 提供 AI 友好的数据源
+
+<Badge color="green">推荐</Badge> 在 llms.txt 中引用结构化数据文件：
+
+```markdown
+## 数据源
+- 产品 JSON：/data/products.json
+- API 文档：/api/docs.json
+- 常见问题：/data/faq.json
+```
+
+### 4. 多语言支持
+
+如果网站有多语言版本：
+
+```markdown
+---
+language: zh-CN
+---
+
+# 其他语言
+- English: /en/llms.txt
+- 日本語: /ja/llms.txt
+- 한국어: /ko/llms.txt
+```
+
+## 高级技巧：llms-full.txt
+
+<Badge color="purple">进阶</Badge> 除了 `llms.txt`，你还可以提供 `llms-full.txt`，包含完整的内容摘要：
+
+```markdown
+---
+title: Example Store
+version: 1.0
+---
+
+# 产品目录完整列表
+
+## 女装系列
+### 连衣裙
+- 产品 A：红色雪纺连衣裙，价格 ¥299
+- 产品 B：蓝色棉质连衣裙，价格 ¥199
+
+### 上衣
+- 产品 C：白色真丝衬衫，价格 ¥399
+- 产品 D：黑色针织衫，价格 ¥259
+
+...（完整内容）
+```
+
+<Callout type="info">
+  <strong>适用场景</strong>：llms-full.txt 适合产品数量较少的网站（< 100 个 SKU）。大型网站建议只提供索引文件和结构化数据链接。
+</Callout>
+
+## 常见问题
+
+<AccordionGroup>
+  <Accordion title="llms.txt 会被所有 AI 搜索引擎识别吗？">
+    <Badge color="yellow">当前状态</Badge> llms.txt 由 Answer.ai 提出，正在成为行业标准。虽然主流 AI 平台尚未正式支持，但这是 GEO 的基础最佳实践，为未来做好准备。
+  </Accordion>
+  
+  <Accordion title="llms.txt 和 Schema.org 标记有什么区别？">
+    <Badge color="blue">互补关系</Badge>
+    <ul>
+      <li><strong>Schema.org</strong>：嵌入在 HTML 中，帮助 AI 理解页面内容</li>
+      <li><strong>llms.txt</strong>：独立文件，为 AI 提供网站整体索引</li>
+    </ul>
+    <strong>建议</strong>：两者都实施，形成完整的 AI 搜索优化体系。
+  </Accordion>
+  
+  <Accordion title="需要多久更新一次 llms.txt？">
+    <Badge color="green">建议频率</Badge>：
+    <ul>
+      <li>内容更新时立即更新 <code>updated</code> 字段</li>
+      <li>新增重要页面时添加索引</li>
+      <li>至少每季度检查一次结构是否合理</li>
+    </ul>
+  </Accordion>
+</AccordionGroup>
+
+## 实施检查清单
+
+<Callout type="tip">
+  <strong>快速行动清单</strong>：
+  
+  **✅ 技术实施**
+  - [ ] 在网站根目录创建 `/llms.txt`
+  - [ ] 添加元数据（标题、版本、更新时间）
+  - [ ] 组织内容索引（按分类）
+  - [ ] 添加结构化数据链接
+  - [ ] 在 robots.txt 中添加 llms.txt 引用
+  
+  **✅ 内容优化**
+  - [ ] 使用语义清晰的分类名称
+  - [ ] 提供有意义的链接描述
+  - [ ] 定期更新内容
+  
+  **✅ 监控验证**
+  - [ ] 测试文件可访问性（访问 yoursite.com/llms.txt）
+  - [ ] 使用 AI 可见性追踪工具监控效果
+  - [ ] 分析 AI 搜索中的引用情况
+</Callout>
+
+## 下一步：构建完整的 GEO 体系
+
+<Badge color="purple">进阶学习</Badge> llms.txt 只是 GEO 的第一步。要全面提升 AI 搜索可见性，你还需要：
+
+<CardGroup cols={2}>
+  <Card title="GEO 完整指南" href="https://github.com/krillinai/GEO" icon="book">
+    学习内容优化、技术实施、品牌权威建设的完整方法
+  </Card>
+  <Card title="AI 可见性追踪" href="https://github.com/danishashko/geo-aeo-tracker" icon="chart">
+    使用开源工具监控品牌在 ChatGPT、Perplexity 中的表现
+  </Card>
+</CardGroup>
+
+---
+
+## 总结
+
+在 AI 搜索时代，llms.txt 就像数字世界的"名片"——它告诉 AI 搜索引擎你是谁、你提供什么、如何使用你的内容。
+
+**立即行动**：
+1. 花 15 分钟创建你的第一个 llms.txt
+2. 在下次内容更新时完善它
+3. 使用追踪工具监控 AI 搜索可见性变化
+
+<Callout type="warning">
+  <strong>记住</strong>：GEO 的核心不是关键词或反向链接，而是<strong>让 AI 信任并引用你的内容</strong>。llms.txt 是建立这份信任的第一步。
+</Callout>
+
+---
+
+**参考来源**：
+- [llms.txt GitHub 仓库](https://github.com/AnswerDotAI/llms.txt) - 官方标准文档
+- [GEO Guide](https://github.com/krillinai/GEO) - 生成式引擎优化完整指南
+- [geo-aeo-tracker](https://github.com/danishashko/geo-aeo-tracker) - AI 可见性追踪工具
+
+---
+
+**标签**：`#GEO` `#AI搜索` `#llms.txt` `#网站优化` `#ChatGPT`
