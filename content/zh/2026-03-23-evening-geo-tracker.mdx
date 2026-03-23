@@ -1,0 +1,390 @@
+---
+title: "GEO 工具实战：如何追踪品牌在 AI 搜索中的可见性"
+description: "88% 的品牌在 AI 搜索中不可见。本文详解 geo-aeo-tracker 工具的 12 大功能模块，手把手教你部署 AI 可见性追踪系统，监控品牌在 ChatGPT、Perplexity 等 AI 平台的表现。"
+date: 2026-03-23
+tags: [GEO, AEO, AI搜索, 工具评测, 品牌监控, geo-aeo-tracker]
+authors: [WuKong]
+draft: false
+---
+
+# GEO 工具实战：如何追踪品牌在 AI 搜索中的可见性
+
+<Callout type="info">
+  <strong>核心问题</strong>：你的品牌在 ChatGPT、Perplexity 等 AI 搜索中被推荐了吗？如果没有，你甚至不知道自己"不可见"。
+</Callout>
+
+## 为什么你需要 AI 可见性追踪？
+
+<Badge color="red">震撼数据</Badge> 根据 GEO Guide 研究报告：
+
+- **88%** 的品牌在 AI 搜索中是不可见的（即使传统搜索排名靠前）
+- ChatGPT 占据 AI 推荐流量的 **87.4%**
+- AI 推荐的转化率是传统搜索的 **2 倍**
+
+**更关键的是**：传统 SEO 工具无法追踪 AI 可见性。你需要专门的 GEO 工具。
+
+## geo-aeo-tracker：开源、本地优先的 AI 可见性仪表板
+
+<Badge color="blue">工具亮点</Badge>
+
+- **完全免费**：开源项目，$0/月
+- **本地优先**：数据不离开你的机器
+- **功能全面**：12 个功能模块覆盖所有 GEO 工作流
+- **多平台支持**：ChatGPT、Perplexity、Gemini、Copilot、Google AI Overview、Grok
+
+### 12 大功能模块详解
+
+#### 1️⃣ 项目设置（Project Settings）
+- 品牌名称、关键词、描述配置
+- 支持多品牌项目管理
+- 一键切换不同追踪项目
+
+#### 2️⃣ 提示词中心（Prompt Hub）
+- 管理追踪提示词库
+- 支持分类标签（品牌词、产品词、行业词）
+- 导入/导出提示词模板
+
+#### 3️⃣ 角色扩散（Persona Diffusion）
+<Badge color="green">独特功能</Badge> 自动生成角色特定提示词
+
+```
+基础提示词："推荐最好的项目管理工具"
+↓ 角色扩散
+- "作为产品经理，推荐最好的项目管理工具"
+- "作为创业公司创始人，推荐最好的项目管理工具"
+- "作为远程团队leader，推荐最好的项目管理工具"
+```
+
+**价值**：覆盖不同用户场景，发现更多引用机会。
+
+#### 4️⃣ 细分领域探索器（Niche Explorer）
+- 自动生成高意图查询
+- 基于品牌关键词扩展长尾词
+- 发现隐藏的可见性机会
+
+#### 5️⃣ 响应浏览器（Responses）
+- 浏览 AI 原始响应
+- 查看品牌提及位置
+- 分析回答结构和内容
+
+#### 6️⃣ 可见性分析（Visibility Analytics）
+<Badge color="purple">核心功能</Badge> 可视化追踪趋势
+
+**可见性评分算法（0-100 分）**：
+- 品牌提及（Mention）
+- 位置（Position）
+- 频率（Frequency）
+- 引用（Citation）
+- 情感（Sentiment）
+
+**图表展示**：
+- 时间趋势图
+- 平台对比图
+- 关键词表现热力图
+
+#### 7️⃣ 引用分析（Citations）
+- 统计品牌被引用的频率
+- 分析引用来源和上下文
+- 识别高价值引用机会
+
+#### 8️⃣ 引用机会（Citation Opportunities）
+<Badge color="orange">竞争情报</Badge> 发现竞争对手被引用但你没有的场景
+
+**输出示例**：
+```
+提示词："比较 Notion vs Asana"
+- Notion 被引用 ✅
+- Asana 被引用 ✅
+- 你的品牌 未被引用 ❌ ← 优化机会
+```
+
+#### 9️⃣ 竞争对手对战卡（Competitor Battle Cards）
+- AI 自动生成品牌对比分析
+- 突出你的差异化优势
+- 用于内容创作和销售话术
+
+#### 🔟 AEO 审计（AEO Audit）
+- 检查网站 GEO 准备度
+- 识别技术优化机会
+- 生成改进建议清单
+
+#### 1️⃣1️⃣ 自动化（Automation）
+- 支持 Cron 定时任务
+- GitHub Actions 自动化
+- 定期生成报告
+
+#### 1️⃣2️⃣ 文档中心（Documentation）
+- 14 部分完整指南
+- 最佳实践案例
+- API 集成文档
+
+## 快速开始：5 步部署你的追踪系统
+
+### 前置要求
+
+- Node.js 18+ 环境
+- Bright Data API 密钥（用于抓取 AI 响应）
+- OpenRouter API 密钥（用于 LLM 分析）
+
+### 步骤 1：克隆项目
+
+```bash
+git clone https://github.com/danishashko/geo-aeo-tracker
+cd geo-aeo-tracker
+```
+
+### 步骤 2：安装依赖
+
+```bash
+npm install
+```
+
+### 步骤 3：配置环境变量
+
+```bash
+cp .env.example .env.local
+```
+
+编辑 `.env.local`：
+
+```env
+# Bright Data 配置
+BRIGHT_DATA_API_KEY=your_key_here
+
+# OpenRouter 配置
+OPENROUTER_API_KEY=your_key_here
+
+# 可选：自定义端点
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
+
+<Callout type="warning">
+  <strong>成本提示</strong>：Bright Data 提供免费试用额度，OpenRouter 按 token 计费（GPT-4 约为 $0.03/1K tokens）。月度预算约 $10-50，取决于追踪频率。
+</Callout>
+
+### 步骤 4：启动服务
+
+```bash
+npm run dev
+```
+
+访问 `http://localhost:3000`，你将看到仪表板界面。
+
+### 步骤 5：创建第一个项目
+
+1. 点击"New Project"
+2. 填写品牌信息：
+   - 品牌名称：例如 "Notion"
+   - 关键词：`["notion", "productivity tool", "note-taking"]`
+   - 描述：简短的品牌介绍
+3. 添加追踪提示词（建议从 10-20 个开始）：
+   - "最好的项目管理工具"
+   - "Notion vs Asana 对比"
+   - "远程团队协作工具推荐"
+4. 运行首次抓取
+5. 等待分析完成（约 5-10 分钟）
+
+## 实战应用场景
+
+### 场景 1：品牌监控
+
+**目标**：实时追踪品牌在 AI 平台中的表现
+
+**操作**：
+1. 设置品牌相关提示词（20-50 个）
+2. 配置每日自动抓取（Cron: `0 9 * * *`）
+3. 监控可见性分数变化
+4. 发现分数下降时及时调查
+
+**关键指标**：
+- 平均可见性分数
+- 引用频率趋势
+- 情感分析（正面/中性/负面）
+
+### 场景 2：竞争分析
+
+**目标**：了解竞争对手的 AI 搜索表现
+
+**操作**：
+1. 在"引用机会"模块查看对比数据
+2. 使用"竞争对手对战卡"生成差异化内容
+3. 针对对手被引用但你没有的提示词优化内容
+
+**案例**：
+```
+发现：在"AI 写作工具推荐"提示词中
+- Jasper 被引用 8 次/10 次查询
+- Copy.ai 被引用 6 次/10 次查询
+- 你的品牌 被引用 0 次/10 次查询
+
+行动：创建"AI 写作工具对比"内容，突出你的优势
+```
+
+### 场景 3：内容优化
+
+**目标**：基于 AI 可见性数据优化内容策略
+
+**操作**：
+1. 使用"细分领域探索器"发现长尾机会
+2. 在"响应浏览器"中分析 AI 回答结构
+3. 创建符合 AI 偏好的内容格式：
+   - 清晰的问答结构
+   - 实体标记（产品名、功能、价格）
+   - 权威来源引用
+
+**最佳实践**：
+- AI 偏好**结构化**内容（列表、表格、步骤）
+- AI 偏好**权威来源**（研究报告、官方文档）
+- AI 偏好**更新频繁**的内容（少于 3 个月）
+
+## 高级技巧：提升追踪效率
+
+### 技巧 1：提示词分层策略
+
+不要只用品牌词，建立三层提示词体系：
+
+```
+Layer 1 - 品牌词（10%）
+"什么是 [品牌名]"
+"[品牌名] 怎么样"
+
+Layer 2 - 产品词（30%）
+"最好的 [产品类别]"
+"[产品类别] 推荐"
+
+Layer 3 - 场景词（60%）
+"如何解决 [痛点]"
+"[场景] 工具推荐"
+```
+
+**原因**：80% 的 AI 搜索是场景驱动的，而非品牌驱动。
+
+### 技巧 2：角色扩散批量生成
+
+使用 AI 批量生成角色特定提示词：
+
+```bash
+# 示例：生成 10 个角色的提示词
+基础词："推荐最好的 CRM 工具"
+
+角色列表：
+- 销售经理
+- 创业公司创始人
+- 电商运营
+- B2B 市场
+- ...
+```
+
+**效果**：覆盖更多用户场景，发现隐藏机会。
+
+### 技巧 3：自动化报告
+
+配置 GitHub Actions 每周自动生成报告：
+
+```yaml
+# .github/workflows/geo-report.yml
+name: Weekly GEO Report
+on:
+  schedule:
+    - cron: '0 9 * * 1' # 每周一 9:00
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run GEO Tracker
+        run: npm run track
+      - name: Send Report
+        run: npm run send-report
+```
+
+**报告内容**：
+- 可见性分数变化（周环比）
+- 新增引用机会
+- 竞争对手动态
+- 优化建议
+
+## 常见问题
+
+### Q1：geo-aeo-tracker vs 传统 SEO 工具？
+
+<AccordionGroup>
+<Accordion title="传统 SEO 工具（Ahrefs、SEMrush）">
+- 追踪传统搜索引擎排名
+- 关注点击率和流量
+- 数据来源：Google、Bing 爬虫
+</Accordion>
+
+<Accordion title="geo-aeo-tracker">
+- 追踪 AI 搜索可见性
+- 关注引用和推荐
+- 数据来源：ChatGPT、Perplexity 等 AI 平台
+- **互补关系**：两者都需要，覆盖不同搜索场景
+</Accordion>
+</AccordionGroup>
+
+### Q2：需要多少预算？
+
+**最低配置**：
+- Bright Data 免费试用（$0）
+- OpenRouter GPT-3.5（$1-5/月）
+- **总计：$1-5/月**
+
+**推荐配置**：
+- Bright Data 基础套餐（$50/月）
+- OpenRouter GPT-4（$20-50/月）
+- **总计：$70-100/月**
+
+### Q3：多久能看到效果？
+
+- **部署**：1-2 小时完成
+- **首次抓取**：10-20 分钟
+- **数据积累**：需要 2-4 周建立基线
+- **优化效果**：3-6 个月显著提升
+
+### Q4：数据安全吗？
+
+<Badge color="green">本地优先</Badge>
+
+- 所有数据存储在本地（IndexedDB + localStorage）
+- API 密钥仅在你机器上使用
+- 可选择自托管 Bright Data 代理（完全离线）
+- 符合 GDPR、CCPA 要求
+
+## 最佳实践总结
+
+<Callout type="success">
+  <strong>5 条黄金法则</strong>
+</Callout>
+
+1. **从小处开始**：先追踪 10-20 个核心提示词，建立基线
+2. **定期监控**：设置每周自动抓取，持续追踪趋势
+3. **关注场景词**：80% 的机会在场景词，而非品牌词
+4. **竞争对标**：至少追踪 2-3 个竞争对手
+5. **数据驱动优化**：基于可见性数据调整内容策略
+
+## 今日总结
+
+<Badge color="blue">核心要点</Badge>
+
+- **88% 品牌在 AI 搜索中不可见** → 你需要追踪工具
+- **geo-aeo-tracker 是免费、开源的解决方案** → 5 步快速部署
+- **12 个功能模块覆盖所有 GEO 工作流** → 从监控到优化一站式解决
+- **实战价值**：品牌监控、竞争分析、内容优化
+
+<Callout type="info">
+  <strong>明日预告</strong>：明天我们将探讨如何基于可见性数据优化内容策略，让你的品牌成为 AI 推荐的首选。
+</Callout>
+
+---
+
+## 相关资源
+
+- **geo-aeo-tracker GitHub**：https://github.com/danishashko/geo-aeo-tracker
+- **GEO Guide 完整指南**：[来源：GEO-AEO-Library]
+- **AI 可见性白皮书**：[来源：GEOlyAI 易点天下可见性峰会]
+- **llms.txt 标准**：[来源：GEO-AEO-Library/01-Standards]
+
+**延伸阅读**：
+- [llms.txt：让 AI 搜索引擎认识你的网站](/2026-03-23-morning-llms-txt)
+- [Loop Marketing：HubSpot 的 AI 时代增长革命](/2026-03-23-midday-loop-marketing)
