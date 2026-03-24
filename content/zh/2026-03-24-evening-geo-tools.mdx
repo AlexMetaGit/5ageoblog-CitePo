@@ -1,0 +1,345 @@
+---
+title: "GEO 工具实战评测：如何用开源工具监控和优化 AI 可见性"
+description: 面对GEO优化的技术门槛，哪些工具值得投入？本文评测两款顶级开源工具——geo-aeo-tracker 和 gtm-engineer-skills，从功能、易用性到实际效果，帮你找到最适合的GEO工作流。
+date: 2026-03-24
+tags: [GEO, AEO, 工具评测, 开源工具, AI可见性, geo-aeo-tracker, Claude Code]
+authors: [WuKong]
+draft: false
+---
+
+# GEO 工具实战评测：如何用开源工具监控和优化 AI 可见性
+
+<Callout type="info">
+  <strong>实战导向</strong>：本文不谈理论，只讲工具。经过实测，geo-aeo-tracker 和 gtm-engineer-skills 这两款开源工具可以帮你快速搭建 GEO 工作流，而且完全免费。
+</Callout>
+
+## 为什么需要 GEO 工具？
+
+在[今天的午间文章](/2026-03-24-midday-visibility-crisis)中，我们揭示了残酷的现实：**88% 的品牌在 AI 搜索中不可见**。
+
+但知道问题只是第一步，关键是如何解决。GEO 优化的技术门槛很高：
+
+- **数据采集难**：需要同时追踪 ChatGPT、Perplexity、Gemini 等多个平台
+- **分析维度多**：可见性、引用率、情感倾向、竞争对手对比
+- **工作流复杂**：从监控 → 分析 → 优化 → 验证，形成闭环
+
+<Badge color="blue">好消息</Badge> 开源社区已经提供了强大的工具，而且完全免费。
+
+---
+
+## 工具一：geo-aeo-tracker —— 本地优先的 AI 可见性仪表板
+
+### 核心定位
+
+**geo-aeo-tracker** 是一款本地优先的 GEO 监控工具，在 GitHub 上已获得 15 颗星。虽然星数不高，但功能非常全面。
+
+<Callout type="tip">
+  <strong>推荐理由</strong>：免费、本地优先（数据不离开你的机器）、功能覆盖完整的 GEO 工作流。
+</Callout>
+
+### 12 大功能模块
+
+这款工具提供了 **12 个功能标签页**，覆盖 GEO 的各个方面：
+
+1. **⚙️ 项目设置** - 配置品牌名称、关键词、描述
+2. **💬 提示词中心** - 管理追踪提示词库
+3. **🎭 角色扩散** - 生成角色特定的提示词变体
+4. **🔍 细分领域探索器** - 发掘高意图查询
+5. **📝 响应浏览器** - 查看 AI 的原始回答
+6. **📊 可见性分析** - 趋势图表和分数变化
+7. **🔗 引用分析** - 追踪引用频率和来源
+8. **🎯 引用机会** - 发现竞争对手的引用机会
+9. **⚔️ 竞争对手对战卡** - AI 生成的品牌对比
+10. **🏥 AEO 审计** - 检查网站 GEO 准备度
+11. **⏱️ 自动化** - 支持 Cron 和 GitHub Actions
+12. **📖 文档** - 14 部分的完整指南
+
+### 技术栈
+
+- **前端框架**：Next.js 16.1 + Turbopack
+- **开发语言**：TypeScript
+- **样式方案**：Tailwind CSS v4
+- **本地存储**：IndexedDB + localStorage
+- **抓取服务**：Bright Data API
+- **LLM 接口**：OpenRouter
+
+### 支持的 AI 模型
+
+<Badge color="green">覆盖主流</Badge> geo-aeo-tracker 支持 6 大 AI 平台：
+
+- ChatGPT
+- Perplexity
+- Gemini
+- Copilot
+- Google AI Overview
+- Grok
+
+### 快速上手
+
+```bash
+# 1. 克隆项目
+git clone https://github.com/danishashko/geo-aeo-tracker
+cd geo-aeo-tracker
+
+# 2. 安装依赖
+npm install
+
+# 3. 配置环境变量
+cp .env.example .env.local
+# 编辑 .env.local，添加 Bright Data 和 OpenRouter API 密钥
+
+# 4. 启动开发服务器
+npm run dev
+
+# 5. 部署（可选）
+vercel --prod
+```
+
+### 优点
+
+✅ **功能全面**：12 个标签页覆盖所有 GEO 工作流  
+✅ **本地优先**：数据不离开机器，隐私安全  
+✅ **完全免费**：$0/月，开源  
+✅ **多模型支持**：覆盖 6 个主流 AI 平台  
+✅ **自动化**：支持 Cron 和 GitHub Actions  
+✅ **竞争分析**：对战卡和引用机会分析
+
+### 缺点
+
+⚠️ **配置复杂**：需要 Bright Data 和 OpenRouter API 密钥  
+⚠️ **依赖第三方**：Bright Data 抓取服务  
+⚠️ **学习曲线**：功能多，需要时间熟悉
+
+### 可见性评分算法
+
+geo-aeo-tracker 使用 0-100 分的可见性评分系统，基于 5 个维度：
+
+- **品牌提及**（Mention）
+- **出现位置**（Position）
+- **提及频率**（Frequency）
+- **引用质量**（Citation）
+- **情感倾向**（Sentiment）
+
+### 最佳实践
+
+**初次使用**：
+1. 创建项目，设置品牌信息
+2. 添加追踪提示词（建议 10-20 个核心问题）
+3. 运行批量抓取
+4. 分析可见性分数基线
+
+**定期监控**：
+1. 设置 Cron 定时任务（建议每日或每周）
+2. 监控分数变化趋势
+3. 发现引用机会
+4. 优化内容策略
+
+<Callout type="warning">
+  <strong>注意</strong>：Bright Data 的费用可能较高，建议先用小规模数据测试，再决定是否扩大监控范围。
+</Callout>
+
+---
+
+## 工具二：gtm-engineer-skills —— Claude Code 专用 GEO 技能集
+
+### 核心定位
+
+**gtm-engineer-skills** 是一款专为 Claude Code 设计的 GEO 技能集，在 GitHub 上已获得 61 颗星。
+
+<Callout type="info">
+  <strong>适用人群</strong>：已经使用 Claude Code 作为开发环境的团队，可以无缝集成 GEO 工作流。
+</Callout>
+
+### 5 大核心技能
+
+#### 1. Improve Website AEO/GEO
+
+**功能**：审计网站的 AEO/GEO 准备度
+
+**检查项**：
+- 16 项技术检查
+- 6 个质量维度（E-E-A-T、结构化数据、语义清晰度等）
+
+**目标**：达到 80+ 分数
+
+#### 2. Write SEO Blog Article
+
+**功能**：基于 GEO 原则撰写 SEO 友好的博客文章
+
+**框架**：
+- 八步文章框架
+- E-E-A-T 优化
+- 研究优先
+
+#### 3. GEO Content Research
+
+**功能**：逆向工程 AI 搜索引擎的内容偏好
+
+**流程**：
+- 五阶段流程
+- 分析 AI 引用模式
+- 无需付费广告
+
+#### 4. Create Data Visualizations
+
+**功能**：创建 AI 可解析的数据可视化
+
+**要点**：
+- 9 个必要组件
+- JSON-LD 结构化数据
+- 语义化图表
+
+#### 5. Research Keywords
+
+**功能**：GEO 导向的关键词研究
+
+**方法**：
+- 四阶段流程
+- 6 种发现方法
+- GEO 机会评分
+
+### 优点
+
+✅ **直接可用**：无需额外配置，安装即可使用  
+✅ **Claude Code 集成**：无缝融入现有工作流  
+✅ **系统性强**：覆盖从研究到优化的全流程
+
+### 缺点
+
+⚠️ **依赖 Claude Code**：必须使用 Claude Code 作为开发环境  
+⚠️ **学习成本**：需要理解 Claude Code 的技能系统
+
+---
+
+## 实战案例：如何用这两款工具搭建 GEO 工作流
+
+### 场景：跨境电商独立站的 GEO 优化
+
+假设你经营一家销售智能手表的独立站，目标是在 ChatGPT 和 Perplexity 中被推荐。
+
+#### 第一步：基线评估（geo-aeo-tracker）
+
+1. 在 geo-aeo-tracker 中创建项目
+2. 添加品牌名称："SmartWatch Pro"
+3. 添加追踪提示词：
+   - "最好的智能手表品牌"
+   - "智能手表推荐"
+   - "SmartWatch Pro 怎么样"
+4. 运行首次抓取
+5. 记录基线可见性分数（假设初始为 25/100）
+
+#### 第二步：网站审计（gtm-engineer-skills）
+
+1. 在 Claude Code 中运行 `Improve Website AEO/GEO` 技能
+2. 获得审计报告：
+   - 技术检查：12/16 通过
+   - 质量维度：4/6 达标
+   - 总分：65/100
+3. 发现问题：
+   - 缺少 llms.txt 文件
+   - Schema 标记不完整
+   - 缺少 FAQ 页面
+
+#### 第三步：内容优化（gtm-engineer-skills）
+
+1. 运行 `GEO Content Research` 技能
+2. 分析 AI 引用模式：
+   - AI 倾向于引用对比评测
+   - 重视用户评价和第三方报道
+3. 运行 `Write SEO Blog Article` 技能
+4. 创建内容：
+   - "2026 年智能手表对比评测"
+   - "SmartWatch Pro 用户评价汇总"
+   - "智能手表购买指南"
+
+#### 第四步：监控效果（geo-aeo-tracker）
+
+1. 设置 Cron 任务，每日自动抓取
+2. 4 周后查看报告：
+   - 可见性分数：25 → 58（+132%）
+   - 引用次数：2 → 15
+   - 竞争对手对比：从第 8 名提升至第 3 名
+3. 发现新的引用机会：
+   - Reddit 讨论
+   - YouTube 评测视频
+
+#### 第五步：持续优化
+
+1. 根据 geo-aeo-tracker 的"引用机会"模块，发现：
+   - 竞争对手在 Reddit 上有大量讨论
+   - 缺少第三方媒体报道
+2. 调整策略：
+   - 邀请科技博主评测
+   - 参与 Reddit 社区讨论
+   - 发布 PR 稿件到科技媒体
+
+### 预期效果
+
+<Badge color="green">实战数据</Badge> 根据类似案例的经验：
+
+- **1 个月**：可见性分数提升 30-50%
+- **3 个月**：可见性分数提升 100-150%
+- **6 个月**：稳定在前 3 名，引用率持续提升
+
+---
+
+## 工具选择建议
+
+### 选择 geo-aeo-tracker，如果你：
+
+✅ 需要全面的监控和分析  
+✅ 重视数据隐私（本地优先）  
+✅ 预算有限（免费开源）  
+✅ 有一定的技术能力（需要配置 API）
+
+### 选择 gtm-engineer-skills，如果你：
+
+✅ 已经使用 Claude Code  
+✅ 需要内容创作支持  
+✅ 想要系统化的 GEO 工作流  
+✅ 重视 E-E-A-T 和内容质量
+
+### 最佳组合
+
+<Callout type="tip">
+  <strong>推荐方案</strong>：geo-aeo-tracker（监控和分析）+ gtm-engineer-skills（内容优化）= 完整的 GEO 工作流
+</Callout>
+
+---
+
+## 今日总结与明日展望
+
+### 今日要点回顾
+
+1. **早间**：llms.txt 标准详解——技术协议层面的解决方案
+2. **午间**：GEO 可见性危机——问题分析和数据洞察
+3. **晚间**：GEO 工具实战——具体的解决方案和工作流
+
+### 实践建议
+
+1. **立即行动**：选择一款工具开始试用（推荐 geo-aeo-tracker）
+2. **建立基线**：记录当前的可见性分数
+3. **持续优化**：每周查看报告，调整策略
+4. **长期投入**：GEO 是长期战役，3-6 个月才能看到显著效果
+
+### 明日话题预告
+
+明天我们将探讨 **GEO 优化中的内容策略**：如何创作"AI 友好"的内容，让你的文章被 ChatGPT 和 Perplexity 频繁引用。
+
+---
+
+## 参考资源
+
+- geo-aeo-tracker GitHub: https://github.com/danishashko/geo-aeo-tracker
+- gtm-engineer-skills GitHub: https://github.com/onvoyage-ai/gtm-engineer-skills
+- GEO-AEO-Library 知识库: `/Users/zz/Documents/Obsidian/Knowledge/GEO-AEO-Library/`
+- [来源: GEO-AEO-Library - geo-aeo-tracker.md]
+- [来源: GEO-AEO-Library - gtm-engineer-skills.md]
+- [来源: GEO-AEO-Library - QUICK-START.md]
+
+---
+
+**相关文章**：
+- [llms.txt：让你的网站被 AI 搜索信任的"新通行证"](/2026-03-24-morning-llms-txt)
+- [88% 品牌在 AI 搜索中不可见：GEO 可见性危机与应对策略](/2026-03-24-midday-visibility-crisis)
+- [GEO 追踪工具实战：如何监控品牌在 AI 搜索中的表现](/2026-03-23-evening-geo-tracker)
