@@ -1,0 +1,233 @@
+---
+title: GEO/AEO 工具选择实战指南：从免费到企业级解决方案
+description: 深度评测 GEO/AEO 工具，从免费的 geo-aeo-tracker 到企业级的 getcito，结合 HubSpot 实战案例，帮你找到最适合的 AI 搜索优化工具。
+date: 2026-03-25
+tags: [GEO, AEO, 工具评测, 实战指南, geo-aeo-tracker]
+authors: [WuKong]
+draft: false
+---
+
+# GEO/AEO 工具选择实战指南：从免费到企业级解决方案
+
+<Badge color="blue">实战指南</Badge> <Badge color="green">工具评测</Badge>
+
+## 为什么你需要 GEO/AEO 工具？
+
+AI 搜索时代，传统 SEO 工具（如 Ahrefs、SEMrush）已经无法满足需求。你需要专门的工具来：
+
+- **追踪 AI 可见性**：品牌在 ChatGPT、Perplexity、Gemini 等平台的提及频率
+- **监控竞争对手**：了解对手的 AI 搜索表现
+- **优化内容策略**：基于数据驱动的内容决策
+
+<Callout type="info">
+根据 HubSpot 的实战经验，AI 搜索可见性（Visibility）已成为最重要的北极星指标，直接驱动转化。
+</Callout>
+
+## GEO/AEO 工具全景图
+
+基于 GitHub Top 10 GEO/AEO 开源项目，我们整理了完整的工具生态：
+
+### 免费工具（开源）
+
+| 工具 | Star 数 | 核心功能 | 难度 | 推荐度 |
+|------|---------|---------|------|--------|
+| **geo-aeo-tracker** | 15 ⭐ | 12 功能标签页，本地优先 | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| **easyGEO** | 42 ⭐ | HTML 转 Markdown | ⭐ | ⭐⭐⭐ |
+| **gtm-engineer-skills** | 61 ⭐ | Claude Code GEO 技能集 | ⭐⭐ | ⭐⭐⭐⭐ |
+
+### 企业级工具
+
+| 工具 | Star 数 | 核心功能 | 适用场景 |
+|------|---------|---------|---------|
+| **getcito** | 49 ⭐ | 企业级监控平台 | 大型品牌、营销团队 |
+
+## 深度评测：geo-aeo-tracker
+
+<Badge color="purple" icon="star">编辑推荐</Badge>
+
+**项目地址**: https://github.com/danishashko/geo-aeo-tracker
+
+### 核心优势
+
+1. **功能全面**：12 个功能标签页覆盖所有 GEO 工作流
+   - 项目设置、提示词中心、角色扩散
+   - 细分领域探索器、响应浏览
+   - 可见性分析、引用频率、竞争对手分析
+   - AEO 审计、自动化任务
+
+2. **本地优先**：数据不离开机器，隐私安全
+3. **完全免费**：$0/月，开源
+4. **多模型支持**：ChatGPT、Perplexity、Gemini、Copilot、Google AI Overview、Grok
+
+### 可见性评分算法
+
+分数（0-100）基于：
+- **品牌提及**（Mention）
+- **位置**（Position）
+- **频率**（Frequency）
+- **引用**（Citation）
+- **情感**（Sentiment）
+
+<Callout type="tip">
+geo-aeo-tracker 适合需要系统化 GEO 工作流的营销团队和开发者，功能全面且完全免费。
+</Callout>
+
+### 配置要求
+
+需要两个 API 密钥：
+- **Bright Data API**：用于抓取 AI 平台响应
+- **OpenRouter API**：用于 LLM 分析
+
+### 快速开始
+
+```bash
+# 1. 克隆项目
+git clone https://github.com/danishashko/geo-aeo-tracker
+cd geo-aeo-tracker
+
+# 2. 安装依赖
+npm install
+
+# 3. 配置环境
+cp .env.example .env.local
+# 编辑 .env.local，添加 API 密钥
+
+# 4. 启动服务
+npm run dev
+```
+
+## 实战案例：HubSpot 的 AEO 转型
+
+<Badge color="orange">案例研究</Badge>
+
+HubSpot 经历了 **80% 流量下降**的危机后，全面转向 AEO（Answer Engine Optimization），建立了新的成功指标体系：
+
+### 四大北极星指标
+
+1. **VISIBILITY（可见度）** - 最重要
+   - 品牌在 AI 回答中的出现频率
+   - 直接驱动转化
+
+2. **SHARE OF VOICE（声量份额）**
+   - 相对于竞争对手的可见度
+   - 抵消算法变化影响
+
+3. **MENTIONS（提及次数）**
+   - 品牌被提及的频率
+
+4. **CITATIONS（引用次数）**
+   - 网站作为答案来源被引用的次数
+
+<Callout type="warning">
+HubSpot 强调：引用次数排在第三位，不应过度追求。可见度和声量份额才是核心指标。
+</Callout>
+
+### HubSpot 的工具策略
+
+HubSpot 使用内部工具追踪这些指标，但对于大多数品牌，geo-aeo-tracker 提供了类似的功能，且完全免费。
+
+## 如何选择适合自己的工具？
+
+<AccordionGroup>
+<Accordion title="个人博客/小型网站">
+
+**推荐**：geo-aeo-tracker + gtm-engineer-skills
+
+**理由**：
+- 免费开源，无预算压力
+- 本地优先，数据安全
+- Claude Code 技能集提升效率
+
+**成本**：$0/月（仅需 API 密钥费用）
+
+</Accordion>
+
+<Accordion title="中型品牌/营销团队">
+
+**推荐**：geo-aeo-tracker + 定期自动化
+
+**理由**：
+- 功能全面，满足团队需求
+- 支持 Cron 和 GitHub Actions 自动化
+- 竞争对手分析功能
+
+**成本**：$0/月 + API 费用（约 $50-100/月）
+
+</Accordion>
+
+<Accordion title="大型企业/跨国品牌">
+
+**推荐**：getcito 企业级方案
+
+**理由**：
+- 企业级监控平台
+- 多品牌管理
+- 专业支持和培训
+
+**成本**：需咨询定价
+
+</Accordion>
+</AccordionGroup>
+
+## 实施检查清单
+
+### ✅ 第 1 周：工具部署
+- [ ] 克隆 geo-aeo-tracker 并安装依赖
+- [ ] 配置 Bright Data 和 OpenRouter API 密钥
+- [ ] 创建品牌项目，设置追踪提示词
+
+### ✅ 第 2 周：数据收集
+- [ ] 运行首次批量抓取
+- [ ] 分析可见性分数基准
+- [ ] 识别竞争对手表现
+
+### ✅ 第 3-4 周：优化迭代
+- [ ] 基于数据优化内容策略
+- [ ] 设置自动化任务（每周/每月）
+- [ ] 监控分数变化趋势
+
+## 学习路径推荐
+
+### 初学者路径（5 天）
+
+1. **第 1 天**：部署 geo-aeo-tracker，运行首次抓取
+2. **第 2 天**：理解可见性评分算法
+3. **第 3 天**：学习 HubSpot 的 AEO 指标体系
+4. **第 4 天**：使用 gtm-engineer-skills 优化内容
+5. **第 5 天**：设置自动化任务，建立监控流程
+
+### 从业者路径（5 步）
+
+1. **部署工具**：geo-aeo-tracker 或 getcito
+2. **建立基准**：首次可见性分析
+3. **竞争分析**：对比竞争对手表现
+4. **内容优化**：基于数据驱动决策
+5. **持续监控**：定期查看报告，优化策略
+
+## 结语
+
+<Badge color="gray">核心观点</Badge>
+
+工具只是手段，**内容才是核心**。
+
+无论你选择免费的 geo-aeo-tracker，还是企业级的 getcito，最终目标都是：
+
+1. **提升 AI 可见性**：让品牌出现在 AI 回答中
+2. **建立内容权威**：成为 AI 引用的可信来源
+3. **驱动业务转化**：从可见性到实际转化
+
+记住 HubSpot 的经验：**AEO = 成为答案的一部分**，而不仅仅是排名。
+
+---
+
+## 参考资源
+
+- [geo-aeo-tracker GitHub](https://github.com/danishashko/geo-aeo-tracker)
+- [getcito 企业级平台](https://github.com/vantage-vectors/getcito)
+- [HubSpot AI Search Visibility 指南](https://blog.hubspot.com/marketing/ai-search-visibility)
+- [GEO/AEO 完整知识库](https://github.com/your-repo/geo-aeo-library)
+
+**来源标注**：
+- 工具对比数据：[GEO-AEO-Library]
+- HubSpot 案例：[GEO-AEO-Article]
+- 学习路径：[QUICK-START.md]
