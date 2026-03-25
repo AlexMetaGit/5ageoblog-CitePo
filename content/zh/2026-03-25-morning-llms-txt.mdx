@@ -1,0 +1,225 @@
+---
+title: llms.txt：AI 搜索时代的 robots.txt
+description: 当 ChatGPT 占据 AI 推荐流量的 87.4%，传统 SEO 已不足够。llms.txt 是专为 AI 搜索设计的新标准，就像当年的 robots.txt。本文详解 llms.txt 标准、实施步骤和监控工具。
+date: 2026-03-25
+tags: [GEO, llms.txt, AI搜索, 标准规范, 内容优化]
+authors: [WuKong]
+draft: false
+---
+
+# llms.txt：AI 搜索时代的 robots.txt
+
+<Callout type="info">
+  <strong>导读</strong>：2026 年，ChatGPT 占据 AI 推荐流量的 87.4%，AI 推荐转化率是传统来源的 2 倍。llms.txt 是专为 AI 搜索设计的新标准，帮助大语言模型更好地理解和引用你的内容。
+</Callout>
+
+## 从 robots.txt 到 llms.txt
+
+还记得 1994 年的 robots.txt 吗？它告诉搜索引擎爬虫哪些页面可以抓取。30 年后，我们面临新的挑战：**AI 搜索引擎不再抓取链接，而是直接生成答案**。
+
+<Badge color="blue">关键认知</Badge> AI 搜索的三大变化：
+
+- **用户行为变化**：用户向 ChatGPT 输入 23 个单词的提示词，而传统搜索只有 4.2 个单词
+- **内容呈现方式**：AI 引擎总结内容，不列出链接——只选择少数可信来源
+- **权威位置转移**：权威不仅在 Web 上，更在 AI 模型的训练数据中
+
+[来源: GEO-AEO-Library/GEO-Guide.md]
+
+---
+
+## llms.txt 是什么？
+
+**llms.txt** 是由 Answer.ai 提出的开放标准，专门为大语言模型（LLM）设计。它就像网站的"名片"，告诉 AI 你的内容是什么、在哪里。
+
+### 标准结构
+
+```
+/llms.txt      - 简洁版索引
+/llms-full.txt - 完整版内容
+```
+
+### 文件格式
+
+```yaml
+---
+title: 你的网站名称
+version: 1.0
+updated: 2026-03-25
+---
+
+## 文档
+- 快速开始: /docs/getting-started
+- API 参考: /docs/api
+- 教程: /docs/tutorials
+
+## 数据
+- 数据集: /dataset
+- 模型权重: /models
+```
+
+[来源: GEO-AEO-Library/llms-txt.md]
+
+---
+
+## 为什么需要 llms.txt？
+
+<Callout type="warning">
+  <strong>现实问题</strong>：ChatGPT 的 24% 响应无需获取在线内容，完全依赖训练数据。如果你的内容不在训练数据中，就永远无法被引用。
+</Callout>
+
+### 三大核心价值
+
+<AccordionGroup>
+  <Accordion title="1. 提高可见性">
+    llms.txt 为 AI 提供结构化索引，帮助 AI 更快找到和理解你的内容。更新时间少于 3 个月的内容，被引用概率高 3 倍。
+  </Accordion>
+  
+  <Accordion title="2. 建立信任">
+    AI 引擎只引用可信来源。llms.txt 展示你的内容组织能力和专业性，是信任信号之一。
+  </Accordion>
+  
+  <Accordion title="3. 未来准备">
+    虽然主流 AI 平台尚未正式支持，但这个标准正在快速发展（GitHub Star: 2,216）。早期采用者将获得先发优势。
+  </Accordion>
+</AccordionGroup>
+
+[来源: GEO-AEO-Library/GEO-Guide.md, llms-txt.md]
+
+---
+
+## 实施步骤
+
+<Steps>
+
+### 创建文件
+
+在网站根目录创建 `/llms.txt` 文件：
+
+```bash
+touch llms.txt
+```
+
+### 添加元数据
+
+编辑文件，添加基本信息：
+
+```yaml
+---
+title: 你的品牌名称
+version: 1.0
+updated: 2026-03-25
+---
+```
+
+### 组织内容索引
+
+按照内容类型组织索引：
+
+```markdown
+## 产品文档
+- 快速开始: /docs/quickstart
+- API 文档: /docs/api
+- 最佳实践: /docs/best-practices
+
+## 博客文章
+- 最新文章: /blog
+- GEO 指南: /blog/geo-guide
+- AI 搜索优化: /blog/ai-search-optimization
+
+## 开放数据
+- 公开数据集: /data/datasets
+- 研究报告: /data/research
+```
+
+### 验证和部署
+
+使用浏览器访问 `https://yourdomain.com/llms.txt`，确认文件可访问。然后部署到生产环境。
+
+### 监控效果
+
+使用 GEO 追踪工具（见下文）监控 AI 引用情况，定期更新内容。
+
+</Steps>
+
+---
+
+## 监控工具推荐
+
+<Badge color="green">开源工具</Badge> **geo-aeo-tracker**
+
+**特点**：
+- 本地优先，数据不离开你的机器
+- 完全免费（$0/月）
+- 支持 ChatGPT、Perplexity、Gemini 等 6 个平台
+- 12 个功能标签页，覆盖所有 GEO 工作流
+
+**核心功能**：
+- 可见性分析：追踪品牌在 AI 搜索中的表现
+- 引用监控：查看被引用的频率和位置
+- 竞争对手分析：对比竞争对手的 AI 可见性
+- 自动化：支持 Cron 和 GitHub Actions
+
+[来源: GEO-AEO-Library/geo-aeo-tracker.md]
+
+<Callout type="tip">
+  <strong>快速试用</strong>：克隆项目后，无需 API 密钥即可试用演示功能。
+  
+  ```bash
+  git clone https://github.com/danishashko/geo-aeo-tracker
+  cd geo-aeo-tracker
+  npm install
+  npm run dev
+  ```
+</Callout>
+
+---
+
+## 最佳实践
+
+<Callout type="warning">
+  <strong>注意事项</strong>：llms.txt 是补充手段，不是替代。你需要同时优化内容质量、结构化数据和语义清晰度。
+</Callout>
+
+### Do ✅
+
+- **定期更新**：保持 `updated` 字段最新
+- **结构清晰**：使用层级标题和列表
+- **链接完整**：提供完整的 URL 路径
+- **内容真实**：索引的内容必须真实存在
+
+### Don't ❌
+
+- **过度优化**：不要堆砌关键词
+- **忽视质量**：内容质量仍然是第一位的
+- **一劳永逸**：需要持续维护和更新
+- **孤立使用**：结合 Schema.org、robots.txt 等其他标准
+
+---
+
+## 总结
+
+llms.txt 是 AI 搜索时代的"robots.txt"，帮助 AI 更好地理解和引用你的内容。
+
+**关键要点**：
+- ChatGPT 占据 AI 推荐流量的 87.4%，传统 SEO 已不足够
+- llms.txt 提供结构化索引，提高 AI 可见性
+- 实施简单：5 步即可完成
+- 结合 geo-aeo-tracker 等工具监控效果
+
+**下一步行动**：
+1. 今天就创建你的 `/llms.txt` 文件
+2. 部署 geo-aeo-tracker 开始监控
+3. 定期更新内容，保持新鲜度
+
+<Badge color="purple">引用是新点击</Badge> 在 AI 搜索时代，被引用意味着被发现。llms.txt 是第一步。
+
+---
+
+**参考来源**：
+- [GEO-AEO-Library/llms-txt.md](https://github.com/AnswerDotAI/llms.txt) - llms.txt 标准规范
+- [GEO-AEO-Library/GEO-Guide.md](https://github.com/krillinai/GEO) - GEO 完整指南
+- [GEO-AEO-Library/geo-aeo-tracker.md](https://github.com/danishashko/geo-aeo-tracker) - AI 可见性追踪器
+
+---
+
+**标签**：`#GEO` `#llms.txt` `#AI搜索` `#标准规范` `#内容优化`
