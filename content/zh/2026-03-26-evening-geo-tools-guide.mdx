@@ -1,0 +1,337 @@
+---
+title: GEO/AEO 工具实战评测：从零到一的品牌可见性追踪指南
+description: 深度评测 4 款 GEO/AEO 开源工具，包括功能全面的 geo-aeo-tracker、Claude Code 技能集 gtm-engineer-skills。提供 5 天学习路径和实施检查清单，帮助你快速上手 AI 搜索可见性追踪。
+date: 2026-03-26
+tags: [GEO, AEO, 工具评测, 实战指南, 品牌监控, 开源工具]
+authors: [WuKong]
+draft: false
+---
+
+# GEO/AEO 工具实战评测：从零到一的品牌可见性追踪指南
+
+<Badge color="blue">实战指南</Badge> <Badge color="green">工具评测</Badge>
+
+> **核心观点**：HubSpot 通过系统化的 AEO 工具和流程，从 80% 流量下降的危机中走出来，成为在 LLM 中最被引用的 CRM。本文将深度评测 4 款开源工具，帮助你快速建立自己的 GEO 监控体系。
+
+---
+
+## 为什么需要 GEO/AEO 工具？
+
+<Callout type="info">
+**关键数据**：88% 的品牌在 AI 搜索中是不可见的，即使它们在传统搜索中排名靠前。[来源: GEO-AEO-Library]
+</Callout>
+
+在 AI 搜索时代，传统的 SEO 工具（如 Google Analytics、Ahrefs）已经不够用了。你需要的是：
+
+- **实时追踪**品牌在 ChatGPT、Perplexity、Gemini 等 AI 引擎中的表现
+- **可见性评分**：量化品牌在 AI 答案中的出现频率和质量
+- **竞争分析**：了解竞争对手的 AI 搜索表现
+- **自动化监控**：定期运行追踪任务，发现趋势变化
+
+HubSpot 的案例告诉我们：**工具 + 流程 = 转型成功**。他们从 2024 年春季的 80% 流量下降，到 2026 年成为在 LLM 中最被引用的 CRM，靠的就是系统化的 AEO 工具和工作流。
+
+---
+
+## 四款 GEO/AEO 工具对比评测
+
+基于 GitHub Top 10 GEO/AEO 开源项目，我精选了 4 款最具实用价值的工具：
+
+### 📊 工具对比表
+
+| 工具 | Star 数 | 类型 | 难度 | 推荐度 | 核心功能 | 成本 |
+|------|---------|------|------|--------|----------|------|
+| **geo-aeo-tracker** | 15 | 仪表板 | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | 12 个功能标签页 | 免费 |
+| **gtm-engineer-skills** | 61 | Claude 技能 | ⭐⭐ | ⭐⭐⭐⭐ | 5 大核心技能 | 免费 |
+| **getcito** | 49 | 企业平台 | ⭐⭐⭐ | ⭐⭐⭐ | 企业级监控 | 需配置 |
+| **easyGEO** | 42 | 转换工具 | ⭐ | ⭐⭐⭐ | HTML 转 Markdown | 免费 |
+
+---
+
+## 🏆 重点推荐：geo-aeo-tracker
+
+**最推荐的免费工具**：功能全面、本地优先、数据安全
+
+### 核心功能（12 个标签页）
+
+1. **⚙️ 项目设置** - 品牌名称、关键词、描述
+2. **💬 提示词中心** - 管理追踪提示词
+3. **🎭 角色扩散** - 生成角色特定提示词
+4. **🔍 细分领域探索器** - 生成高意图查询
+5. **📝 响应** - 浏览 AI 响应
+6. **📊 可见性分析** - 趋势图表
+7. **🔗 引用** - 引用频率分析
+8. **🎯 引用机会** - 竞争对手分析
+9. **⚔️ 竞争对手对战卡** - AI 生成的对比
+10. **🏥 AEO 审计** - 站点准备度检查
+11. **⏱️ 自动化** - Cron/GitHub Actions
+12. **📖 文档** - 14 部分指南
+
+### 支持的 AI 模型
+
+<Badge color="blue">ChatGPT</Badge>
+<Badge color="green">Perplexity</Badge>
+<Badge color="purple">Gemini</Badge>
+<Badge color="orange">Copilot</Badge>
+<Badge color="red">Google AI Overview</Badge>
+<Badge color="gray">Grok</Badge>
+
+### 可见性评分算法
+
+**分数 (0-100)** 基于五个维度：
+
+- **Mention（品牌提及）** - 是否被提及
+- **Position（位置）** - 出现的位置
+- **Frequency（频率）** - 提及的频率
+- **Citation（引用）** - 是否有引用链接
+- **Sentiment（情感）** - 提及的情感倾向
+
+### 快速开始
+
+<Steps>
+  <Step>
+    **克隆项目**
+
+    ```bash
+    git clone https://github.com/danishashko/geo-aeo-tracker
+    cd geo-aeo-tracker
+    ```
+  </Step>
+
+  <Step>
+    **安装依赖**
+
+    ```bash
+    npm install
+    ```
+  </Step>
+
+  <Step>
+    **配置环境**
+
+    ```bash
+    cp .env.example .env.local
+    # 编辑 .env.local，添加以下 API 密钥：
+    # - BRIGHT_DATA_API_KEY（用于抓取）
+    # - OPENROUTER_API_KEY（用于 LLM）
+    ```
+  </Step>
+
+  <Step>
+    **启动服务**
+
+    ```bash
+    npm run dev
+    ```
+  </Step>
+
+  <Step>
+    **创建项目**
+
+    访问 `http://localhost:3000`，创建你的第一个品牌追踪项目。
+  </Step>
+</Steps>
+
+### 优缺点分析
+
+<Callout type="info">
+**优点**
+- ✅ 功能全面：12 个标签页覆盖所有 GEO 工作流
+- ✅ 本地优先：数据不离开机器，隐私安全
+- ✅ 完全免费：$0/月，开源
+- ✅ 多模型支持：覆盖 6 个主流 AI 平台
+- ✅ 自动化：支持 Cron 和 GitHub Actions
+</Callout>
+
+<Callout type="warning">
+**缺点**
+- ❌ 配置复杂：需要 Bright Data 和 OpenRouter API 密钥
+- ❌ 依赖第三方：依赖 Bright Data 抓取服务
+- ❌ 学习曲线：功能多，需要时间熟悉
+</Callout>
+
+---
+
+## 🤖 Claude Code 用户福音：gtm-engineer-skills
+
+如果你是 Claude Code 用户，这款工具将 GEO 工作流直接集成到你的开发环境中。
+
+### 5 大核心技能
+
+1. **Improve Website AEO/GEO**
+   - 审计网站 AEO/GEO 分数
+   - 16 项检查 + 6 个质量维度
+   - 目标：80+ 分数
+
+2. **Write SEO Blog Article**
+   - 八步文章框架
+   - E-E-A-T 优化
+   - 研究优先
+
+3. **GEO Content Research**
+   - 五阶段流程
+   - 逆向工程 AI 引擎
+   - 无需付费广告
+
+4. **Create Data Visualizations**
+   - AI 可解析的图表
+   - 9 个必要组件
+   - JSON-LD 结构化
+
+5. **Research Keywords**
+   - 四阶段流程
+   - 6 种发现方法
+   - GEO 机会评分
+
+<Callout type="info">
+**推荐场景**：如果你已经使用 Claude Code 进行开发工作，gtm-engineer-skills 可以无缝集成到你的工作流中，无需切换工具。
+</Callout>
+
+---
+
+## 🚀 5 天学习路径
+
+从 QUICK-START.md 中提炼的实战学习路径：
+
+### 第 1 天：理解 GEO 基础
+
+- 阅读 GEO 完整指南第 1-3 章
+- 理解 GEO 与 SEO 的本质区别
+- 了解 AI 搜索的工作原理
+
+### 第 2 天：实现 llms.txt 协议
+
+- 在网站根目录创建 llms.txt 文件
+- 按照 Answer.ai 的标准格式编写
+- 测试 AI 是否能正确读取
+
+### 第 3 天：部署追踪工具
+
+- 克隆 geo-aeo-tracker 项目
+- 配置 API 密钥（Bright Data + OpenRouter）
+- 创建品牌项目，添加追踪提示词
+
+### 第 4 天：运行首次追踪
+
+- 批量抓取 AI 响应
+- 分析可见性分数
+- 发现引用机会
+
+### 第 5 天：优化内容策略
+
+- 根据追踪数据优化内容
+- 使用 gtm-engineer-skills 进行内容审计
+- 设置自动化任务
+
+---
+
+## ✅ 实施检查清单
+
+### 技术实施
+
+- [ ] 实现 llms.txt 协议
+- [ ] 添加 Schema.org 标记
+- [ ] 优化 robots.txt
+- [ ] 创建 XML Sitemap
+
+### 工具部署
+
+- [ ] 克隆 geo-aeo-tracker 项目
+- [ ] 配置 Bright Data API 密钥
+- [ ] 配置 OpenRouter API 密钥
+- [ ] 创建品牌项目
+- [ ] 添加追踪提示词
+- [ ] 运行首次抓取
+
+### 监控分析
+
+- [ ] 设置 Cron 定时任务
+- [ ] 监控分数变化趋势
+- [ ] 发现引用机会
+- [ ] 分析竞争对手
+
+### 内容优化
+
+- [ ] 提高语义清晰度
+- [ ] 添加实体建模
+- [ ] 创建结构化 Q&A
+- [ ] 优化对话设计
+
+---
+
+## 💡 实战建议
+
+### 初次使用
+
+1. **从小处开始**：不要试图一次性追踪所有关键词，选择 5-10 个核心关键词
+2. **关注趋势**：可见性分数的绝对值不如趋势重要
+3. **定期检查**：建议每周至少运行一次追踪
+
+### 定期监控
+
+1. **设置自动化**：使用 Cron 或 GitHub Actions 定期运行追踪
+2. **监控竞争对手**：了解他们的可见性变化
+3. **发现引用机会**：找到 AI 经常引用但未引用你的话题
+4. **优化内容策略**：根据数据调整内容方向
+
+### 成本控制
+
+<Callout type="info">
+**预算建议**
+- **Bright Data API**：根据抓取量计费，建议设置预算上限
+- **OpenRouter API**：根据 LLM 调用计费，选择性价比高的模型
+- **总成本**：对于中小型项目，每月约 $10-50 足够
+</Callout>
+
+---
+
+## 📊 预期效果
+
+### 短期（1-3 个月）
+
+- ✅ 建立可见性基线
+- ✅ 发现关键问题
+- ✅ 初步优化内容
+
+### 中期（3-6 个月）
+
+- ✅ 可见性分数显著提升
+- ✅ 在 AI 答案中出现频率增加
+- ✅ 引用质量提高
+
+### 长期（6-12 个月）
+
+- ✅ 成为细分领域的 AI 首选引用源
+- ✅ 来自 AI 的流量转化率提升
+- ✅ 建立可持续的 GEO 工作流
+
+---
+
+## 总结
+
+GEO/AEO 工具不是奢侈品，而是 AI 搜索时代的必需品。正如 HubSpot 的案例所示，系统化的工具和流程可以帮助你：
+
+1. **量化可见性**：从模糊的感觉到具体的分数
+2. **发现机会**：找到 AI 经常引用但未引用你的话题
+3. **追踪进度**：定期监控，持续优化
+4. **竞争分析**：了解竞争对手的表现
+
+**从今天开始**：选择 geo-aeo-tracker（功能全面、免费、本地优先），按照 5 天学习路径，建立你的 GEO 监控体系。
+
+<Callout type="info">
+**下一步行动**
+1. 克隆 geo-aeo-tracker 项目
+2. 配置 API 密钥
+3. 创建你的第一个品牌追踪项目
+4. 运行首次抓取，建立基线
+</Callout>
+
+---
+
+## 参考资源
+
+- **geo-aeo-tracker GitHub**: https://github.com/danishashko/geo-aeo-tracker
+- **gtm-engineer-skills GitHub**: https://github.com/onvoyage-ai/gtm-engineer-skills
+- **GEO/AEO 知识库**: [GEO-AEO-Library]
+- **HubSpot 转型案例**: [SEO to AEO HubSpot Analysis]
+
+**来源说明**：本文基于 GitHub Top 10 GEO/AEO 开源项目的完整资料库（GEO-AEO-Library）和 HubSpot 的真实转型案例撰写，所有数据和工具信息均来自开源社区和公开资料。
