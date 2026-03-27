@@ -1,0 +1,203 @@
+---
+title: AI 搜索新时代的入场券：llms.txt 标准完全指南
+description: 深度解读 llms.txt 标准——AI 搜索时代的 robots.txt。了解如何让 ChatGPT、Claude、Gemini 正确理解和引用你的网站内容。
+date: 2026-03-27
+tags: [GEO, llms.txt, AI搜索, 标准协议, 可见性优化]
+authors: [WuKong]
+draft: false
+---
+
+# AI 搜索新时代的入场券：llms.txt 标准完全指南
+
+<Callout type="info">
+  <strong>导读</strong>：如果你还在为传统 SEO 焦虑，那你可能已经落伍了。llms.txt 正在成为 AI 搜索时代的新标准——就像 robots.txt 之于搜索引擎。本文将手把手教你如何实施这个协议，让你的内容被 ChatGPT、Claude、Gemini 正确引用。
+</Callout>
+
+## AI 搜索正在改变游戏规则
+
+<Badge color="red">关键数据</Badge> ChatGPT 目前占 AI 推荐流量的 **87.4%**，而且这个数字还在增长。用户行为也在变化：他们向 ChatGPT 输入平均 **23 个单词** 的提示词，而传统搜索只有 **4.2 个单词**。
+
+这意味着什么？用户不再寻找链接列表，他们想要综合答案。而 AI 引擎只会引用它"信任"的少数来源——被引用就是被发现。
+
+## llms.txt：AI 时代的 robots.txt
+
+### 什么是 llms.txt？
+
+**llms.txt** 是由 Answer.ai 提出的开放标准，专门为大语言模型（LLM）设计。就像 `robots.txt` 告诉搜索引擎如何爬取你的网站，`llms.txt` 告诉 AI 模型如何理解和使用你的内容。
+
+### 核心价值
+
+<Badge color="blue">标准化</Badge> 提供统一的格式，让所有 LLM 平台都能轻松索引你的内容
+
+<Badge color="green">可见性</Badge> 提高 AI 搜索中的引用概率，让品牌更容易被发现
+
+<Badge color="purple">未来准备</Badge> 虽然 ChatGPT、Claude 等尚未正式支持，但这是必然趋势
+
+## llms.txt 的结构
+
+一个标准的 `/llms.txt` 文件包含三个部分：
+
+### 1. 元数据
+
+```yaml
+---
+title: Your Website Name
+version: 1.0
+updated: 2026-03-27
+---
+```
+
+### 2. 内容索引
+
+```markdown
+## Documentation
+- Getting Started: /docs/getting-started
+- API Reference: /docs/api
+- Examples: /docs/examples
+
+## Data
+- Dataset: /dataset
+- Model Weights: /models
+```
+
+### 3. 可选：完整版本
+
+如果你有大量内容，可以创建 `/llms-full.txt`，包含完整的文档内容。
+
+## 实施步骤：5 分钟快速开始
+
+<Steps>
+
+### 创建文件
+
+在网站根目录创建 `llms.txt`：
+
+```bash
+touch public/llms.txt
+```
+
+### 添加元数据
+
+编辑文件，添加基本信息：
+
+```yaml
+---
+title: 5AGEO Blog - GEO/AEO 优化指南
+version: 1.0
+updated: 2026-03-27
+---
+```
+
+### 组织内容索引
+
+按类别列出关键页面：
+
+```markdown
+## 博客文章
+- GEO 入门指南: /geo-guide
+- llms.txt 教程: /llms-txt-tutorial
+
+## 资源
+- 工具推荐: /tools
+- 案例分析: /case-studies
+```
+
+### 验证格式
+
+确保文件格式正确，可以通过浏览器访问：
+`https://yourdomain.com/llms.txt`
+
+### 定期更新
+
+每次添加新内容后，更新 `updated` 字段和内容索引。
+
+</Steps>
+
+## 最佳实践
+
+<Callout type="tip">
+  <strong>💡 专业建议</strong>：内容更新时间少于 3 个月的网站，被 AI 引用的概率高出 **3 倍**。定期更新 llms.txt 是关键。
+</Callout>
+
+### 1. 保持简洁
+
+- 只列出最重要的页面
+- 使用清晰的分类结构
+- 避免过度嵌套
+
+### 2. 语义清晰
+
+- 使用描述性标题
+- 确保链接文本有意义
+- 添加简短说明（可选）
+
+### 3. 定期维护
+
+- 每周检查一次链接有效性
+- 及时更新内容索引
+- 监控 AI 爬虫访问日志
+
+## 常见问题
+
+<AccordionGroup>
+  <Accordion title="llms.txt 和 robots.txt 有什么区别？">
+    **robots.txt** 控制搜索引擎爬虫的访问权限，而 **llms.txt** 专门为 AI 模型提供内容索引。两者可以共存，llms.txt 更注重"如何理解"而非"是否允许"。
+  </Accordion>
+
+  <Accordion title="ChatGPT 已经支持 llms.txt 了吗？">
+    截至目前（2026-03），ChatGPT、Claude、Gemini 等主流 AI 平台尚未正式宣布支持 llms.txt。但这是行业发展的必然方向——提前布局，抢占先机。
+  </Accordion>
+
+  <Accordion title="我需要 llms-full.txt 吗？">
+    如果你的网站有大量结构化文档（如 API 文档、知识库），建议创建 `llms-full.txt`。对于博客和小型网站，`llms.txt` 已经足够。
+  </Accordion>
+
+  <Accordion title="llms.txt 对 SEO 有帮助吗？">
+    直接帮助有限，但间接价值很大。结构化的内容索引有助于所有爬虫（包括搜索引擎）更好地理解你的网站结构。
+  </Accordion>
+</AccordionGroup>
+
+## 行动建议
+
+<Callout type="warning">
+  <strong>⚠️ 立即行动</strong>：不要等待 AI 平台正式支持 llms.txt。现在开始实施，你将在竞争中占据先发优势。
+</Callout>
+
+### 技术实施清单
+
+- [ ] 在网站根目录创建 `/llms.txt`
+- [ ] 添加元数据（标题、版本、更新时间）
+- [ ] 组织内容索引（按类别分组）
+- [ ] 验证文件可访问性
+- [ ] 设置定期更新提醒（每周/每月）
+
+### 内容优化清单
+
+- [ ] 确保关键页面内容质量高
+- [ ] 使用清晰的标题和描述
+- [ ] 添加 Schema.org 结构化数据
+- [ ] 优化 XML Sitemap
+- [ ] 监控 AI 爬虫访问情况
+
+## 总结
+
+llms.txt 是 AI 搜索时代的入场券。虽然目前还不是行业标准，但就像早期的 robots.txt 和 sitemap.xml，率先采用者将获得巨大的先发优势。
+
+**核心要点**：
+- llms.txt = AI 时代的 robots.txt
+- 实施简单，5 分钟即可完成
+- 定期更新是关键（&lt;3 个月的内容更受 AI 青睐）
+- 未来趋势，提前布局
+
+现在就开始创建你的 llms.txt，让 AI 模型更容易发现和引用你的内容！
+
+---
+
+**参考来源**：
+- [来源: GEO-AEO-Library/llms-txt.md] - llms.txt 标准规范
+- [来源: GEO-AEO-Library/GEO-Guide.md] - GEO 完整指南
+- [GitHub: AnswerDotAI/llms.txt](https://github.com/AnswerDotAI/llms.txt) - 官方项目地址
+
+---
+
+**标签**：`#llms.txt` `#AI搜索` `#GEO` `#标准协议` `#可见性优化`
