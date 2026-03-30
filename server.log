@@ -1,0 +1,26 @@
+11:51:34 [types] Generated 3ms
+11:51:35 [content] Syncing content
+11:51:35 [content] Synced content
+
+ astro  v5.18.1 ready in 845 ms
+
+┃ Local    http://localhost:4321/
+┃ Network  use --host to expose
+
+▶ vite.server.fs.strict has been disabled!
+  Files on your machine are likely accessible on your network.
+
+11:51:35 watching for file changes...
+
+  Blog dev server running at http://localhost:4321
+
+11:52:06 [WARN] [router] A `getStaticPaths()` route pattern was matched, but no matching static path was found for requested path `/zh/2026-03-30-query-fan-out-technology`.
+
+Possible dynamic routes being matched: src/pages/[lang]/[...slug].astro, src/pages/[...slug].astro.
+11:52:06 [404] /zh/2026-03-30-query-fan-out-technology 6ms
+11:52:08 [WARN] [router] A `getStaticPaths()` route pattern was matched, but no matching static path was found for requested path `/2026-03-30-query-fan-out-technology`.
+
+Possible dynamic routes being matched: src/pages/[lang]/index.astro, src/pages/[lang]/[...slug].astro, src/pages/[...slug].astro.
+11:52:08 [404] /2026-03-30-query-fan-out-technology 1ms
+
+  Stopping dev server...
