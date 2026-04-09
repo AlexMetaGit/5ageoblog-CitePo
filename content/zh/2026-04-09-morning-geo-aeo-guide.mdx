@@ -1,0 +1,229 @@
+---
+title: GEO/AEO 入门指南：从 SEO 到 AI 可见性的战略转型
+description: 探索生成式引擎优化（GEO）核心概念，学习 llms.txt 标准实施，掌握 geo-aeo-tracker 等实用工具，助力品牌在 AI 搜索时代获得可见性。
+date: 2026-04-09
+tags: [GEO, AEO, AI搜索, llms.txt, 数字营销]
+authors: [WuKong]
+draft: false
+---
+
+# GEO/AEO 入门指南：从 SEO 到 AI 可见性的战略转型
+
+<Callout type="info">
+  <strong>早间导读</strong>：ChatGPT 已占据 87.4% 的 AI 推荐流量，AI 推荐转化率是传统来源的 2 倍。本文帮你快速理解 GEO 核心概念、掌握 llms.txt 标准实施、部署实用的追踪工具。
+</Callout>
+
+## 为什么 GEO 现在如此重要？
+
+过去几个月，AI 搜索引擎的发展速度令人瞩目。ChatGPT、Perplexity、Gemini 等平台正在重塑用户获取信息的方式。根据最新数据：
+
+<Badge color="red">关键数据</Badge>
+
+- **ChatGPT 主导**：占 AI 推荐流量的 **87.4%**
+- **转化率翻倍**：AI 推荐转化率是传统来源的 **2 倍**
+- **用户行为改变**：用户向 ChatGPT 输入 **23 个单词**的提示词，而传统搜索平均只有 **4.2 个单词**
+- **内容时效性**：更新时间少于 3 个月的内容被引用概率高 **3 倍**
+
+这意味着什么？用户不再满足于简单的链接列表，而是寻求综合、可信的答案。如果你的品牌不能被 AI 引用，你就失去了被发现的机会。
+
+## GEO vs SEO：核心差异
+
+<Callout type="tip">
+  <strong>关键认知</strong>：GEO 不是替代 SEO，而是扩展。SEO 关注排名和点击，GEO 关注引用和信任。
+</Callout>
+
+| 维度 | 传统 SEO | GEO |
+|------|---------|-----|
+| **核心目标** | 排名、点击 | 引用、信任 |
+| **用户意图** | 关键词匹配 | 综合答案需求 |
+| **成功指标** | 排名位置、流量 | 引用频率、可见性分数 |
+| **优化重点** | 反向链接、关键词密度 | 语义清晰度、实体建模 |
+| **平台** | Google、Bing | ChatGPT、Perplexity、Gemini |
+
+> **引用是新点击**：在 AI 搜索时代，被引用意味着被发现。
+
+## 标准解读：llms.txt 协议
+
+<Callout type="warning">
+  <strong>早间重点</strong>：llms.txt 是目前最受关注的 GEO 标准，由 Answer.ai 提出，GitHub 已获得 2,216 Star。
+</Callout>
+
+### 什么是 llms.txt？
+
+类似于 `robots.txt`，`llms.txt` 是专门为 LLM 设计的网站内容索引标准。它帮助 ChatGPT、Claude、Gemini 等大语言模型更好地理解和使用你的网站内容。
+
+### 为什么需要 llms.txt？
+
+1. **标准化交互**：为 AI 爬虫提供清晰的网站结构指引
+2. **提高可见性**：让 AI 更容易发现你的核心内容
+3. **建立信任**：通过透明的内容组织建立 AI 信任
+4. **未来兼容**：提前布局，应对 AI 搜索引擎的发展
+
+### 如何实施 llms.txt？
+
+在你的网站根目录创建 `/llms.txt` 文件：
+
+```yaml
+---
+title: Your Website Name
+description: 简短描述你的网站
+version: 1.0
+updated: 2026-04-09
+---
+
+## Documentation
+- Getting Started: /docs/getting-started
+- API Reference: /docs/api
+- Examples: /docs/examples
+
+## Products
+- Product A: /products/a
+- Product B: /products/b
+
+## Resources
+- Blog: /blog
+- Case Studies: /case-studies
+```
+
+<Badge color="green">实施要点</Badge>
+
+- **简洁优先**：只包含最重要的内容索引
+- **保持更新**：定期更新版本和日期
+- **结构清晰**：使用层级结构组织内容
+- **测试验证**：确保链接可访问
+
+## 工具推荐：geo-aeo-tracker
+
+<Callout type="tip">
+  <strong>早间推荐</strong>：geo-aeo-tracker 是一款开源、本地优先的 AI 可见性追踪工具，完全免费，功能全面。
+</Callout>
+
+### 工具亮点
+
+<Badge color="blue">开源免费</Badge> <Badge color="green">本地优先</Badge> <Badge color="yellow">功能全面</Badge>
+
+**核心功能（12 个标签页）**：
+
+1. **项目设置** - 配置品牌、关键词、描述
+2. **提示词中心** - 管理追踪提示词
+3. **角色扩散** - 生成角色特定提示词
+4. **细分领域探索** - 生成高意图查询
+5. **响应浏览** - 查看 AI 响应
+6. **可见性分析** - 趋势图表
+7. **引用分析** - 引用频率统计
+8. **引用机会** - 竞争对手分析
+9. **竞争对手对战卡** - AI 生成的对比
+10. **AEO 审计** - 站点准备度检查
+11. **自动化** - Cron/GitHub Actions 支持
+12. **完整文档** - 14 部分详细指南
+
+### 支持的 AI 模型
+
+- ChatGPT
+- Perplexity
+- Gemini
+- Copilot
+- Google AI Overview
+- Grok
+
+### 快速开始
+
+```bash
+# 1. 克隆项目
+git clone https://github.com/danishashko/geo-aeo-tracker
+cd geo-aeo-tracker
+
+# 2. 安装依赖
+npm install
+
+# 3. 配置环境
+cp .env.example .env.local
+# 编辑 .env.local，添加 Bright Data 和 OpenRouter API 密钥
+
+# 4. 启动服务
+npm run dev
+```
+
+<AccordionGroup>
+  <Accordion title="需要准备什么？">
+    你需要两个 API 密钥：
+    1. **Bright Data API** - 用于网页抓取
+    2. **OpenRouter API** - 用于调用不同 AI 模型
+    
+    两者都有免费额度，足以开始使用。
+  </Accordion>
+  <Accordion title="数据安全吗？">
+    完全安全。geo-aeo-tracker 是本地优先的工具，所有数据都存储在你的机器上，不会上传到任何第三方服务器。你的品牌数据和追踪结果完全私密。
+  </Accordion>
+  <Accordion title="适合什么场景？">
+    - 品牌监控：实时追踪品牌在 AI 引擎中的表现
+    - 竞争分析：了解竞争对手的 AI 搜索表现
+    - 营销团队：系统化的 GEO 工作流
+    - 独立站运营：优化跨境电商的 AI 可见性
+  </Accordion>
+</AccordionGroup>
+
+## 快速行动：今日可做的 3 件事
+
+<Steps>
+
+### 第一步：评估现状
+
+花 10 分钟，在 ChatGPT 和 Perplexity 上搜索你的品牌关键词。看看：
+- 你的品牌是否被提及？
+- 竞争对手的表现如何？
+- 哪些内容被引用了？
+
+### 第二步：创建 llms.txt
+
+在你的网站根目录创建 `/llms.txt` 文件。参考上面的示例，列出你最重要的内容索引。这是最简单的 GEO 优化动作。
+
+### 第三步：部署追踪工具
+
+克隆 geo-aeo-tracker，配置你的品牌和关键词。设置自动化任务，定期监控你的 AI 可见性分数。
+
+</Steps>
+
+## GEO 核心原则
+
+<Callout type="info">
+  <strong>记住</strong>：GEO 是关于信任，不是关键词或反向链接。目标是确保 AI 信任并引用你的内容。
+</Callout>
+
+### 建立权威性的 4 个维度
+
+1. **E-E-A-T**（经验、专业性、权威性、可信度）
+2. **专家归属** - 明确内容作者和专家背景
+3. **可验证引用** - 提供数据来源和参考文献
+4. **多平台存在** - 在多个权威平台建立品牌存在感
+
+### 内容优化的 5 个要点
+
+1. **语义清晰度** - 使用清晰、结构化的语言
+2. **实体建模** - 明确提及品牌、产品、概念
+3. **对话设计** - 优化内容的问答友好性
+4. **证据驱动** - 用数据和研究支持观点
+5. **结构化 Q&A** - 创建 FAQ 和问答内容
+
+## 总结
+
+AI 搜索正在快速改变用户获取信息的方式。GEO 不是未来的概念，而是现在的必需。从今天开始：
+
+1. **理解差异** - GEO 关注引用和信任，不是排名
+2. **实施标准** - 创建 llms.txt，遵循 AI 友好规范
+3. **部署工具** - 使用 geo-aeo-tracker 监控可见性
+4. **建立权威** - 在多个平台建立品牌信任
+
+> **权威现在在 AI 模型内部** - 不仅仅在 Web 上。你的训练数据足迹决定了 AI 如何看待你的品牌。
+
+---
+
+**参考来源**：
+- [GEO-AEO-Library](https://github.com/AlexYuan/GEO-AEO-Library) - 基于 GitHub Top 10 GEO/AEO 项目的完整资料库
+- [llms.txt 标准](https://github.com/AnswerDotAI/llms.txt) - Answer.ai 提出的 LLM 文件标准
+- [GEO Guide](https://github.com/krillinai/GEO) - 生成式引擎优化完整指南
+- [geo-aeo-tracker](https://github.com/danishashko/geo-aeo-tracker) - 开源 AI 可见性追踪工具
+
+---
+
+**标签**：`#GEO` `#AEO` `#AI搜索` `#llms.txt` `#数字营销` `#内容优化`
