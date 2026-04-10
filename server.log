@@ -1,26 +1,47 @@
-11:51:34 [types] Generated 3ms
-11:51:35 [content] Syncing content
-11:51:35 [content] Synced content
+08:06:06 [types] Generated 1ms
+08:06:07 [content] Syncing content
+08:06:07 [content] Synced content
+08:06:07 [vite] Port 4321 is in use, trying another one...
+08:06:07 [vite] Port 4322 is in use, trying another one...
+08:06:07 [vite] Port 4323 is in use, trying another one...
+08:06:07 [vite] Port 4324 is in use, trying another one...
+08:06:07 [vite] Port 4325 is in use, trying another one...
+08:06:07 [vite] Port 4326 is in use, trying another one...
 
- astro  v5.18.1 ready in 845 ms
+ astro  v5.18.1 ready in 851 ms
 
-┃ Local    http://localhost:4321/
+┃ Local    http://localhost:4327/
 ┃ Network  use --host to expose
 
-▶ vite.server.fs.strict has been disabled!
-  Files on your machine are likely accessible on your network.
+▶ vite.server.fs.strict has been disable08:06:29 [glob-loader] Reloaded data from zh/2026-04-04-morning-geo-crisis.mdx
+08:06:34 [glob-loader] Reloaded data from zh/test-simple.mdx
 
-11:51:35 watching for file changes...
-
-  Blog dev server running at http://localhost:4321
-
-11:52:06 [WARN] [router] A `getStaticPaths()` route pattern was matched, but no matching static path was found for requested path `/zh/2026-03-30-query-fan-out-technology`.
-
-Possible dynamic routes being matched: src/pages/[lang]/[...slug].astro, src/pages/[...slug].astro.
-11:52:06 [404] /zh/2026-03-30-query-fan-out-technology 6ms
-11:52:08 [WARN] [router] A `getStaticPaths()` route pattern was matched, but no matching static path was found for requested path `/2026-03-30-query-fan-out-technology`.
-
-Possible dynamic routes being matched: src/pages/[lang]/index.astro, src/pages/[lang]/[...slug].astro, src/pages/[...slug].astro.
-11:52:08 [404] /2026-03-30-query-fan-out-technology 1ms
+  Stopping dev server...
+ [glob-loader] Reloaded data from zh/2026-04-04-morning-geo-crisis.mdx
+08:06:34 [glob-loader] Reloaded data from zh/test-simple.mdx
+08:06:34 [ERROR] [UnknownFilesystemError] 
+  Hint:
+    It can be caused by many things, eg. missing permissions or a file not existing we attempt to read. Check the error cause for more details.
+  Error reference:
+    https://docs.astro.build/en/reference/errors/unknown-filesystem-error/
+  Stack trace:
+    at /Users/zz/.npm/_npx/3a2d9698dcdd3368/node_modules/citepo/src/astro-project/Users/zz/.npm/_npx/3a2d9698dcdd3368/node_modules/astro/dist/content/mutable-data-store.js:119:13
+    [...] See full stack trace in the browser, or rerun with --verbose.
+  Caused by:
+  ENOENT: no such file or directory, rename '/Users/zz/.npm/_npx/3a2d9698dcdd3368/node_modules/citepo/src/astro-project/.astro/content-modules.mjs.tmp' -> '/Users/zz/.npm/_npx/3a2d9698dcdd3368/node_modules/citepo/src/astro-project/.astro/content-modules.mjs'
+    at async Object.rename (node:internal/fs/promises:782:10)
+    [...] See full stack trace in the browser, or rerun with --verbose.
+08:06:34 [ERROR] [UnknownFilesystemError] 
+  Hint:
+    It can be caused by many things, eg. missing permissions or a file not existing we attempt to read. Check the error cause for more details.
+  Error reference:
+    https://docs.astro.build/en/reference/errors/unknown-filesystem-error/
+  Stack trace:
+    at /Users/zz/.npm/_npx/3a2d9698dcdd3368/node_modules/citepo/src/astro-project/Users/zz/.npm/_npx/3a2d9698dcdd3368/node_modules/astro/dist/content/mutable-data-store.js:337:13
+    [...] See full stack trace in the browser, or rerun with --verbose.
+  Caused by:
+  ENOENT: no such file or directory, rename '/Users/zz/.npm/_npx/3a2d9698dcdd3368/node_modules/citepo/src/astro-project/.astro/data-store.json.tmp' -> '/Users/zz/.npm/_npx/3a2d9698dcdd3368/node_modules/citepo/src/astro-project/.astro/data-store.json'
+    at async Object.rename (node:internal/fs/promises:782:10)
+    [...] See full stack trace in the browser, or rerun with --verbose.
 
   Stopping dev server...
