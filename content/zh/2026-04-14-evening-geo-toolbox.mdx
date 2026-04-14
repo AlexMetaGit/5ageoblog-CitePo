@@ -1,0 +1,249 @@
+---
+title: "GEO/AEO实战工具箱：从0到1构建AI可见性监控系统"
+description: "2026年AI搜索已占搜索量60%，本文详解5大开源GEO工具，重点推荐geo-aeo-tracker本地监控方案，附完整实施检查清单，助你快速搭建AI可见性监控体系。"
+date: 2026-04-14
+tags: [GEO, AEO, AI搜索, 工具评测, 实战指南, 开源工具]
+authors: [WuKong]
+draft: false
+---
+
+# GEO/AEO实战工具箱：从0到1构建AI可见性监控系统
+
+<Callout type="info">
+<strong>导读</strong>：Google AI Overviews已覆盖18%美国桌面搜索，高达60%的搜索在无点击情况下结束。传统SEO从业者如何转型？本文精选5大开源GEO工具，手把手教你搭建AI可见性监控系统。
+</Callout>
+
+## 为什么现在必须关注GEO工具？
+
+<Badge color="red">紧急</Badge>
+
+根据Pew Research 2025年3月数据，Google AI Overviews已出现在**18%**的美国桌面搜索中。更惊人的是，高达**60%**的搜索在无点击的情况下结束——用户直接在AI回答中获取所需信息。
+
+这意味着什么？
+
+- ❌ 你的页面可能排名第一，但用户根本不看
+- ✅ 被AI引用才是新的流量入口
+- ⚠️ 没有监控 = 在盲飞
+
+<Callout type="warning">
+HubSpot数据显示：来自LLM的流量转化率是传统搜索的<strong>3倍</strong>。用户到达网站前已进行大量研究，购买意图更强。
+</Callout>
+
+## 5大开源GEO工具横向评测
+
+基于GitHub Top 10 GEO项目，我为你筛选出5个最实用的开源工具：
+
+| 工具 | Star | 类型 | 难度 | 推荐度 | 核心优势 |
+|------|------|------|------|--------|---------|
+| **geo-aeo-tracker** | 15 | 监控平台 | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | 本地优先、12功能模块、完全免费 |
+| **llms-txt** | 2,216 | 标准协议 | ⭐ | ⭐⭐⭐⭐⭐ | 行业通用标准、易于实施 |
+| **gtm-engineer-skills** | 61 | Claude技能 | ⭐⭐ | ⭐⭐⭐⭐ | 直接集成Claude Code、自动化优化 |
+| **getcito** | 49 | 企业平台 | ⭐⭐⭐ | ⭐⭐⭐ | 企业级功能、团队协作 |
+| **GEO-Guide** | 48 | 学习资源 | ⭐ | ⭐⭐⭐⭐⭐ | 系统性教程、适合入门 |
+
+<Callout type="tip">
+<strong>初学者推荐路径</strong>：GEO-Guide（学习）→ llms.txt（实施）→ geo-aeo-tracker（监控）
+</Callout>
+
+## 深度评测：geo-aeo-tracker
+
+<Badge color="blue">编辑推荐</Badge>
+
+如果你只想选择一个工具，**geo-aeo-tracker**是我的首选推荐。
+
+### 为什么推荐它？
+
+**1. 本地优先，数据安全**
+- 所有数据存储在本地IndexedDB
+- 无需担心敏感品牌数据泄露
+- 完全开源，可审计代码
+
+**2. 12个功能模块全覆盖**
+
+<AccordionGroup>
+<Accordion title="核心监控功能">
+- ⚙️ 项目设置 - 品牌名称、关键词、描述
+- 💬 提示词中心 - 管理追踪提示词
+- 🎭 角色扩散 - 生成角色特定提示词
+- 🔍 细分领域探索器 - 生成高意图查询
+- 📝 响应浏览 - 查看AI原始响应
+</Accordion>
+
+<Accordion title="分析与优化">
+- 📊 可见性分析 - 趋势图表与分数追踪
+- 🔗 引用分析 - 引用频率与来源识别
+- 🎯 引用机会 - 竞争对手分析
+- ⚔️ 竞争对手对战卡 - AI生成的对比报告
+- 🏥 AEO审计 - 站点准备度检查
+</Accordion>
+
+<Accordion title="自动化与文档">
+- ⏱️ 自动化 - 支持Cron/GitHub Actions
+- 📖 文档 - 14部分完整使用指南
+</Accordion>
+</AccordionGroup>
+
+**3. 支持6大AI平台**
+
+- ChatGPT
+- Perplexity
+- Gemini
+- Copilot
+- Google AI Overview
+- Grok
+
+**4. 可见性评分算法科学**
+
+分数(0-100)基于5个维度：
+- 品牌提及(Mention)
+- 位置(Position)
+- 频率(Frequency)
+- 引用(Citation)
+- 情感(Sentiment)
+
+### 快速部署指南
+
+<Steps>
+
+### 第一步：克隆项目
+
+```bash
+git clone https://github.com/danishashko/geo-aeo-tracker
+cd geo-aeo-tracker
+```
+
+### 第二步：安装依赖
+
+```bash
+npm install
+```
+
+### 第三步：配置环境
+
+```bash
+cp .env.example .env.local
+# 编辑.env.local，添加API密钥
+```
+
+### 第四步：启动服务
+
+```bash
+npm run dev
+```
+
+访问 http://localhost:3000 即可使用
+
+</Steps>
+
+<Callout type="warning">
+<strong>注意事项</strong>：需要配置Bright Data和OpenRouter API密钥。Bright Data用于网页抓取，OpenRouter用于AI模型调用。初次配置可能需要30分钟左右。
+</Callout>
+
+## 实施检查清单：从0到1搭建监控系统
+
+### 技术实施
+
+- [ ] 实现llms.txt协议
+- [ ] 添加Schema.org标记
+- [ ] 优化robots.txt
+- [ ] 创建XML Sitemap
+
+### 内容优化
+
+- [ ] 提高语义清晰度
+- [ ] 添加实体建模
+- [ ] 创建结构化Q&A
+- [ ] 优化对话设计
+
+### 监控分析
+
+- [ ] 部署geo-aeo-tracker
+- [ ] 创建品牌项目
+- [ ] 添加追踪提示词（建议10-30个）
+- [ ] 运行首次抓取
+- [ ] 设置Cron自动化任务
+- [ ] 建立月度审查机制
+
+### 数据追踪框架
+
+<Callout type="info">
+<strong>HubSpot推荐的AI可见性追踪五步法</strong>：
+
+1. **选择战略性主题** - 核心产品类别、优先用例
+2. **构建标准化提示词集** - 10-30个提示词/主题集
+3. **选择优先AI平台** - ChatGPT、Gemini、Copilot、Perplexity
+4. **运行重复采样** - 每个提示词3-5次，月度重复
+5. **记录结果** - 品牌提及、引用数量、情感分析、位置排名
+</Callout>
+
+## 实战建议：本周内完成的快速实验
+
+### 使用Query Fan-out工具
+
+1. 选择网站现有页面
+2. 输入可能引导用户到该页面的查询
+3. 评估页面是否回答了fan-out提供的所有子查询
+4. 如果没有，添加它们
+5. 观察该主要问题的可见度是否增加
+
+<Callout type="tip">
+数据来源：HubSpot AEO实战指南。Query Fan-out技术是AI搜索的核心机制，将单个查询扩展为8-12个子查询。
+</Callout>
+
+## 成本与预算
+
+| 项目 | 费用 | 说明 |
+|------|------|------|
+| geo-aeo-tracker | $0 | 完全开源免费 |
+| Bright Data API | ~$50/月起 | 网页抓取服务 |
+| OpenRouter API | 按量付费 | AI模型调用 |
+| 总成本 | $50-100/月 | 远低于企业级工具 |
+
+相比之下，企业级工具如getcito通常需要$500-2000/月的订阅费。
+
+## 常见问题解答
+
+<AccordionGroup>
+<Accordion title="Q: 从哪里开始？">
+先阅读GEO-Guide理解GEO概念，然后实施llms.txt协议，最后部署geo-aeo-tracker进行监控。
+</Accordion>
+
+<Accordion title="Q: 多久能看到效果？">
+通常1-3个月能看到可见性提升，3-6个月能有显著效果。建议每月运行一次完整追踪。
+</Accordion>
+
+<Accordion title="Q: 需要技术背景吗？">
+基础的技术知识有帮助，但geo-aeo-tracker提供了详细的文档。非技术用户可以寻求开发团队协助初始部署。
+</Accordion>
+
+<Accordion title="Q: 如何处理AI结果的可变性？">
+将可变性视为预期特性。聚合每个提示词5-10个样本，记录平均提及率、情感和引用频率，关注趋势而非单次结果。
+</Accordion>
+</AccordionGroup>
+
+## 总结与下一步
+
+AI搜索正在重塑流量分配规则。传统SEO从业者需要：
+
+1. **认知转变**：从"排名优化"到"被AI记住"
+2. **工具赋能**：利用开源工具建立监控能力
+3. **持续迭代**：基于数据优化内容策略
+
+<Callout type="tip">
+<strong>今晚行动清单</strong>：
+- [ ] 访问github.com/danishashko/geo-aeo-tracker
+- [ ] 阅读README文档
+- [ ] 注册Bright Data和OpenRouter账号
+- [ ] 明天开始部署
+</Callout>
+
+---
+
+**参考来源**：
+- [geo-aeo-tracker GitHub](https://github.com/danishashko/geo-aeo-tracker) [来源: GEO-AEO-Library]
+- [HubSpot AEO实战指南](https://blog.hubspot.com/marketing/ai-search-visibility) [来源: GEO-AEO-Article]
+- [Pew Research 2025年3月报告](https://www.pewresearch.org) [来源: 行业数据]
+
+---
+
+**标签**：`#GEO` `#AEO` `#AI搜索` `#开源工具` `#实战指南`
