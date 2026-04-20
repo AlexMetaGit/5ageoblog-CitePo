@@ -1,0 +1,237 @@
+---
+title: llms.txt 标准解读：AI 搜索时代的 robots.txt
+description: 详解 llms.txt 标准规范，教你如何在 AI 搜索时代提升品牌可见性。包含实施步骤、工具推荐和实战案例，适合 SEO 从业者和品牌营销人员。
+date: 2026-04-20
+tags: [GEO, AEO, llms.txt, AI搜索, SEO, 标准规范]
+authors: [WuKong]
+draft: false
+---
+
+# llms.txt 标准解读：AI 搜索时代的 robots.txt
+
+<Callout type="info">
+  <strong>早间导读</strong>：ChatGPT 占据 AI 推荐流量的 87.4%，但 24% 的响应无需获取在线内容。如何让 AI 找到并信任你的品牌？答案可能是——在你的网站根目录放一个 llms.txt 文件。
+</Callout>
+
+## 为什么传统 SEO 正在失效？
+
+过去二十年，SEO 的核心逻辑是：**关键词 + 反向链接 = 排名**。
+
+但在 AI 搜索时代，这个公式正在瓦解：
+
+<Badge color="blue">数据说话</Badge>
+
+- 用户向 ChatGPT 输入 **23 个单词** 的提示词，而传统搜索平均只有 **4.2 个单词**
+- **ChatGPT 占 AI 推荐流量的 87.4%**，但转化率是传统来源的 2 倍
+- 内容更新时间 **< 3 个月** 的被引用概率高 **3 倍**
+- **24%** 的 ChatGPT 响应无需获取任何在线内容（直接基于训练数据回答）
+
+这意味着什么？**权威现在存在于 AI 模型内部**，而不仅仅是网页上。
+
+## 什么是 llms.txt？
+
+llms.txt 是由 Answer.ai 提出的标准规范，类比 robots.txt，但专门为大型语言模型设计。
+
+**核心作用**：帮助 ChatGPT、Claude、Gemini 等 AI 引擎更好地理解和引用你的网站内容。
+
+<Badge color="green">标准规范</Badge>
+
+| 特性 | 说明 |
+|------|------|
+| **文件位置** | 网站根目录 `/llms.txt` |
+| **扩展版本** | `/llms-full.txt`（完整内容索引）|
+| **格式** | Markdown + YAML 元数据 |
+| **许可证** | MIT（开源免费）|
+| **GitHub Stars** | 2,216 ⭐（GEO/AEO 领域排名第 1）|
+
+[来源: GEO-AEO-Library/01-Standards/llms-txt.md]
+
+## llms.txt 文件结构详解
+
+一个标准的 llms.txt 文件包含三个部分：
+
+```markdown
+---
+title: 你的网站名称
+description: 简短描述，告诉 AI 你的网站是做什么的
+version: 1.0
+updated: 2026-04-20
+---
+
+# Content Sections
+
+## 产品文档
+- 快速开始: /docs/getting-started
+- API 文档: /api/reference
+- 使用教程: /docs/tutorials
+
+## 核心数据
+- 数据集: /data/dataset.json
+- 模型权重: /models/latest
+- 案例研究: /cases
+```
+
+### 关键设计原则
+
+<AccordionGroup>
+  <Accordion title="1. 语义清晰度优先">
+    AI 模型偏好结构清晰、意义明确的内容。使用描述性标题，避免模糊表达。
+  </Accordion>
+  <Accordion title="2. 实体建模">
+    明确标注人名、品牌、技术术语等实体，帮助 AI 建立知识关联。
+  </Accordion>
+  <Accordion title="3. 对话式结构">
+    使用问答格式组织内容，匹配用户向 AI 提问的方式。
+  </Accordion>
+</AccordionGroup>
+
+## 实施步骤：5 分钟快速部署
+
+<Steps>
+
+### 第一步：创建文件
+
+在网站根目录创建 `llms.txt`：
+
+```bash
+touch /var/www/html/llms.txt
+```
+
+### 第二步：添加元数据
+
+使用 YAML frontmatter 格式：
+
+```yaml
+---
+title: 你的品牌名称
+description: 一句话描述你的核心业务
+version: 1.0
+updated: 2026-04-20
+---
+```
+
+### 第三步：组织内容索引
+
+按类别整理你的核心内容：
+
+```markdown
+## 文档
+- 产品文档: /docs
+- API 参考: /api
+- 博客: /blog
+
+## 数据资源
+- 数据集: /data
+- 研究报告: /research
+```
+
+### 第四步：验证可访问性
+
+确保文件可通过 HTTPS 访问：
+
+```bash
+curl -s https://your-domain.com/llms.txt
+```
+
+### 第五步：定期更新
+
+设置提醒，每月检查并更新内容索引。
+
+</Steps>
+
+## 工具推荐：本地优先的 GEO 监控
+
+<Badge color="blue">工具推荐</Badge>
+
+想要追踪品牌在 AI 引擎中的表现？推荐开源工具 **geo-aeo-tracker**：
+
+| 特性 | 说明 |
+|------|------|
+| **本地优先** | 数据不离开你的机器，隐私安全 |
+| **完全免费** | 开源，$0/月 |
+| **多模型支持** | ChatGPT、Perplexity、Gemini、Copilot、Google AI Overview、Grok |
+| **12 个功能模块** | 从提示词管理到竞争对手分析全覆盖 |
+
+**快速开始**：
+
+```bash
+git clone https://github.com/danishashko/geo-aeo-tracker
+cd geo-aeo-tracker
+npm install
+npm run dev
+```
+
+[来源: GEO-AEO-Library/03-Tools/geo-aeo-tracker.md]
+
+## GEO 的核心理念：信任而非排名
+
+传统 SEO 关注**排名和点击**，GEO 关注**引用和信任**。
+
+**关键认知转变**：
+
+<Badge color="red">核心洞察</Badge>
+
+> "不是关键词或反向链接，是确保 AI 信任并引用你的内容。引用是新点击：被引用意味着被发现。"
+
+### E-E-A-T 在 AI 时代的新含义
+
+| 传统 SEO | GEO/AEO |
+|---------|---------|
+| Experience（经验）| 训练数据中的出现频率 |
+| Expertise（专业性）| 被权威来源引用的次数 |
+| Authoritativeness（权威性）| 跨平台一致的品牌信号 |
+| Trustworthiness（可信度）| 事实准确性和引用质量 |
+
+[来源: GEO-AEO-Library/02-Resources/GEO-Guide.md]
+
+## 实战建议：今天就可以开始
+
+<Callout type="tip">
+  <strong>行动清单</strong>：选择 1-2 项今天就开始实施
+</Callout>
+
+### 立即可做（5 分钟）
+
+- [ ] 创建 `/llms.txt` 文件
+- [ ] 添加基础元数据和内容索引
+- [ ] 验证文件可通过 HTTPS 访问
+
+### 本周完成（1 小时）
+
+- [ ] 审查现有内容的语义清晰度
+- [ ] 优化关键页面的结构化数据（Schema.org）
+- [ ] 设置 geo-aeo-tracker 监控品牌表现
+
+### 持续优化（每月）
+
+- [ ] 更新 llms.txt 中的内容索引
+- [ ] 分析 AI 引用趋势
+- [ ] 基于数据调整内容策略
+
+## 总结与展望
+
+llms.txt 可能是 2026 年最值得实施的 SEO/GEO 标准之一。
+
+**为什么重要？**
+
+1. **先发优势**：目前采用率还不高，早实施早受益
+2. **成本极低**：只需创建一个文本文件
+3. **信号明确**：向 AI 引擎主动展示你的内容结构
+4. **未来兼容**：为即将普及的 AI 搜索优化做好准备
+
+<Badge color="green">早间金句</Badge>
+
+> "在 AI 搜索时代，被引用比被点击更有价值。"
+
+准备好让你的品牌在 ChatGPT 中被引用了吗？从今天的 llms.txt 开始。
+
+---
+
+**参考来源**：
+- [llms.txt 标准规范](https://github.com/AnswerDotAI/llms.txt)
+- [GEO 完整指南](https://github.com/krillinai/GEO)
+- [geo-aeo-tracker 工具](https://github.com/danishashko/geo-aeo-tracker)
+
+---
+
+**标签**：`#GEO` `#AEO` `#llms.txt` `#AI搜索` `#SEO` `#标准规范`
