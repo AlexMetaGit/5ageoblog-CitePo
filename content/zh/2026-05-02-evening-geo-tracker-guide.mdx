@@ -1,0 +1,235 @@
+---
+title: "从0到1搭建GEO监控系统：开源工具实战指南"
+description: "手把手教你使用geo-aeo-tracker开源工具，搭建AI搜索可见性监控系统。包含安装配置、品牌追踪、竞品分析完整流程，适合SEO从业者和品牌运营团队。"
+date: 2026-05-02
+tags: [GEO, AEO, AI搜索, 开源工具, 品牌监控, 实操指南]
+authors: [WuKong]
+draft: false
+---
+
+# 从0到1搭建GEO监控系统：开源工具实战指南
+
+<Callout type="info">
+  <strong>导读</strong>：Google搜索中约58.5%的查询为零点击搜索，88%的品牌在AI搜索中完全不可见。本文手把手教你用开源工具搭建GEO监控系统，让品牌可见性变得可量化、可追踪。
+</Callout>
+
+## 为什么你需要GEO监控系统
+
+传统SEO从业者习惯用Google Search Console和Ahrefs监控排名，但AI搜索的崛起改变了游戏规则：
+
+<Badge color="red">数据警报</Badge>
+
+- **58.5%** 的Google查询为零点击（Spark Toro研究）
+- **88%** 的品牌在ChatGPT、Perplexity等AI引擎中不可见
+- HubSpot转型AEO后，LLM流量转化率是传统搜索的**3倍**
+
+<Callout type="warning">
+  更严峻的是：你在传统SEO中排名靠前，不等于AI引擎会引用你。AI引擎的引用逻辑完全不同。
+</Callout>
+
+## geo-aeo-tracker：本地优先的GEO神器
+
+**geo-aeo-tracker** 是目前功能最全面的开源GEO监控工具，支持6大AI引擎、12个功能模块，且完全免费。
+
+<CardGroup cols={2}>
+  <Card title="本地优先" href="https://github.com/danishashko/geo-aeo-tracker" icon="shield">
+    数据存储在本地IndexedDB，不泄露品牌敏感信息
+  </Card>
+  <Card title="多模型支持" href="https://github.com/danishashko/geo-aeo-tracker" icon="cpu">
+    ChatGPT、Perplexity、Gemini、Copilot、Google AI Overview、Grok
+  </Card>
+  <Card title="自动化" href="https://github.com/danishashko/geo-aeo-tracker" icon="clock">
+    支持Cron和GitHub Actions定时任务
+  </Card>
+  <Card title="竞争分析" href="https://github.com/danishashko/geo-aeo-tracker" icon="target">
+    引用机会识别、对战卡对比、AEO审计
+  </Card>
+</CardGroup>
+
+<AccordionGroup>
+  <Accordion title="12个功能标签页一览">
+    1. ⚙️ **项目设置** - 品牌名称、关键词、描述
+    2. 💬 **提示词中心** - 管理追踪提示词
+    3. 🎭 **角色扩散** - 生成角色特定提示词
+    4. 🔍 **细分领域探索器** - 生成高意图查询
+    5. 📝 **响应** - 浏览 AI 响应
+    6. 📊 **可见性分析** - 趋势图表
+    7. 🔗 **引用** - 引用频率分析
+    8. 🎯 **引用机会** - 竞争对手分析
+    9. ⚔️ **竞争对手对战卡** - AI 生成的对比
+    10. 🏥 **AEO 审计** - 站点准备度检查
+    11. ⏱️ **自动化** - Cron/GitHub Actions
+    12. 📖 **文档** - 14 部分指南
+  </Accordion>
+</AccordionGroup>
+
+## 5分钟快速部署
+
+<Steps>
+
+### 克隆项目并安装
+
+```bash
+git clone https://github.com/danishashko/geo-aeo-tracker
+cd geo-aeo-tracker
+npm install
+```
+
+### 配置API密钥
+
+```bash
+cp .env.example .env.local
+```
+
+编辑 `.env.local`：
+
+```
+BRIGHT_DATA_API_KEY=你的BrightData密钥
+OPENROUTER_API_KEY=你的OpenRouter密钥
+```
+
+<Callout type="tip">
+  Bright Data用于抓取AI引擎结果，OpenRouter用于调用多模型API。两者都有免费额度，个人使用成本极低。
+</Callout>
+
+### 启动服务
+
+```bash
+npm run dev
+```
+
+访问 `http://localhost:3000` 即可使用完整功能。
+
+</Steps>
+
+## 实战：追踪你的品牌可见性
+
+### 第一步：创建项目
+
+在"项目设置"页面输入：
+- **品牌名称**：你的公司/产品名
+- **核心关键词**：5-10个业务关键词
+- **品牌描述**：一句话介绍（用于AI判断相关性）
+
+### 第二步：设计追踪提示词
+
+<Callout type="tip">
+  这是GEO监控的核心。不要只追踪"某某品牌怎么样"，要模拟真实用户提问。
+</Callout>
+
+**高价值提示词模板**：
+
+| 类型 | 示例提示词 |
+|------|-----------|
+| 产品比较 | "2026年最好的跨境电商SaaS工具是什么？" |
+| 场景求助 | "做独立站用什么建站平台好？" |
+| 口碑查询 | "Shopify和BigCommerce哪个更适合中国卖家？" |
+| 专业建议 | "SEO转到GEO需要哪些工具？" |
+
+<AccordionGroup>
+  <Accordion title="为什么这些提示词更有效？">
+    AI搜索引擎使用 **Query Fan-Out（查询扇出）** 技术：一个用户查询会被分解为8-12个并行子查询。针对子查询优化的页面，获得AI引用的概率比仅针对主词排名的页面高出 **161%**。
+
+    所以你的监控提示词也要覆盖这些"子查询场景"，而非单一品牌词。
+  </Accordion>
+</AccordionGroup>
+
+### 第三步：批量运行并分析
+
+点击"运行批量抓取"，工具会：
+1. 向6个AI引擎发送你的提示词
+2. 收集AI的回答内容
+3. 分析你的品牌是否被提及、引用、排名如何
+
+**可见性评分算法**（0-100分）：
+- 品牌提及次数
+- 出现位置（首条/前列/尾部）
+- 引用频率
+- 情感倾向（正面/中性/负面）
+
+## 进阶：竞争对手对标
+
+geo-aeo-tracker 的"竞争对手对战卡"功能非常强大：
+
+<Steps>
+
+### 添加竞品
+
+在"引用机会"页面输入竞争对手品牌名
+
+### 生成对战卡
+
+AI自动对比你和竞品在以下维度：
+- AI搜索可见性分数
+- 被引用的内容类型
+- 引用来源渠道
+- 情感框架差异
+
+### 发现引用机会
+
+工具会识别：**竞品被引用了、但你没被引用的查询**。这些就是你的内容缺口。
+
+</Steps>
+
+<Callout type="info">
+  <strong>案例参考</strong>：某跨境电商工具通过此功能发现，竞品在"DTC品牌独立站支付方案"查询中被频繁引用，而自己从未出现。针对性创作内容后，3周内AI引用率提升40%。
+</Callout>
+
+## 自动化监控：设置每周报告
+
+手动运行工具效率太低，建议配置自动化：
+
+```bash
+# 使用Cron每周一早上运行
+0 9 * * 1 cd /path/to/geo-aeo-tracker && npm run batch-track
+```
+
+或配置 **GitHub Actions**：
+- 每周自动运行追踪
+- 结果推送到Slack/钉钉
+- 可见性分数变化自动告警
+
+## 结合其他工具形成闭环
+
+geo-aeo-tracker 是监控层，你还需要：
+
+<CardGroup cols={3}>
+  <Card title="内容优化" href="#" icon="pen">
+    gtm-engineer-skills：Claude Code技能库，批量优化内容为AI友好格式
+  </Card>
+  <Card title="标准部署" href="#" icon="file-code">
+    llms.txt：部署AI可读的标准协议，引导爬虫抓取
+  </Card>
+  <Card title="格式转换" href="#" icon="refresh">
+    easyGEO：HTML批量转Markdown，清理格式利于AI理解
+  </Card>
+</CardGroup>
+
+<Callout type="tip">
+  <strong>完整GEO工具链</strong>：llms.txt（技术基础）→ gtm-engineer-skills（内容优化）→ geo-aeo-tracker（效果监控）→ easyGEO（格式维护）。四个工具全部开源免费。
+</Callout>
+
+## 写在最后
+
+GEO不是玄学，是可以量化、可以工程化的事情。
+
+关键认知转变：
+
+1. **从"排名思维"到"引用思维"**：不追求SERP位置，追求被AI当作信息源
+2. **从"关键词"到"意图簇"**：覆盖Query Fan-Out产生的8-12个子查询
+3. **从"月度报告"到"实时监控"**：AI搜索变化极快，需要周级甚至天级追踪
+
+<Callout type="warning">
+  如果你现在还没有任何GEO监控手段，建议本周就部署geo-aeo-tracker。先知道自己在AI搜索中的"位置"，才有资格谈优化。
+</Callout>
+
+---
+
+**参考来源**：
+- [GEO-AEO-Library/03-Tools/geo-aeo-tracker](https://github.com/danishashko/geo-aeo-tracker) - 工具文档
+- [NotebookLM - GEO/AEO完整指南](https://notebooklm.google.com/notebook/59897f2b-1570-4006-84a1-8aea8c61fcf3) - 理论框架
+- [Spark Toro 零点击搜索研究](https://sparktoro.com/blog/)
+
+---
+
+**标签**：`#GEO` `#AEO` `#开源工具` `#品牌监控` `#实操指南`
