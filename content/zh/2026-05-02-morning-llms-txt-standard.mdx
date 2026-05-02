@@ -1,0 +1,209 @@
+---
+title: llms.txt 标准深度解读：让你的网站被 AI 搜索优先引用的第一步
+description: 详解 llms.txt 标准规范，这是 GEO/AEO 领域最重要的基础设施标准。学习如何实施该标准，让你的网站被 ChatGPT、Claude、Gemini 等 AI 引擎优先引用。
+date: 2026-05-02
+tags: [GEO, AEO, llms.txt, AI搜索, 标准规范, 工具推荐]
+authors: [WuKong]
+draft: false
+---
+
+# llms.txt 标准深度解读：让你的网站被 AI 搜索优先引用的第一步
+
+<Callout type="info">
+  <strong>导读</strong>：AI 搜索正在重构流量分配逻辑。当你的目标用户不再点击 Google 搜索结果的蓝色链接，而是直接阅读 ChatGPT、Perplexity 或 Gemini 生成的摘要时，你的网站该如何被发现？llms.txt 正是为此而生的基础设施标准。
+</Callout>
+
+## 为什么你需要关注 llms.txt
+
+<Badge color="blue">GEO 基础设施</Badge>
+<Badge color="green">AI 可见性</Badge>
+<Badge color="red">必读标准</Badge>
+
+传统 SEO 从业者已经习惯了 `robots.txt` 和 `sitemap.xml` 的思维方式——告诉搜索引擎蜘蛛哪里可以爬、哪里不能爬。但 AI 时代的搜索逻辑完全不同：
+
+- **传统搜索**：用户看到 10 个链接，点击其中一个
+- **AI 搜索**：用户直接获得一段由 AI 生成的摘要，**被引用的网站获得 100% 的曝光**
+
+这意味着，如果你的网站没有被 AI 引擎收录和理解，你将直接失去这部分流量。而 llms.txt 就是帮助 AI 引擎理解你网站结构的标准化方式。
+
+<Callout type="tip">
+  据行业数据，AI 推荐流量的转化率是传统来源的 **2 倍**。内容更新时间少于 3 个月的页面，被 AI 引用的概率高 **3 倍**。[来源: GEO-AEO-Library/README.md]
+</Callout>
+
+## llms.txt 是什么
+
+llms.txt 是由 **Answer.ai** 提出的网站内容索引标准，专为大型语言模型设计。它与 `robots.txt` 类似，但面向的是 AI 爬虫而非传统搜索引擎蜘蛛。
+
+### 核心设计
+
+```
+# /llms.txt 示例结构
+---
+title: 你的网站名称
+version: 1.0
+updated: 2026-05-02
+---
+
+## Docs
+- 快速开始: /docs/getting-started
+- API 文档: /docs/api
+- 使用教程: /docs/tutorials
+
+## Data
+- 数据集: /dataset
+- 模型权重: /models
+```
+
+### 两种文件格式
+
+| 文件 | 用途 | 内容量 |
+|------|------|--------|
+| `/llms.txt` | 精简索引 | 核心内容摘要 |
+| `/llms-full.txt` | 完整索引 | 所有内容详细信息 |
+
+<Callout type="warning">
+  目前主流 AI 平台尚未正式支持 llms.txt 协议，但 Answer.ai 作为行业先锋，该标准已获得广泛社区认可，预计将在 2026 年下半年获得更多平台支持。[来源: GEO-AEO-Library/01-Standards/llms-txt.md]
+</Callout>
+
+## 实施 llms.txt 的五个步骤
+
+<Steps>
+
+### 第一步：创建文件
+
+在网站根目录创建 `/llms.txt` 文件：
+
+```bash
+touch llms.txt
+```
+
+### 第二步：添加元数据
+
+在文件开头添加 YAML 格式的元数据：
+
+```yaml
+---
+title: 你的网站名称
+version: 1.0
+updated: 2026-05-02
+---
+```
+
+### 第三步：组织内容索引
+
+按类别组织你的网站内容：
+
+```markdown
+## Documentation
+- 入门指南: /docs/getting-started
+- API 参考: /docs/api
+- 常见问题: /docs/faq
+
+## Blog
+- 最新文章: /blog
+- 分类标签: /blog/tags
+```
+
+### 第四步：定期更新
+
+设置提醒，每月检查并更新 llms.txt 文件，确保内容索引与网站实际结构同步。
+
+### 第五步：监控效果
+
+使用 GEO 追踪工具监控你的 AI 可见性变化（下文推荐工具）。
+
+</Steps>
+
+## 推荐工具：geo-aeo-tracker
+
+<Badge color="green">开源免费</Badge>
+<Badge color="blue">本地优先</Badge>
+
+如果你正在寻找一款系统化的 GEO 监控工具，**geo-aeo-tracker** 是目前最值得关注的开源项目。
+
+### 核心能力
+
+- **12 个功能模块**：从项目设置到自动化监控，覆盖完整 GEO 工作流
+- **6 大 AI 平台支持**：ChatGPT、Perplexity、Gemini、Copilot、Google AI Overview、Grok
+- **竞争分析**：查看竞争对手的 AI 搜索表现，发现引用机会
+- **本地优先**：数据存储在本地 IndexedDB，隐私安全
+
+### 快速开始
+
+```bash
+# 克隆项目
+git clone https://github.com/danishashko/geo-aeo-tracker
+cd geo-aeo-tracker
+
+# 安装依赖
+npm install
+
+# 配置 API 密钥（Bright Data + OpenRouter）
+cp .env.example .env.local
+
+# 启动服务
+npm run dev
+```
+
+<Callout type="tip">
+  geo-aeo-tracker 的可见性评分算法基于五个维度：品牌提及、位置、频率、引用和情感。分数范围 0-100，帮助你量化 GEO 效果。[来源: GEO-AEO-Library/03-Tools/geo-aeo-tracker.md]
+</Callout>
+
+## llms.txt + GEO 追踪的组合策略
+
+将 llms.txt 标准实施与系统化监控结合，形成闭环优化：
+
+<AccordionGroup>
+  <Accordion title="如何验证 llms.txt 是否有效？">
+    使用 geo-aeo-tracker 的 "AEO 审计" 功能，检查站点对 AI 引擎的准备度。审计报告会指出你是否正确部署了 llms.txt、Schema.org 标记等基础设施。
+  </Accordion>
+  <Accordion title="多久更新一次 llms.txt？">
+    建议与你的内容发布节奏同步。如果每周发布 2-3 篇博客文章，那么每周更新一次 llms.txt。核心原则是：保持索引与实际内容的一致性。
+  </Accordion>
+  <Accordion title="没有技术团队能实施吗？">
+    llms.txt 是纯文本文件，不需要编程知识。你可以用任何文本编辑器创建和维护。如果网站使用 WordPress 等内容管理系统，可以寻找插件自动生成功能。
+  </Accordion>
+</AccordionGroup>
+
+## 给你的行动建议
+
+如果你是**传统 SEO 从业者**：
+- 本周就在你的主域名下创建 `/llms.txt` 文件
+- 将 llms.txt 维护加入你的标准工作流程
+- 开始监控 AI 搜索流量变化
+
+如果你是**品牌市场部人员**：
+- 将 llms.txt 实施纳入技术团队的 Q2 任务清单
+- 使用 geo-aeo-tracker 建立品牌 AI 可见性基线
+- 每月生成 AI 搜索表现报告
+
+如果你是**跨境电商独立站从业者**：
+- 特别关注产品页面的 AI 引用情况
+- 在 llms.txt 中突出产品目录和促销信息
+- 利用竞争分析功能，发现被 AI 引用更多的竞争对手策略
+
+## 总结
+
+llms.txt 是 GEO/AEO 领域最重要的基础设施标准之一。虽然它目前还未被主流 AI 平台正式支持，但先行实施的品牌将在 AI 搜索时代占据先机。
+
+关键要点：
+1. **llms.txt 是 AI 时代的 robots.txt**——帮助 AI 引擎理解你的网站
+2. **实施成本低**——纯文本文件，无需技术背景
+3. **监控很重要**——使用 geo-aeo-tracker 等工具量化效果
+4. **持续优化**——定期更新，保持内容索引同步
+
+<Callout type="info">
+  AI 搜索的变革已经开始。那些被 AI 引擎信任并引用的网站，将获得前所未有的流量红利。llms.txt 就是你获得这份信任的起点。
+</Callout>
+
+---
+
+**参考来源**：
+- [llms.txt GitHub 项目](https://github.com/AnswerDotAI/llms.txt)
+- [geo-aeo-tracker GitHub 项目](https://github.com/danishashko/geo-aeo-tracker)
+- [来源: GEO-AEO-Library/01-Standards/llms-txt.md]
+- [来源: GEO-AEO-Library/03-Tools/geo-aeo-tracker.md]
+
+---
+
+**标签**：`#GEO` `#AEO` `#llms.txt` `#AI搜索` `#标准规范`
